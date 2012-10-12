@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-
+\usepackage{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -41,7 +41,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-\rhead{\large\bfseries Deliverable 1: Literature study} % right header: document title
+\rhead{\large\bfseries Gamification and Learning Analytics for Education} % right header: document title
 \lhead{\textsc{Jurriaans}, \textsc{Latour}} % left header: document author
 \cfoot{\large \thepage} % center footer: page number
 
@@ -54,11 +54,10 @@
 \includegraphics[width=1\textwidth]{img/uva}\\[1cm]
 \HRule \\[0.4cm]
 % Title
- Deliverable 1: Literature study \\\small \small{[Version 0.1]}\\[0.4cm]
+ A Unified Theory of Applying Gamification and Learning Analytics to Education \\\small \small{[Version 0.1]}\\[0.4cm]
 \HRule \\[1cm]
 \begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
 Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
-\textsc{5887380} & \textsc{} \\
 \end{tabular*}
 
 
@@ -95,43 +94,98 @@ Students often come from different backgrounds and
 % Overview of Paper
 
 \section{Gamification}
-In March 2004 the term gamification was coined by Nick Pelling, but did not become popular until 2010. The term refers to the usage of game-design elements in mostly non-gaming contexts. Gamification was mostly a marketing-term \cite{Huotari2011}, but slowly began to be used to define the academic practice \cite{Deterding2011} of applying game design patterns to increase motivation and engagement. An example of this is the usage of narrative to change routine work into something more meaningful, such as changing math problems into real-life examples with an underlying math problem (CITE).
+Games are unprecedented in motivating and engaging players. Humans tend to spent large amounts of time playing games of all sorts. This led some people to believe that it could be possible to generate this type of motivation and engagement in other contexts as well by applying the underlying game design patterns to areas other than gaming to steer behaviour.
 
+Gamification is a concept that is both controversial \cite{mcGonigal} as well as hard to define \cite{Deterding2011}. The controversy of the term gamification is easily seen in the many different terms that have been coined, including pervasive games, alternate reality games, productivity games, applied gaming, etcetera. All of these terms refer to the practice of applying game design patterns to non-gaming contexts to achieve higher motivation and engagement from users. The term gamification originates from 2004 when it was first used by Nick Pelling as a marketing term \cite{Huotari2011}. In recent years, gamification has moved beyond being just a marketing technique and becoming an academic field. The mayor problem with gamification is that the definition is very subjective and it is difficult to formalize the definition \cite{Huotari2011, Deterding2011}. 
+%
+The definition of Gamification given by Deterding is:
+\begin{quote}
+	``Gamification'' is the use of game design elements in non-game contexts. 
+\end{quote}
+
+The two important concepts in this definition are ``game design elements'' and ``non-game contexts.'' ``Game design elements'' or ``game atoms'' \cite{Deterding2011, Brathwaite2008} are elements that are not unique to games, but instead are used often in ``gaming contexts''. Such elements can be the state, the dynamics, theme, goals and mechanics of a game and the player and his avatar. The definition for game elements is also subjective as any of these elements can be used outside of the game-context or ``magic circle of games'' \cite{Huizinga}. To give a formal definition of game-elements we would first need to define game-contexts.
+
+Another definition for gamification is given by Huotari et al \cite{Huotari2011} which is from a marketing point of view.
+\begin{quote}
+	“(Gamification is a) service packaging where a core service is
+enhanced by a rules-based service system that provides feedback
+and interaction mechanisms to the user with an aim to facilitate
+and support the users’ overall value creation.”
+\end{quote}
+
+Deterding challenges this definition by addressing that a rule-based system covers more than just games \cite{Deterding2011}. Furthermore, by viewing gamification only from a service marketing perspective does not fully take the social and experiential dimensions of games into account. Nevertheless, both definitions see gamification as the introduction of game-like elements into non-gaming contexts.
+
+Non-game contexts is a broad term for anything that is not a game in itself. However, non-game contexts may also apply to games themselves (CITE). Parts of the game that may not necessarily be part of the design of the game can be considered as non-game contexts. These type of meta-games have been considered as separate from the game design itself. The game-context is thus also difficult to capture in a formal definition as games can be considered to be something subjective by nature. 
+
+In game theory, games are formally defined as a set of players or agents, a set of moves or strategies and a pay-off function or reward system. In this definition the game elements are already considered as being the set of moves and the reward function. The reward function would then hold all the underlying game mechanics whereas the set of moves can be interpreted as the user interface. For a gamification framework we would like to be able to understand more about the elements that fall under reward functions and the set of moves, as there is common notion that gamification is more then adding rewards and available moves to a non-gaming context.
+
+Byron and Reeves \cite{Byron} consider game-elements to be any part of a game and give a list of game elements that help to make a game more engaging. These game elements are: Self-representation with avatars; three-dimensional environments; narrative context; feedback; reputations, ranks, and levels; marketplaces and economies; competition under rules that are explicit and enforced; teams; parallel communication systems that can be easily configured; time pressure. These elements differ from the set of moves and the reward function as found in game theory. Although elements such as feedback and ranks seem to be correlating to intrinsic rewards and thus the reward function, avatars and communication systems appear to be different from this as they are actions that do not directly influence the pay-off.
+
+% Ontology project
+Another way of viewing game contexts and game elements is by creating an ontology such as the Game Ontology Project (GOP) \cite{Zagal2005} which is a framework for describing, analysing and studying games. It is a hierarchy for defining games using prototype theory and grounded theory to account for a growing and changing field of games. The ontology is based around four main categories: Interface; Rules; Entity Manipulation and Goals. The interface category comprises how a player interacts with the game, which comprises of both perception and user input. The rules are the rules in the game that work apart from the player, such as the physics, as well as direct consequences of user actions. This latter category seems to be related to the category of entity manipulation, but the main difference is that in the rules category, user actions affect certain underlying mechanics, whilst user actions affecting entities within the rule system belong to entity manipulation. The final category goals holds all the 
+information about the direction of the game: when the game ends; how the score is calculated and the actual goals for the player.
+These game elements are on a higher level than the game elements as described by Byron and Reeves, but are on a lower level than the game theory description of games.
+
+% Game classification elements
+A slightly different ontology is given by Elverdam \cite{Elverdam2006} which is based on the Typology Model of games. It is mainly used for the classification of games and works by separating the general concepts: Physical Space; Virtual Space; Internal Time; External Time; Player Relation; Player Composition; Struggle and Game state. Although the model is used for classification as opposed to generation or game design, it is still capable of describing the various game elements. It is a model which is geared towards separating the various types of game design patterns without giving actual separate game elements, but rather categories of game elements which are present in game-play. The eight different categories can be categorised on a higher level as: Players; Space; Time and Rules. These categories differ from the Game Ontology Project in that it is more focussed on the type of game as opposed to the inner mechanics of the game.
+
+
+% Game design patterns
+
+
+%% Game contexts
+% Magic circle of play
+
+
+
+% Juul
+“A game is a rule-based formal system with a variable and quantifiable outcome, where different outcomes are assigned different values, the player exerts effort in order to influence the outcome, the player feels attached to the outcome, and the consequences of the activity are optional and negotiable.” 
 An important underlying idea is ``playfulness'' (CITE) which is a concept addressing how much fun it is to do something. However, a consensus about the exact definition of this playfulness has yet to emerge, many researchers have described it as a desirable user experience or interaction. The term is described as making a standard interaction ``fun'' (CITE) or making it a ``pleasurable experience.''
+
+
+
+
 
 Deterding et al \cite{Deterding2011} makes a distinction between ``gamefulness'' and ``playfulness'' by saying that the first is a subfield (?) of the latter where the play is done according to strict rules that are enforced. 
 
+Deterding:
+We therefore suggest restricting “gamification” to the description of elements that are characteristic to games – elements that are found in most (but not necessarily all) games, readily associated with games, and found to play a significant role in gameplay. Of course, this is a heuristic definition with much room for debate over what is “characteristic” for games.
 
-\subsection{Definition}
-% Gamification definition, Deterding 2011
-% Make distinction between fun in learning; serious games; game design in non-gaming environments
+% Conclusion towards deliverable 2
 
-
-\subsection{Background}
-% History of Motivation and Incentive Systems, Pearson 2012
+Game elements are elements from other fields applied to game contexts. Game contexts are defined as a set of mechanics and a reward function that a group of users has agreed upon. This means that the game context in itself does not need to be ``fun'' in the sense that it could very well be that the set of game elements that are used do not motivate or engage one or more of the players in the game context.
 
 
-\subsection{Gamification Methods}
-% Gamification Methods
-
-\subsubsection{Game Design Patterns and Mechanics}
-% Game design patterns and mechanics
-
-\subsubsection{Game Design Principles and Heuristics}
-% Game design principles and heuristics
-
-\subsubsection{Game Models}
-% Game Models
-
-
-\subsection{Applications and Frameworks}
-% Applications and Existing Frameworks
-% Mainly address what these frameworks introduce/use and what factors were important in the success of the application
-
-
-  \subsection{Open Issues}
-% Open issues in Gamification
-% Future Work (Narrative and experiences)
+% \subsection{Definition}
+% % Gamification definition, Deterding 2011
+% % Make distinction between fun in learning; serious games; game design in non-gaming environments
+% 
+% 
+% \subsection{Background}
+% % History of Motivation and Incentive Systems, Pearson 2012
+% 
+% 
+% \subsection{Gamification Methods}
+% % Gamification Methods
+% 
+% \subsubsection{Game Design Patterns and Mechanics}
+% % Game design patterns and mechanics
+% 
+% \subsubsection{Game Design Principles and Heuristics}
+% % Game design principles and heuristics
+% 
+% \subsubsection{Game Models}
+% % Game Models
+% 
+% 
+% \subsection{Applications and Frameworks}
+% % Applications and Existing Frameworks
+% % Mainly address what these frameworks introduce/use and what factors were important in the success of the application
+% 
+% 
+%   \subsection{Open Issues}
+% % Open issues in Gamification
+% % Future Work (Narrative and experiences)
 
 
 \section{Learning Analytics}
@@ -140,7 +194,8 @@ There is on ongoing whish to increase study success of students in higher educat
 
 Now that the Web is globally used as a key component of course delivery, many learning interactions of students no longer occur under the direct observation and influence of teachers \cite{Sheard2003}. This complicates decision making in classroom processes and makes it difficult to evaluate pedagogical strategies on their effectiveness \cite{Romero2007}. This is especially true for Massive Open Online Courses, since they have no face to face contact whatsoever(reference needed). Therefore educators need to find other ways to observe students and react to individual students' needs.
 
-The introduction of virtual learning environments (VLE's)\footnote{Similair concepts are `Interactive Learning Environment', `Course Management System` and `Learning Management System'} and their ability of recording digital trails of students' learning actions resulted in the availability of large sets of data to education instutitions \cite{Ferguson2012a}\cite{Romero2007}. An increasing interest arises in analysing interaction data of the learning with the virtual learning environment automatically \cite{Muehlenbrock2005}. It is also not easy for the faculty to interpret large datasets of learning-related data. Furthermore, VLE's insufficiently support stakeholders with extracting, aggregating and visualising pedagogically useful information \cite{Zhang2007}\cite{Dawson2010}\cite{Zaiane2001}. At the same time it would be useful if the system could guide a student's learning process automatically by recommending online activities or resourses \cite{Zaiane2001}. Learning Analytics assists both educators and learners in this matter and is defined by the 1st International Conference on Learning Analytics and Knowledge as follows:
+The introduction of virtual learning environments (VLE's)\footnote{Similair concepts are `Interactive Learning Environment', `Course Management System` and `Learning Management System'} and their ability of recording digital trails of students' learning actions resulted in the availability of large sets of data to education instutitions \cite{Ferguson2012a}\cite{Romero2007}. An increasing interest arises in analysing interaction data of the learning with the virtual learning environment automatically \cite{Muehlenbrock2005}. It is also not easy for the faculty to interpret large datasets of learning-related data. Furthermore, VLE's insufficiently support stakeholders with extracting, aggregating and visualising pedagogically useful information \cite{Zhang2007}\cite{Dawson2010}\cite{Zaiane2001}. At the same time it would be useful if the system could guide a student's learning process automatically by recommending online activities or resourses \cite{Zaiane2001}. Learning Analytics assists both educators and 
+learners in this matter and is defined by the 1st International Conference on Learning Analytics and Knowledge as follows:
 \begin{quote}
 "Learning analytics is the measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the environments in which it occurs." \cite{lak2011}
 \end{quote}
@@ -203,6 +258,8 @@ Visual Analytics
 
 
 \section{Gamification and Learning Analytics applied on Education}
+
+
 
 \section{Conclusion}
 
