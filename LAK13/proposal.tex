@@ -1,0 +1,86 @@
+\documentclass{acm_proc_article-sp}
+
+\begin{document}
+
+\title{Introducing the Game Context: A Representation For the Motivational Aspects in Education}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{2} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Sander Latour\titlenote{Corresponding author}\\
+       \affaddr{University of Amsterdam}\\
+       \affaddr{The Netherlands}\\
+       \email{M.S.Latour@uva.nl}
+% 2nd. author
+\alignauthor
+Robrecht Jurriaans\\  
+       \affaddr{University of Amsterdam}\\
+       \affaddr{The Netherlands}\\
+       \email{Robrecht.Jurriaans@student.uva.nl}
+}
+\additionalauthors{}
+
+\date{\today}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+From a student's perspective, a learning task has three major facets: the knowledge it is concerned with, the type of learning activity and the aspects of the task that motivate the student. A mismatch can occur between these properties of a learning task and their counterparts in the capacity of a student. Optimizing this for every individual student is difficult for a teacher that designs a course for the collective. The learning analytics community tries to assist teachers by providing them with systems that can optimize this on an individual level. Ideally, such a system would optimize all three major facets of a learning task, by finding a good balance in the amount of new knowledge, by choosing the optimal learning activity and keeping the student fully motivated and engaged during the assignment. Ample work has been done on systems that personalize learning tasks in terms of the knowledge and in recent years there has also been a focus on personalizing the type of learning activity. However, little work has been done on the optimization of the third quantity in such systems. 
+
+Engagement is a complex notion which is usually very subjective in its nature. Although many physiological and psychological explanations and formalizations exist, these definitions fail to be usable in context-aware recommender systems. We propose a novel representation of the motivating aspects of a learning task, called the game context, based on the fields of gamification and reverse game theory. A game context consists of a set of actors, a set of game mechanics and a set of predetermined rewards functions. For a learning task, the set of actors represents the students involved and the game mechanics and reward function represent the motivating aspects. For each student, the game context has a certain effectiveness in triggering engagement. 
+
+In this paper we propose to use the game context representation in applications such as computer-assisted course building and intelligent curriculum. We also present a proof of concept implementation of a system that uses the game context and evaluate its use in a bachelor course.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+%\terms{Theory}
+
+%\keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
+
+%\balancecolumns
+\end{document}
+
