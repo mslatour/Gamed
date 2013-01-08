@@ -4,6 +4,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+
+
+
 % Lay out packages
 %\usepackage[margin=3.5cm]{geometry}
 \usepackage[utf8]{inputenc}
@@ -54,6 +57,8 @@
 \begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
 Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \end{tabular*}
+
+
 
 \vfill \today
 \end{center}
