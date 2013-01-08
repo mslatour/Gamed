@@ -66,11 +66,6 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \end{center}
 \end{titlepage}
 
-\newpage
-\thispagestyle{empty}
-\mbox{}
-\pagebreak
-
 \tableofcontents
 \pagebreak
 
