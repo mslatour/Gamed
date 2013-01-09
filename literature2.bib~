@@ -22,7 +22,6 @@
  author = {Brathwaite, Brenda and Schreiber, Ian},
  title = {Challenges for Game Designers},
  year = {2008},
- isbn = {158450580X, 9781584505808},
  edition = {1},
  publisher = {Charles River Media, Inc.},
  address = {Rockland, MA, USA},
@@ -55,37 +54,24 @@
                authentically to game studies},
   booktitle = {ICLS (2)},
   year      = {2008},
-  pages     = {499-506},
-  ee        = {http://dl.acm.org/citation.cfm?id=1599933},
-  crossref  = {DBLP:conf/icls/2008-2},
-  bibsource = {DBLP, http://dblp.uni-trier.de}
+  pages     = {499-506}
 }
 
 @article{Zagal2009,
     author = {Zagal, J. P. and Fernandez-Vara, C. and Mateas, M.},
-    citeulike-article-id = {6561403},
-    citeulike-linkout-0 = {http://dx.doi.org/10.1177/1555412008314129},
-    citeulike-linkout-1 = {http://gac.sagepub.com/cgi/doi/10.1177/1555412008314129},
-    doi = {10.1177/1555412008314129},
     journal = {Games and Culture},
-    keywords = {file-import-10-01-19},
     number = {2},
     pages = {175--198},
-    posted-at = {2010-01-19 09:17:22},
-    priority = {0},
     title = {{Rounds, Levels, and Waves: The Early Evolution of Gameplay Segmentation}},
-    url = {http://gac.sagepub.com/cgi/doi/10.1177/1555412008314129},
     volume = {3},
     year = {2009}
 }
 
 
 @inproceedings{Huotari2012,
-  added-at = {2012-11-14T00:00:00.000+0100},
   author = {Huotari, Kai and Hamari, Juho},
   booktitle = {MindTrek},
   editor = {Lugmayr, Artur},
-  isbn = {978-1-4503-1637-8},
   pages = {17-22},
   publisher = {ACM},
   title = {Defining gamification: a service marketing perspective.},
@@ -103,21 +89,14 @@
 
 @book{Zimmerman2004,
   abstract = {Written for game scholars, game developers, and interactive designers, Rules of Play is a textbook, reference book, and conceptual guide. It is the first comprehensive attempt to establish a solid theoretical framework for the emerging discipine of game design.},
-  added-at = {2007-03-23T01:37:56.000+0100},
   author = {Salen, Katie and Zimmerman, Eric},
-  biburl = {http://www.bibsonomy.org/bibtex/2a62895de04538628b42e20981a556c70/p4games},
   booktitle = {Rules of Play},
   description = {Written for game scholars, game developers, and interactive designers, Rules of Play is a textbook, reference book, and conceptual guide. It is the first comprehensive attempt to establish a solid theoretical framework for the emerging discipine of game design.},
-  interhash = {96e338fd32b5d5fd255e71eec79c76ee},
-  intrahash = {a62895de04538628b42e20981a556c70},
-  keywords = {design fundamentals game play rules},
   pages = 672,
   publisher = {MIT Press},
-  timestamp = {2007-03-23T01:37:56.000+0100},
   title = {Rules of Play: Game Design Fundamentals},
   year = 2004
 }
-
 
 @inproceedings{Bjork2003,
   author    = {Staffan Bj{\"o}rk and
@@ -125,26 +104,69 @@
                Jussi Holopainen},
   title     = {Game Design Patterns},
   booktitle = {DIGRA Conf.},
-  year      = {2003},
-  ee        = {http://www.digra.org/dl/display_html?chid=http://www.digra.org/dl/db/05163.15303},
-  crossref  = {DBLP:conf/digra/2003},
-  bibsource = {DBLP, http://dblp.uni-trier.de}
-}
+  year      = {2003}
+  }
 
 @inproceedings{Bjork2003b,
-  added-at = {2005-11-28T00:00:00.000+0100},
   author = {Björk, Staffan and Holopainen, Jussi},
-  biburl = {http://www.bibsonomy.org/bibtex/284b2b59db55d0849689706492ee850cb/dblp},
   booktitle = {DIGRA Conf.},
-  crossref = {conf/digra/2003},
   date = {2005-11-28},
   description = {dblp},
-  ee = {http://www.digra.org/dl/display_html?chid=http://www.digra.org/dl/db/05150.10348},
-  interhash = {40595ffa3a4c08cf9d3338095a6c4f60},
-  intrahash = {84b2b59db55d0849689706492ee850cb},
-  keywords = {dblp},
   timestamp = {2005-11-28T00:00:00.000+0100},
   title = {Describing Games: An Interaction-Centric Structural Framework.},
-  url = {http://dblp.uni-trier.de/db/conf/digra/digra2003.html#BjorkH03},
   year = 2003
 }
+
+@article{Taylor2009,
+    author = {Taylor, T. L.},
+    journal = {Games and Culture},
+    number = {4},
+    pages = {331--339},
+    title = {{The Assemblage of Play}},
+    volume = {4},
+    year = {2009}
+}
+
+@inproceedings{Hartsook2011,
+  author = {Hartsook, Ken and Zook, Alexander and Das, Sauvik and Riedl, Mark O.},
+  booktitle = {CIG},
+  editor = {Cho, Sung-Bae and Lucas, Simon M. and Hingston, Philip},
+  pages = {297-304},
+  publisher = {IEEE},
+  title = {Toward supporting stories with procedurally generated game worlds.},
+  year = 2011
+}
+
+@article{Marchiori2011,
+ author = {Marchiori, Eugenio J. and del Blanco, \'{A}ngel and Torrente, Javier and Martinez-Ortiz, Iv\'{a}n and Fern\'{a}ndez-Manj\'{o}n, Baltasar},
+ title = {A visual language for the creation of narrative educational games},
+ journal = {J. Vis. Lang. Comput.},
+ issue_date = {December, 2011},
+ volume = {22},
+ number = {6},
+ month = dec,
+ year = {2011},
+ pages = {443--452},
+ numpages = {10},
+ publisher = {Academic Press, Inc.}
+} 
+
+@article{Li2012,
+	author = {Boyang Li and Stephen Lee-Urban and Mark Riedl},
+	title = {Toward Autonomous Crowd-Powered Creation of Interactive Narratives},
+	conference = {Artificial Intelligence and Interactive Digital Entertainment Conference},
+	year = {2012},
+	abstract = {Interactive narrative is a form of storytelling that adapts to actions performed by users who assume the roles of story characters. To date, interactive narratives are built by hand. In this paper, we introduce Scheherazade, an intelligent system that automatically creates an interactive narrative about any topic from crowdsourced narratives. Our system leverages the experience and creativity of humans by crowdsourcing a corpus of linear narrative examples. It then constructs an executable plot graph, which is a knowledge structure that defines the legal space of an interactive narrative, by learning the plot events, execution precedence, and event separations. We demonstrate the system can successfully construct an interactive narrative based on noisy human input.}
+}
+
+@incollection{Jenkins 2004,
+    author = {Jenkins, Henry},
+    booktitle = {First person: New media as story, performance, and game},
+    editor = {Wardrip-Fruin, Noah and Harrigan, Pat and Crumpton, Michael},
+    location = {Cambridge, MA},
+    pages = {119 – 129+},
+    publisher = {MIT Press},
+    title = {{Game design as narrative architecture}},
+    year = {2004}
+}
+
