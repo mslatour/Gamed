@@ -9,11 +9,6 @@
 \usepackage[utf8]{inputenc}
 %\usepackage{mathpazo}
 
-% More compact bibliography
-\usepackage{natbib}
-\setlength{\bibsep}{0.0pt}
-
-
 % Dutch style of paragraph formatting, i.e. no indents. 
 % \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 % \setlength{\parindent}{0pt}
@@ -157,10 +152,8 @@ In Huizinga's ``Homo Ludens: A Study of the Play-Element in Culture'' \cite{Huiz
 
 This notion of a magic circle is vastly different than the view of games as being interactive narratives \cite{Hartsook2011,Marchiori2011,Li2012,Jenkins2004}. Seeing games as interactive narratives creates the opportunity to compare games with more traditional story-telling such as writing, films and even static art. Many genres of games also overlap between traditional storytelling and games, such as interactive novels and role-playing games. However, not all types of games fall into this classification in a natural manner. When playing chess, not many people will be bothered with an actual story about warfare. Some of these games have a different type of narrative that breaks away from a traditional story and are more the narrative or experience of the game. For instance, tic-tac-toe does not have a proper story, but playing it creates a narrative between the players engaged in the game.
 
-% Experiential Flow
-Another method of describing games is as the mental state that games trigger in players \cite{Kiili2005} called the experiential flow. This flow is segmented into three distinct parts: Antecedents, Flow experience, Flow consequences. The antecedents are the actual game setting represented as the person, the task and the artefacts. These three components interact which causes the player to get the flow experience. This experience has various effects on the player including time distortion, merging of action and awareness, concentration, telepresence, sense of control and the loss of self-consciousness. Due to these effects the player then experiences the flow consequences. These flow consequences are indirect effects on the player such as improved learning, changes of attitude, exploratory behaviour and perceived behavioural control.
-
-\cite{Rollings2003}
+% Experiental Flow
+\cite{Kiili2005}
 
 
 \subsection{Gamification}
@@ -272,16 +265,7 @@ Visual Analytics
 \end{itemize}
 
 
-\section{The Game Context}
-
-
-\section{GALA, Gamification and Learning Analytics}
-
-
-\section{GAMED, Transfer Learning through Game Design}
-
-
-\section{Virtual Economy in the Classroom}
+\section{Gamification and Learning Analytics applied on Education}
 
 
 
