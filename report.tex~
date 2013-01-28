@@ -9,6 +9,11 @@
 \usepackage[utf8]{inputenc}
 %\usepackage{mathpazo}
 
+% More compact bibliography
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}
+
+
 % Dutch style of paragraph formatting, i.e. no indents. 
 % \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 % \setlength{\parindent}{0pt}
@@ -66,6 +71,12 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 
 \pagestyle{empty} %get rid of header/footer for toc page
 \tableofcontents
+
+\begin{abstract}
+	
+\end{abstract}
+
+
 \cleardoublepage %start new page
 \pagestyle{plain} % put headers/footers back on
 \setcounter{page}{1} %reset the page counter
@@ -146,13 +157,26 @@ In Huizinga's ``Homo Ludens: A Study of the Play-Element in Culture'' \cite{Huiz
 
 This notion of a magic circle is vastly different than the view of games as being interactive narratives \cite{Hartsook2011,Marchiori2011,Li2012,Jenkins2004}. Seeing games as interactive narratives creates the opportunity to compare games with more traditional story-telling such as writing, films and even static art. Many genres of games also overlap between traditional storytelling and games, such as interactive novels and role-playing games. However, not all types of games fall into this classification in a natural manner. When playing chess, not many people will be bothered with an actual story about warfare. Some of these games have a different type of narrative that breaks away from a traditional story and are more the narrative or experience of the game. For instance, tic-tac-toe does not have a proper story, but playing it creates a narrative between the players engaged in the game.
 
-% Experiental Flow
+% Experiential Flow
+Another method of describing games is as the mental state that games trigger in players \cite{Kiili2005} called the experiential flow. This flow is segmented into three distinct parts: Antecedents, Flow experience, Flow consequences. The antecedents are the actual game setting represented as the person, the task and the artefacts. These three components interact which causes the player to get the flow experience. This experience has various effects on the player including time distortion, merging of action and awareness, concentration, telepresence, sense of control and the loss of self-consciousness. Due to these effects the player then experiences the flow consequences. These flow consequences are indirect effects on the player such as improved learning, changes of attitude, exploratory behaviour and perceived behavioural control.
+
+\cite{Rollings2003}
+
+
+\subsection{Gamification}
+
+
+
+\subsection{Game-based Learning}
+
+
+
 
 \section{Learning Analytics}
 
 There is an ongoing whish to increase study success of students in higher education. Stakeholders demand educational institutions to make data-driven decisions to improve perfomance \cite{Ferguson2012a}. Recently more and more focus is on identifying at-risk students to prevent drop-outs.
 
-Now that the Web is globally used as a key course delivery method, many learning interactions of students no longer occur under the direct observation and influence of teachers \cite{Sheard2003}. This complicates decision making in classroom processes and makes it difficult to evaluate pedagogical strategies on their effectiveness \cite{Romero2007}. This is especially true for Massive Open Online Courses, since they have no face to face contact whatsoever(reference needed). Therefore educators need to find other ways to observe students and react to individual students' needs.
+Now that the Web is globally used to deliver course content, many learning interactions of students no longer occur under the direct observation and influence of teachers \cite{Sheard2003}. This complicates decision making in classroom processes and makes it difficult to evaluate pedagogical strategies on their effectiveness \cite{Romero2007}. This is especially true for Massive Open Online Courses, since they have no face to face contact whatsoever(reference needed). Therefore educators need to find other ways to observe students and react to individual students' needs.
 
 The introduction of virtual learning environments (VLE's)\footnote{Similair concepts are `Interactive Learning Environment', `Virtual Learning Environment', `Course Management System` and `Learning Management System'} and their ability of recording digital trails of students' learning actions resulted in the availability of large sets of data to education instutitions \cite{Ferguson2012a}\cite{Romero2007}. An increasing interest arises in analysing interaction data of the learning with the virtual learning environment automatically \cite{Muehlenbrock2005}. It is also not easy for the faculty to interpret large datasets of learning-related data. Furthermore, VLE's insufficiently support stakeholders with extracting, aggregating and visualising pedagogically useful information \cite{Zhang2007}\cite{Dawson2010}\cite{Zaiane2001}. At the same time it would be useful if the system could guide a student's learning process automatically by recommending online activities or resourses \cite{Zaiane2001}.
 %% Maybe: EDM denotes the area that concerns itself with using Data Mining techniques to answer such questions, Academic analytics specialized this ....., Learning analytics uses similair techniques but tries to give constructive feedback to both teachers and students to help improve learners and the environment in which they learn.
@@ -166,11 +190,6 @@ The field of learning analytics has its origins in the field of Educational Data
 Before the term learning analytics came in to play, the term academic analytics was coined by WebCT (now Blackboard) to describe their new feature. WebCT's academic analytics was a module inspired by business intelligence, which was a set of tools used to make data-driven decisions about a business. Academic analytics applied this to the business of higher education, and focused on enrollment optimization and student success. Stakeholders for academic analytics systems are historically at the institutional level that seek to make statistical predictions and identify key indicators. Learning analytics research typically attempts to answer different questions coming from different stakeholders. The Signals project from Perdue University, as described in \cite{Arnold2010}, is a well-known example of academic analytics where also students are informed of how they are doing using the traffic light metaphor. Their project lies in somewhere between academic analytics and learning analytics. Academic analytics 
 differs from EDM in that it is more hypothesis driven. The term action analytics emerged to stress that academic analytics is nowadays mostly focused on actionable analytics (i.e. having it early enough so that something could still be done).
 
-\paragraph{Academic Analytics}
-\begin{itemize}
-  \item \cite{Campbell2007} ....
-  \item \cite{Baepler2010}: Besides educational data mining, the field of academic analytics also emerged as a method to make more data-driven decisions . Academic analytics differs from EDM in that it is more hypothesis driven. The term action analytics emerged to stress that academic analytics is mostly focused on actionable analytics (i.e. having it early enough so that something could still be done).
-\end{itemize}
 \paragraph{Personalized Learning}
 Introduceer de notie van personalized learning, met een citaat uit een paper. 
 \begin{itemize}
@@ -178,7 +197,7 @@ Introduceer de notie van personalized learning, met een citaat uit een paper.
   \item Brusilovsky2001: Static hypermedia systems suffer from the inability to adapt to specific users' knowledge, needs and preferences. Adaptive hypermedia systems combine the fields of hypertext and user modelling to overcome this.
 %  \item Arruabarrena2002: On evaluating adaptive educational systems
   \item Brusilovsky2007: Access to online educational is not a problem anymore, however personalised access is.
-%  \item Romero2005: 
+%  \item Romero2005:
   \item \cite{Brusilovsky2003}
   \item \cite{Henze2001}
   \item \cite{Farzan2004}
@@ -253,7 +272,16 @@ Visual Analytics
 \end{itemize}
 
 
-\section{Gamification and Learning Analytics applied on Education}
+\section{The Game Context}
+
+
+\section{GALA, Gamification and Learning Analytics}
+
+
+\section{GAMED, Transfer Learning through Game Design}
+
+
+\section{Virtual Economy in the Classroom}
 
 
 

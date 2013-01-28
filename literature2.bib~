@@ -159,7 +159,7 @@
 	abstract = {Interactive narrative is a form of storytelling that adapts to actions performed by users who assume the roles of story characters. To date, interactive narratives are built by hand. In this paper, we introduce Scheherazade, an intelligent system that automatically creates an interactive narrative about any topic from crowdsourced narratives. Our system leverages the experience and creativity of humans by crowdsourcing a corpus of linear narrative examples. It then constructs an executable plot graph, which is a knowledge structure that defines the legal space of an interactive narrative, by learning the plot events, execution precedence, and event separations. We demonstrate the system can successfully construct an interactive narrative based on noisy human input.}
 }
 
-@incollection{Jenkins 2004,
+@incollection{Jenkins2004,
     author = {Jenkins, Henry},
     booktitle = {First person: New media as story, performance, and game},
     editor = {Wardrip-Fruin, Noah and Harrigan, Pat and Crumpton, Michael},
@@ -169,4 +169,16 @@
     title = {{Game design as narrative architecture}},
     year = {2004}
 }
+
+@article{Kiili2005,
+    author = {Kiili, Kristian},
+    journal = {The Internet and Higher Education},
+    month = jan,
+    number = {1},
+    pages = {13--24},
+    title = {{Digital game-based learning: Towards an experiential gaming model}},
+    volume = {8},
+    year = {2005}
+}
+
 
