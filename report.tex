@@ -282,14 +282,23 @@ The usual approach in gamification is to take a non-gaming context and add game 
 
 We define the game context as having a set of players, a set of mechanics or game elements, and a set of reward functions that can be either action based or based on other rules, such as variables at the end of the game. Another important element of both the set of game elements and the set of reward functions is that all players must agree on these sets. This further removes our definition of a game context from the game theory definition of a game by removing the intrinsic- or implicit-ness of the pay-off function.
 
-The reason these sets need to be agreed upon is that if the players do not agree, then they are not active in the same game context. In this case the players are actually in different game contexts and they may feel frustration due to the other players that they do interact with, which become mere game elements in this game context, do not adhere to these mechanics and rewards. An example of this is found in online games where so-called \emph{grievers} seek out a different reward, namely that to bother other players, and also usually choose to change the game elements by means of hacking or exploits. The grievers are active in another game context where the other players are game elements for them and vice versa. Another example can be found when players are playing a board-game, but not all players follow the same rules for rewards, like when a Texas Hold'em player tries to play with a Omaha High player.
+The reason these sets need to be agreed upon is that if the players do not agree, then they are not active in the same game context. In this case the players are actually in different game contexts and they may feel frustration due to the other players that they do interact with, which become mere game elements in this game context, do not adhere to these mechanics and rewards. An example of this is found in online games where so-called \emph{grievers} seek out a different reward, namely that to bother other players, and also usually choose to change the game elements by means of hacking or exploits. The grievers are active in another game context where the other players are game elements for them and vice versa. Another example can be found when players are playing a board-game, but not all players follow the same rules for rewards, like when a \emph{Texas Hold'em} player tries to play with a \emph{Omaha High} player.
 
 The reward function can also easily be added to non-gaming contexts which do have actors and game elements. For instance, when a person is at a gas-station and decides to fill his tank so that he has tanked exactly 20 litres. The reward function is fairly simple for this, but changes the context to that of a game context, merely by fulfilling all three requirements. 
 
-Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that frequently occur in the domain.
+The reward function does not only define which values are given to certain states or conditions, but is more meant to define the goal of play or interaction. This also differs from the game theory definition of a game as the pay-off function only defines what combined actions are worth for each agent. In the game context definition, the rewards can also be viewed as goals. There are a plethora of games that do not have a precise goal that is predefined. For instance, \emph{Sim City} does not have any goal-states but is more a continuous simulation toy. Minecraft is another game that in it's earlier state\footnote{Later iterations of the game did include an end-boss and credit-roll} did not have an end or goal like highscore to achieve. In these cases, players usually define their own goals within the context and thus create a game context in the process. In Sim City, players may strive to create a big profitable city where everybody is happy while in Minecraft players set themselves goals like building certain structures.
+
+The set of actors does not refer to users within the context, but interacting agents that can modify some or all of the game elements. Without this, books and movies should be considered game contexts as well, since there is at least one actor, a goal and mechanics. 
+
+Finally, the game elements or mechanics are defined as the often occurring elements within the domain.Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that not only frequently occur in the domain, but also based upon the goal of the task. Within a single domain, it is possible to arrive to different game elements. For instance, when defining game elements in modern video games, the set may be different if the task of the context is to classify the genre as opposed to finding the motivational factors within the game.
+
+To test the correctness and the versatility of the game context it is necessary to look at some examples of situations.
 
 % Example: a modern game
+The first thing that the game context should be able to define are games, both traditional board games and digital video games. If we look at these games it is easy to see that they indeed have a set of actors that are interacting with the game state. Furthermore, these types of games have a certain goal, or multiple goal-states with various attributed rewards on which the players agree. Although it may be possible that the players of a single game, do not agree upon the reward in which case there are multiple game contexts that are defined over the single game. Finally, there are design patterns of basic reoccurring elements that can be defined on any given game. 
 
+% Example: Movies and Books
+A different situation can be found when testing books or movies as being a game context. The actor can not interact with the game state, breaking the first condition of the game context. There are elements that are reoccurring and there may be a goal that the actors are trying to achieve, albeit without interacting with the game state. Movies and books are not game contexts, but with little alteration they can be: In a \emph{choose-your-own-adventure} book, the reader can make decisions after each story element as to what the characters in the book do. This results in that the actor is now interacting with the game-state and thus all conditions of the game context are met. Interactive stories can usually be seen as a game context, unless there is not a specific goal to be achieved.
 
 % Example: Pizza restaurant
 
@@ -298,6 +307,10 @@ Following the approach found in the game classification literature, it is necess
 
 
 % Example: Education
+
+
+% Definition of the Game Context
+
 
 
 \section{GALA, Gamification and Learning Analytics}
