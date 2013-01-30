@@ -313,8 +313,22 @@ A different situation can be found when testing books or movies as being a game 
 
 
 
-\section{GALA, Gamification and Learning Analytics}
+\section{GaLA, Gamification and Learning Analytics}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{gala.png}
+\caption{The overall architecture of the GaLA system.\label{fig:gala}}
+\end{figure}
+The overall architecture of GaLA is shown in Figure~\ref{fig:gala}. A course contains a set of learning objects that can transfer various pieces of information in various ways. This set is passed on to a recommender system that selects the best route through the available course materials for a specific student. Such an adaptive route is also known as an intelligent curriculum. The content that is selected by the recommender system is presented to the student, which may result in an increase of the student’s knowledge over time. The knowledge acquired by the student and the measured engagement of a student during the processing of previously offered learning objects is capture in the user model. How this user model is implemented is outside of the scope of this project. This user model serves as one of the two inputs of the GaLA system. The motivational aspects of the learning objects of the course are represented in the earlier described Game Context. This Game Context representation serves as the other input of the GaLA system. The GaLA system has as output both local and global recommendations. Global recommendations give feedback to the teacher during course (re)design based on the overall group of students and the average match between the Game Contexts of the available learning objects and the expected (for example based on previous courses) engagement aspects of the user models. The teacher can then try to adapt the course materials in order to on average fit better to the students, of course within the margins of what the teachers finds desirable. In a sense global recommendations try to optimize the engagement globally given the entire group of students. Local recommendations influence the Intelligent Curriculum component directly for a specific student. In a sense the local recommendations try to optimize the engagement locally given the globally defined set of possible learning objects. 
 
+Let’s now look at the workings of the GaLA component more closely. In generic terms, the GaLA system compares the Game Context of each learning object with the engagement evidence from the past given by the User model and combines that into local and global recommendations. The exact instantiation of this generic description depends on the required representations of the recommendations and on the representations of the game context and the engagement evidence. A possible instantiation could be the following setup:
+\begin{description}
+\item[Game Context] The Game Context of a learning object is represented as an  $n$-dimensional vector containing values for $n$ Game Context elements. These values can either be binaries (present or not present) or reals (gradation of presence).
+\item[Engagement evidence] The engagement evidence is a linear regression model that contains the weights for $n$ Game Context elements. These weights indicate how successful the Game Context element seemed to be in triggering engagement based on past experience.
+\item[Local recommendations]  Local recommendations are represented as real-valued numbers that indicate how the learning objects are expected to motivate. An intelligent curriculum could take this into account by adopting it as a term in the scoring formula, or the number could be used to choose between several learning objects that contain the same knowledge prerequisites but have different Game Contexts.
+\item[Global recommendations] Global recommendations are represented as $n$-dimensional vectors that contains values for $n$ Game Context elements of a specific learning object. These values indicate how much the Game Context element contributed (negatively or positively) to the average student’s engagement. Furthermore it could be displayed as a score for each learning object.
+\item[GaLA System] Given the representations of the other components in this example, the GaLA system could calculate local recommendations by linearly combining the weight vectors from the User model with the Game Context of each learning object. For the global recommendations the GaLA System could calculate the average weight vector based on all User models and linearly combined that with each Game Context.
+\end{description}
 
 \section{GAMED, Transfer Learning through Game Design}
 
