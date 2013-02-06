@@ -175,7 +175,7 @@ With this quote, Sid Meyer touches upon what lies at the heart of a game and wha
 The big difference is with Sid Meyer's original quote is the naming of the simulated environment and the alteration of the interesting choices to a series of challenges. The game is now defined by one or more linked series of challenges which represent the different types of gameplay that can be present in a game. These causal links are closely related to assemblage theory and the magic circle. The challenges not only refer to the gameplay being an actual challenge, but more to certain events and obstacles that the player has to overcome to reach the goal of the game.
 
 
-\subsection{Gamification}
+\subsection{Application of Gamification}
 
 
 
@@ -351,6 +351,51 @@ Let’s now look at the workings of the GaLA component more closely. In generic 
 \end{description}
 
 \section{GAMED, Transfer Learning through Game Design}
+The user models in GaLA are difficult to create. It is not straight-forward to model the connection between the game elements and the value to be optimized in any given domain. However, the overlap of game elements from different domains is significant as well as that multiple game elements seem to be connected to some higher level element. For instance, a student who is competitive will have higher motivation for competition-related game elements in multiple domains. If we are able to find a set of higher level elements and how these higher level elements affect, for instance, motivation the task of creating these user models will be easier for new domains. This is a type of transfer learning that can be achieved by finding a set of higher level elements and the connection between that set and the set of game elements in a domain. 
+
+
+\section{Experiment setup}
+
+\section{Experiment results}
+
+\begin{tabular}{ll}
+Program & Frequency \\ \hline
+1st year Bachelor Artificial Intelligence & 40 \\
+1st year Master Artificial Intelligence & 41 \\
+1st year Bachelor Computer Science & 27 \\
+3rd year Bachelor Computer Science & 3 \\
+1st year Bachelor Information Science & 2 \\
+3rd year Bachelor Information Science & 2 \\
+2nd year Bachelor Beta-Gamma & 9
+\end{tabular}
+
+\begin{tabular}{ll}
+Gender & Frequency \\ \hline
+Male & 83 \\
+Female & 41
+\end{tabular}
+
+\begin{tabular}{ll}
+General start motivation & Frequency \\ \hline
+Highly demotivated & 0 \\
+Demotivated & 0 \\
+Neutral & 52 \\
+Motivated & 72 \\
+Highly motivated & 0 \\
+\end{tabular}
+
+\begin{tabular}{lll}
+Game Context element & Frequency (present) & Frequence (not present) \\ \hline
+Multi Assignment & 53 & 71 \\
+Strict deadline & 67 & 57 \\
+Bonus & 66 & 58 \\
+Badges & 65 & 59 \\
+Graded & 60 & 64 \\
+Relative grades & 66 & 58 \\
+Expert review & 57 & 67 \\
+A single final grade & 55 & 69 \\
+Group assignment & 61 & 63 \\
+\end{tabular}
 
 
 \section{Analysis of Data}
@@ -369,6 +414,14 @@ Linear Regression Model through Least Median Square error regression
       0.1233 &\nonumber \\
 \end{align}
 
+% Notes:
+% Badges have highest negative impact
+% Expected bonus content to have a positive impact, but apparently it does not
+% 
+
+
+% Expert Review might have been misinterpreted as being more work if assignments are peer-reviewed
+
 
 % === Cross-validation ===
 % === Summary ===
@@ -384,7 +437,7 @@ Linear Regression Model through Least Median Square error regression
 
 Linear Regression Model with Aikake measure for feature selection
 \begin{align}
- motivation =  \nonumber \\
+ motivation &=  \nonumber \\
      -0.1332 &* badges + \nonumber \\
       0.2163 &* graded + \nonumber \\
       0.2852 &* expert_review + \nonumber \\

@@ -353,21 +353,66 @@ Let’s now look at the workings of the GaLA component more closely. In generic 
 \section{GAMED, Transfer Learning through Game Design}
 
 
+
+\section{Experiment setup}
+
+\section{Experiment results}
+
+\begin{tabular}{ll}
+Program & Frequency \\ \hline
+1st year Bachelor Artificial Intelligence & 40 \\
+1st year Master Artificial Intelligence & 41 \\
+1st year Bachelor Computer Science & 27 \\
+3rd year Bachelor Computer Science & 3 \\
+1st year Bachelor Information Science & 2 \\
+3rd year Bachelor Information Science & 2 \\
+2nd year Bachelor Beta-Gamma & 9
+\end{tabular}
+
+\begin{tabular}{ll}
+Gender & Frequency \\ \hline
+Male & 83 \\
+Female & 41
+\end{tabular}
+
+\begin{tabular}{ll}
+General start motivation & Frequency \\ \hline
+Highly demotivated & 0 \\
+Demotivated & 0 \\
+Neutral & 52 \\
+Motivated & 72 \\
+Highly motivated & 0 \\
+\end{tabular}
+
+\begin{tabular}{lll}
+Game Context element & Frequency (present) & Frequence (not present) \\ \hline
+Multi Assignment & 53 & 71 \\
+Strict deadline & 67 & 57 \\
+Bonus & 66 & 58 \\
+Badges & 65 & 59 \\
+Graded & 60 & 64 \\
+Relative grades & 66 & 58 \\
+Expert review & 57 & 67 \\
+A single final grade & 55 & 69 \\
+Group assignment & 61 & 63 \\
+\end{tabular}
+
+
 \section{Analysis of Data}
 Linear Regression Model through Least Median Square error regression
-\begin{eqnarray*}
- motivation = & \nonumber \\
-     -0.0679 &* multi\_ass + \nonumber \\
-     -0.0283 &* strict\_dead + \nonumber \\
-     -0.0484 &* bonus + \nonumber \\
-     -0.2141 &* badges + \nonumber \\
-      0.1635 &* graded + \nonumber \\
-     -0.1377 &* rel\_grade + \nonumber \\
-      0.1652 &* expert\_review + \nonumber \\
-      0.1558 &* final\_grade + \nonumber \\
-      0.0212 &* group\_ass + \nonumber \\
-      0.1233 \nonumber \\
-\end{eqnarray*}
+\begin{align}
+ motivation  & = \nonumber \\
+     -0.0679 & * multi\_ass + \nonumber \\
+     -0.0283 & * strict\_dead + \nonumber \\
+     -0.0484 & * bonus + \nonumber \\
+     -0.2141 & * badges + \nonumber \\
+      0.1635 & * graded + \nonumber \\
+     -0.1377 & * rel\_grade + \nonumber \\
+      0.1652 & * expert\_review + \nonumber \\
+      0.1558 & * final\_grade + \nonumber \\
+      0.0212 & * group\_ass + \nonumber \\
+      0.1233 &\nonumber \\
+\end{align}
 
 
 % === Cross-validation ===
@@ -383,13 +428,13 @@ Linear Regression Model through Least Median Square error regression
 
 
 Linear Regression Model with Aikake measure for feature selection
-\begin{eqnarray*}
- motivation =  \nonumber \\
-     -0.1332 * badges + \nonumber \\
-      0.2163 * graded + \nonumber \\
-      0.2852 * expert_review + \nonumber \\
-      0.1733 \nonumber \\
-\end{eqnarray*}
+\begin{align}
+ motivation &=  \nonumber \\
+     -0.1332 &* badges + \nonumber \\
+      0.2163 &* graded + \nonumber \\
+      0.2852 &* expert_review + \nonumber \\
+      0.1733 &\nonumber \\
+\end{align}
 % Time taken to build model: 0 seconds
 % 
 % === Cross-validation ===
