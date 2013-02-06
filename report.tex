@@ -161,7 +161,18 @@ This notion of a magic circle is vastly different than the view of games as bein
 % Experiential Flow
 Another method of describing games is as the mental state that games trigger in players \cite{Kiili2005} called the experiential flow. This flow is segmented into three distinct parts: Antecedents, Flow experience, Flow consequences. The antecedents are the actual game setting represented as the person, the task and the artefacts. These three components interact which causes the player to get the flow experience. This experience has various effects on the player including time distortion, merging of action and awareness, concentration, telepresence, sense of control and the loss of self-consciousness. Due to these effects the player then experiences the flow consequences. These flow consequences are indirect effects on the player such as improved learning, changes of attitude, exploratory behaviour and perceived behavioural control.
 
-\cite{Rollings2003}
+In the book \emph{Andrew Rollings and Ernest Adams on Game Design} \cite{Rollings2003} the definition of a game is derived from the informal definition as given by game designer Sid Meyer.
+\begin{quotation}
+	[Gameplay is] a series of interesting choices
+\end{quotation}
+
+With this quote, Sid Meyer touches upon what lies at the heart of a game and what Huizinga described as the magic circle. Games are defined by their gameplay in a sequence of events held together in the assemblage of the domain. The definition is made more formal by defining the "interesting choices." 
+
+\begin{quotation}
+	[Gameplay is] One or more causally linked series of challenges in a simulated environment \cite{Rollings2003}
+\end{quotation}
+
+The big difference is with Sid Meyer's original quote is the naming of the simulated environment and the alteration of the interesting choices to a series of challenges. The game is now defined by one or more linked series of challenges which represent the different types of gameplay that can be present in a game. These causal links are closely related to assemblage theory and the magic circle. The challenges not only refer to the gameplay being an actual challenge, but more to certain events and obstacles that the player has to overcome to reach the goal of the game.
 
 
 \subsection{Gamification}
@@ -286,7 +297,8 @@ The reason these sets need to be agreed upon is that if the players do not agree
 
 The reward function can also easily be added to non-gaming contexts which do have actors and game elements. For instance, when a person is at a gas-station and decides to fill his tank so that he has tanked exactly 20 litres. The reward function is fairly simple for this, but changes the context to that of a game context, merely by fulfilling all three requirements. 
 
-The reward function does not only define which values are given to certain states or conditions, but is more meant to define the goal of play or interaction. This also differs from the game theory definition of a game as the pay-off function only defines what combined actions are worth for each agent. In the game context definition, the rewards can also be viewed as goals. There are a plethora of games that do not have a precise goal that is predefined. For instance, \emph{Sim City} does not have any goal-states but is more a continuous simulation toy. Minecraft is another game that in it's earlier state\footnote{Later iterations of the game did include an end-boss and credit-roll} did not have an end or goal like highscore to achieve. In these cases, players usually define their own goals within the context and thus create a game context in the process. In Sim City, players may strive to create a big profitable city where everybody is happy while in Minecraft players set themselves goals like building certain structures.
+The reward function does not only define which values are given to certain states or conditions, but is more meant to define the goal of play or interaction. This also differs from the game theory definition of a game as the pay-off function only defines what combined actions are worth for each agent. In the game context definition, the rewards can also be viewed as goals. There are a plethora of games that do not have a precise goal that is predefined. For instance, \emph{Sim City} does not have any goal-states but is more a continuous simulation toy. Minecraft is another game that in it's earlier state\footnote{Later iterations of the game did include an end-boss and credit-roll} did not have an end or goal like highscore to achieve. In these cases, players usually define their own goals within the context and thus create a game context in the process. In Sim City, players may strive to create a big profitable city where everybody is happy while in Minecraft players set themselves goals like building 
+certain structures.
 
 The set of actors does not refer to users within the context, but interacting agents that can modify some or all of the game elements. Without this, books and movies should be considered game contexts as well, since there is at least one actor, a goal and mechanics. 
 
@@ -326,7 +338,8 @@ If these three conditions are met, the context can be viewed as being a game con
 \includegraphics[width=0.9\linewidth]{gala.png}
 \caption{The overall architecture of the GaLA system.\label{fig:gala}}
 \end{figure}
-The overall architecture of GaLA is shown in Figure~\ref{fig:gala}. A course contains a set of learning objects that can transfer various pieces of information in various ways. This set is passed on to a recommender system that selects the best route through the available course materials for a specific student. Such an adaptive route is also known as an intelligent curriculum. The content that is selected by the recommender system is presented to the student, which may result in an increase of the student’s knowledge over time. The knowledge acquired by the student and the measured engagement of a student during the processing of previously offered learning objects is capture in the user model. How this user model is implemented is outside of the scope of this project. This user model serves as one of the two inputs of the GaLA system. The motivational aspects of the learning objects of the course are represented in the earlier described Game Context. This Game Context representation serves as the other input of the GaLA system. The GaLA system has as output both local and global recommendations. Global recommendations give feedback to the teacher during course (re)design based on the overall group of students and the average match between the Game Contexts of the available learning objects and the expected (for example based on previous courses) engagement aspects of the user models. The teacher can then try to adapt the course materials in order to on average fit better to the students, of course within the margins of what the teachers finds desirable. In a sense global recommendations try to optimize the engagement globally given the entire group of students. Local recommendations influence the Intelligent Curriculum component directly for a specific student. In a sense the local recommendations try to optimize the engagement locally given the globally defined set of possible learning objects. 
+The overall architecture of GaLA is shown in Figure~\ref{fig:gala}. A course contains a set of learning objects that can transfer various pieces of information in various ways. This set is passed on to a recommender system that selects the best route through the available course materials for a specific student. Such an adaptive route is also known as an intelligent curriculum. The content that is selected by the recommender system is presented to the student, which may result in an increase of the student’s knowledge over time. The knowledge acquired by the student and the measured engagement of a student during the processing of previously offered learning objects is capture in the user model. How this user model is implemented is outside of the scope of this project. This user model serves as one of the two inputs of the GaLA system. The motivational aspects of the learning objects of the course are represented in the earlier described Game Context. This Game Context representation serves as the other 
+input of the GaLA system. The GaLA system has as output both local and global recommendations. Global recommendations give feedback to the teacher during course (re)design based on the overall group of students and the average match between the Game Contexts of the available learning objects and the expected (for example based on previous courses) engagement aspects of the user models. The teacher can then try to adapt the course materials in order to on average fit better to the students, of course within the margins of what the teachers finds desirable. In a sense global recommendations try to optimize the engagement globally given the entire group of students. Local recommendations influence the Intelligent Curriculum component directly for a specific student. In a sense the local recommendations try to optimize the engagement locally given the globally defined set of possible learning objects. 
 
 Let’s now look at the workings of the GaLA component more closely. In generic terms, the GaLA system compares the Game Context of each learning object with the engagement evidence from the past given by the User model and combines that into local and global recommendations. The exact instantiation of this generic description depends on the required representations of the recommendations and on the representations of the game context and the engagement evidence. A possible instantiation could be the following setup:
 \begin{description}
@@ -338,6 +351,57 @@ Let’s now look at the workings of the GaLA component more closely. In generic 
 \end{description}
 
 \section{GAMED, Transfer Learning through Game Design}
+
+
+\section{Analysis of Data}
+Linear Regression Model through Least Median Square error regression
+\begin{align}
+ motivation  & = \nonumber \\
+     -0.0679 & * multi\_ass + \nonumber \\
+     -0.0283 & * strict\_dead + \nonumber \\
+     -0.0484 & * bonus + \nonumber \\
+     -0.2141 & * badges + \nonumber \\
+      0.1635 & * graded + \nonumber \\
+     -0.1377 & * rel\_grade + \nonumber \\
+      0.1652 & * expert\_review + \nonumber \\
+      0.1558 & * final\_grade + \nonumber \\
+      0.0212 & * group\_ass + \nonumber \\
+      0.1233 &\nonumber \\
+\end{align}
+
+
+% === Cross-validation ===
+% === Summary ===
+% 
+% Correlation coefficient                  0.2993
+% Mean absolute error                      0.7266
+% Root mean squared error                  0.9003
+% Relative absolute error                 94.0473 %
+% Root relative squared error             96.3392 %
+% Total Number of Instances              124     
+
+
+
+Linear Regression Model with Aikake measure for feature selection
+\begin{align}
+ motivation &=  \nonumber \\
+     -0.1332 &* badges + \nonumber \\
+      0.2163 &* graded + \nonumber \\
+      0.2852 &* expert_review + \nonumber \\
+      0.1733 &\nonumber \\
+\end{align}
+% Time taken to build model: 0 seconds
+% 
+% === Cross-validation ===
+% === Summary ===
+% 
+% Correlation coefficient                  0.2687
+% Mean absolute error                      0.7517
+% Root mean squared error                  0.9018
+% Relative absolute error                 97.2939 %
+% Root relative squared error             96.4933 %
+% Total Number of Instances              124     
+
 
 \section{Conclusion}
 
