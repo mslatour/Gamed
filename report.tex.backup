@@ -360,9 +360,43 @@ The user models in GaLA are difficult to create. It is not straight-forward to m
 
 \emph{GAMED} is a system that tries to achieve this type of transfer learning by first finding models that map the game elements in a domain to the value that is being optimized. Once these models have been created for each player in the domain, factor analysis is done on the models to find underlying structure. These values then have to be mapped to the values found on another domain which creates the possibility of estimating a model for another domain.
 
-The first part is to create a model for each individual student. The $n$ game elements in a domain are represented as a vector with $lenght=n$.
+The first part is to create a model for each individual student. The $n$ game elements in a domain are represented as a vector with $lenght=n$. Since the value that is being optimized is either continuous or a ordered discrete set, the model is created by doing regression. There are a plethora of techniques available to do regression with different properties. For \emph{GAMED}, any of these techniques can be used as long as it remains possible to find the influence of each game element on the higher level variables that are found through factor analysis. 
+
+The models that are created for each person act as user models that map the domain's elements to the value that is optimized. After this has been done for all students, factor analysis is done on the set of user models resulting in a set of higher level variables. The resulting set can then be analysed as to which of the game elements are linked to these higher variables and then compared to a set of these higher variables found for another domain. So the transferring of knowledge from the users in one domain to another is not done automatically. It could be done automatically once enough of these players have user models in both domains so that the mapping between the higher level variables can be found.
 
 \section{Experiment setup}
+The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement.
+
+In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
+
+\begin{tabular}{ll}
+\textbf{Category} & \textbf{Instances} \\ \hline \hline
+\emph{Player Configuration} & Single \\
+                              & Pair \\
+                              & Multi \\ \hline
+\emph{Evaluation}           & Final Evalutation \\
+                              & Multiple Sub-Evaluations \\
+                              & Expert Review \\
+                              & Peer Review \\
+                              & Relative Grade \\ \hline
+\emph{Reward}               & Grade \\
+                              & Badges \\
+                              & Bonus Content \\
+                              & Epic Meaning \\ \hline
+\emph{Time Constraints}     & Final Deadline \\
+                              & Multiple Deadlines \\
+                              & Hard Deadlines \\
+                              & Soft Deadlines \\ \hline
+\emph{Space}                & Physical Room \\
+                              & Virual Room \\
+                              & Isolated \\ \hline
+\emph{Assignment Goal}      & Knowledge Acquisition \\
+                              & Knowledge Transfer \\
+                              & Exploration \\
+                              & Consolidation \\
+                              & Implementation/Application \\
+\end{tabular}
+
 
 \section{Experiment results}
 
