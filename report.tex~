@@ -175,7 +175,7 @@ With this quote, Sid Meyer touches upon what lies at the heart of a game and wha
 The big difference is with Sid Meyer's original quote is the naming of the simulated environment and the alteration of the interesting choices to a series of challenges. The game is now defined by one or more linked series of challenges which represent the different types of gameplay that can be present in a game. These causal links are closely related to assemblage theory and the magic circle. The challenges not only refer to the gameplay being an actual challenge, but more to certain events and obstacles that the player has to overcome to reach the goal of the game.
 
 
-\subsection{Gamification}
+\subsection{Application of Gamification}
 
 
 
@@ -333,6 +333,11 @@ So the final definition of the game context is a set of game elements that are c
 If these three conditions are met, the context can be viewed as being a game context and then the instantiation of the game context can be done by finding all reoccurring elements within the domain that influence that for which the game context should be used. The final representation of the game context is then the set of game elements within the domain for a specific task.
 
 \section{GaLA, Gamification and Learning Analytics}
+When designing a course, a teacher tries to make a compromise between what he wants students to learn during the course and what students are able to pick up based on their prior knowledge. Often a teacher focusses on the expected average student to determine the overall level and as such try to optimize the course content for the entire group (global optimization). Additionally, a teacher may decide to provide some extra learning materials for those students that feel they need more assistance, and as such enable students to optimize the course content even further for them individually (local optimization). One could add a recommender system to do this local optimization automatically based on a model of their individual knowledge and skills.
+
+Similar to the optimizations on course content, a teacher also decides which set of Game Context elements he will use in the course. This again is a compromise between what he wants students to be motivated by and what students have shown to be motivated by in the past. If teachers see this as an optimization at all, they will almost always only focus on the expected average student engagement (global optimization). Ignoring the possibility to further optimize engagement per student (local optimization).
+
+The GaLA system contains a flow to automatically optimize the engagement, both globally and locally.
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{gala.png}
@@ -351,6 +356,56 @@ Let’s now look at the workings of the GaLA component more closely. In generic 
 \end{description}
 
 \section{GAMED, Transfer Learning through Game Design}
+The user models in GaLA are difficult to create. It is not straight-forward to model the connection between the game elements and the value to be optimized in any given domain. However, the overlap of game elements from different domains is significant as well as that multiple game elements seem to be connected to some higher level element. For instance, a student who is competitive will have higher motivation for competition-related game elements in multiple domains such as gaming and assignments with a competitive nature. If we are able to find a set of higher level elements and how these higher level elements affect, for instance, motivation the task of creating these user models will be easier for new domains. This is a type of transfer learning that can be achieved by finding a set of higher level elements and the connection between that set and the set of game elements in a domain. 
+
+\emph{GAMED} is a system that tries to achieve this type of transfer learning by first finding models that map the game elements in a domain to the value that is being optimized. Once these models have been created for each player in the domain, factor analysis is done on the models to find underlying structure. These values then have to be mapped to the values found on another domain which creates the possibility of estimating a model for another domain.
+
+The first part is to create a model for each individual student. The $n$ game elements in a domain are represented as a vector with $lenght=n$. Since the value that is being optimized is either continuous or a ordered discrete set, the model is created by doing regression. There are a plethora of techniques available to do regression with different properties. For \emph{GAMED}, any of these techniques can be used as long as it remains possible to find the influence of each game element on the higher level variables that are found through factor analysis. 
+
+The models that are created for each person act as user models that map the domain's elements to the value that is optimized. After this has been done for all students, factor analysis is done on the set of user models resulting in a set of higher level variables. The resulting set can then be analysed as to which of the game elements are linked to these higher variables and then compared to a set of these higher variables found for another domain. So the transferring of knowledge from the users in one domain to another is not done automatically. It could be done automatically once enough of these players have user models in both domains
+
+\section{Experiment setup}
+
+\section{Experiment results}
+
+\begin{tabular}{ll}
+Program & Frequency \\ \hline
+1st year Bachelor Artificial Intelligence & 40 \\
+1st year Master Artificial Intelligence & 41 \\
+1st year Bachelor Computer Science & 27 \\
+3rd year Bachelor Computer Science & 3 \\
+1st year Bachelor Information Science & 2 \\
+3rd year Bachelor Information Science & 2 \\
+2nd year Bachelor Beta-Gamma & 9
+\end{tabular}
+
+\begin{tabular}{ll}
+Gender & Frequency \\ \hline
+Male & 83 \\
+Female & 41
+\end{tabular}
+
+\begin{tabular}{ll}
+General start motivation & Frequency \\ \hline
+Highly demotivated & 0 \\
+Demotivated & 0 \\
+Neutral & 52 \\
+Motivated & 72 \\
+Highly motivated & 0 \\
+\end{tabular}
+
+\begin{tabular}{lll}
+Game Context element & Frequency (present) & Frequence (not present) \\ \hline
+Multi Assignment & 53 & 71 \\
+Strict deadline & 67 & 57 \\
+Bonus & 66 & 58 \\
+Badges & 65 & 59 \\
+Graded & 60 & 64 \\
+Relative grades & 66 & 58 \\
+Expert review & 57 & 67 \\
+A single final grade & 55 & 69 \\
+Group assignment & 61 & 63 \\
+\end{tabular}
 
 
 \section{Analysis of Data}
@@ -369,6 +424,14 @@ Linear Regression Model through Least Median Square error regression
       0.1233 &\nonumber \\
 \end{align}
 
+% Notes:
+% Badges have highest negative impact
+% Expected bonus content to have a positive impact, but apparently it does not
+% 
+
+
+% Expert Review might have been misinterpreted as being more work if assignments are peer-reviewed
+
 
 % === Cross-validation ===
 % === Summary ===
@@ -384,7 +447,7 @@ Linear Regression Model through Least Median Square error regression
 
 Linear Regression Model with Aikake measure for feature selection
 \begin{align}
- motivation =  \nonumber \\
+ motivation &=  \nonumber \\
      -0.1332 &* badges + \nonumber \\
       0.2163 &* graded + \nonumber \\
       0.2852 &* expert_review + \nonumber \\
