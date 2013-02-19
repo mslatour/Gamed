@@ -289,6 +289,7 @@ Visual Analytics
 
 
 \section{The Game Context}
+\label{sec:thegamecontext}
 The usual approach in gamification is to take a non-gaming context and add game elements from other domains to create a gamified context. However, if we try to define what constitutes as a game context or a non-game context, it quickly becomes apparent that the borderline between the two is difficult to find. In fact, it seems that the definition from game theory is the one that is most capable of correctly classifying what constitutes as a game context. In game theory, games are seen as having a set of actors, a set of possible actions and a set of pay-off or reward functions. The key-factor is that this does not restrict the definition to modern games, but also a plethora of other situations in which actors take decisions based on possible pay-off. It is this definition that we use to describe what a game context is, albeit slightly altered so that it is more capable than just decision making for pay-off.
 
 We define the game context as having a set of players, a set of mechanics or game elements, and a set of reward functions that can be either action based or based on other rules, such as variables at the end of the game. Another important element of both the set of game elements and the set of reward functions is that all players must agree on these sets. This further removes our definition of a game context from the game theory definition of a game by removing the intrinsic- or implicit-ness of the pay-off function.
@@ -302,7 +303,7 @@ certain structures.
 
 The set of actors does not refer to users within the context, but interacting agents that can modify some or all of the game elements. Without this, books and movies should be considered game contexts as well, since there is at least one actor, a goal and mechanics. 
 
-Finally, the game elements or mechanics are defined as the often occurring elements within the domain.Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that not only frequently occur in the domain, but also based upon the goal of the task. Within a single domain, it is possible to arrive to different game elements. For instance, when defining game elements in modern video games, the set may be different if the task of the context is to classify the genre as opposed to finding the motivational factors within the game.
+Finally, the game elements or mechanics are defined as the often occurring elements within the domain. Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that not only frequently occur in the domain, but also based upon the goal of the task. Within a single domain, it is possible to arrive to different game elements. For instance, when defining game elements in modern video games, the set may be different if the task of the context is to classify the genre as opposed to finding the motivational factors within the game.
 
 To test the correctness and the versatility of the game context it is necessary to look at some examples of situations.
 
@@ -365,38 +366,41 @@ The first part is to create a model for each individual student. The $n$ game el
 The models that are created for each person act as user models that map the domain's elements to the value that is optimized. After this has been done for all students, factor analysis is done on the set of user models resulting in a set of higher level variables. The resulting set can then be analysed as to which of the game elements are linked to these higher variables and then compared to a set of these higher variables found for another domain. So the transferring of knowledge from the users in one domain to another is not done automatically. It could be done automatically once enough of these players have user models in both domains so that the mapping between the higher level variables can be found.
 
 \section{Experiment setup}
-The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement.
+The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement in the education domain. 
 
-In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
-
+As mentioned in section \ref{sec:thegamecontext}, each domain has its own set of identifiable game elements. The game elements that the authors found in school assignments are listed in table \ref{tab:game_elements_assignments}.
+\begin{table}[ht!]
+\centering
 \begin{tabular}{ll}
 \textbf{Category} & \textbf{Instances} \\ \hline \hline
 \emph{Player Configuration} & Single \\
-                              & Pair \\
-                              & Multi \\ \hline
+                            & Pair \\
+                            & Multi \\ \hline
 \emph{Evaluation}           & Final Evalutation \\
-                              & Multiple Sub-Evaluations \\
-                              & Expert Review \\
-                              & Peer Review \\
-                              & Relative Grade \\ \hline
+                            & Multiple Sub-Evaluations \\
+                            & Expert Review \\
+                            & Peer Review \\
+                            & Relative Grade \\ \hline
 \emph{Reward}               & Grade \\
-                              & Badges \\
-                              & Bonus Content \\
-                              & Epic Meaning \\ \hline
+                            & Badges \\
+                            & Bonus Content \\
+                            & Epic Meaning \\ \hline
 \emph{Time Constraints}     & Final Deadline \\
-                              & Multiple Deadlines \\
-                              & Hard Deadlines \\
-                              & Soft Deadlines \\ \hline
+                            & Multiple Deadlines \\
+                            & Hard Deadlines \\
+                            & Soft Deadlines \\ \hline
 \emph{Space}                & Physical Room \\
-                              & Virual Room \\
-                              & Isolated \\ \hline
+                            & Virtual Room \\
+                            & Isolated \\ \hline
 \emph{Assignment Goal}      & Knowledge Acquisition \\
-                              & Knowledge Transfer \\
-                              & Exploration \\
-                              & Consolidation \\
-                              & Implementation/Application \\
+                            & Knowledge Transfer \\
+                            & Exploration \\
+                            & Consolidation \\
+                            & Implementation/Application \\
 \end{tabular}
-
+\caption{The game elements discovered in school assignments\label{tab:game_elements_assignments}}
+\end{table}
+In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
 
 \section{Experiment results}
 
