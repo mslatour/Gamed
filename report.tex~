@@ -1,4 +1,5 @@
 \documentclass[11pt]{article}
+
 \usepackage{geometry}
 % Math formatting
 \usepackage{amsmath}
@@ -13,10 +14,10 @@
 \usepackage{natbib}
 \setlength{\bibsep}{0.0pt}
 
-
 % Dutch style of paragraph formatting, i.e. no indents. 
 % \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 % \setlength{\parindent}{0pt}
+\usepackage[protrusion=true,expansion=true]{microtype}
 
 % Command for Horizontal lines
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -36,6 +37,11 @@
 % Fancy Header
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+
+% Nicer tables
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
 
 % Psuedo code
 \usepackage{algorithm}
@@ -362,40 +368,108 @@ The user models in GaLA are difficult to create. It is not straight-forward to m
 
 The first part is to create a model for each individual student. The $n$ game elements in a domain are represented as a vector with $lenght=n$. Since the value that is being optimized is either continuous or a ordered discrete set, the model is created by doing regression. There are a plethora of techniques available to do regression with different properties. For \emph{GAMED}, any of these techniques can be used as long as it remains possible to find the influence of each game element on the higher level variables that are found through factor analysis. 
 
-The models that are created for each person act as user models that map the domain's elements to the value that is optimized. After this has been done for all students, factor analysis is done on the set of user models resulting in a set of higher level variables. The resulting set can then be analysed as to which of the game elements are linked to these higher variables and then compared to a set of these higher variables found for another domain. So the transferring of knowledge from the users in one domain to another is not done automatically. It could be done automatically once enough of these players have user models in both domains
+The models that are created for each person act as user models that map the domain's elements to the value that is optimized. After this has been done for all students, factor analysis is done on the set of user models resulting in a set of higher level variables. The resulting set can then be analysed as to which of the game elements are linked to these higher variables and then compared to a set of these higher variables found for another domain. So the transferring of knowledge from the users in one domain to another is not done automatically. It could be done automatically once enough of these players have user models in both domains so that the mapping between the higher level variables can be found.
+
+% Example
+For example, we take the Game Context of the domain of video games and we want to transfer this to the Game Context of the domain of school assignments with respect to their motivational aspects. The first step is to create a user model for each user in the video-game domain. 
+
+An example of how to do this is to track which games a user plays and for how long. For each game, the game elements are given a value as to how important that element is in the game. For each user, a mapping is made between the game element representation and the value for motivation for each game. This value for motivation could be derived from certain other values such as the length of the game session, the frequency with which the game is played and perhaps intensity of play, which can be found by seeing how many badges, or other collectables, the player got during the session. Once the mapping is made for each user, factor analysis is done on all of these models. This results in a set of higher variables which might represent important aspects of the users such as competitiveness.
+
+This is also done for the school assignments domain. Resulting in another set of higher level variables that may represent certain motivational aspects of the users. The difficult part is to find a mapping between these two sets. One method to achieve this would be to create these user models of both domains for a group of users. Then the goal is to find if there is overlap in the higher level variables, which can be done by finding couples of variables that have the same values for all users. Another possibility is to annotate the higher variables using the related game elements and then manually find the mapping between the two sets.
+
+
+
+
 
 \section{Experiment setup}
+The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement.
+
+In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
+
+\begin{tabular}{ll}
+\textbf{Category} & \textbf{Instances} \\ \hline \hline
+\emph{Player Configuration} & Single \\
+                              & Pair \\
+                              & Multi \\ \hline
+\emph{Evaluation}           & Final Evalutation \\
+                              & Multiple Sub-Evaluations \\
+                              & Expert Review \\
+                              & Peer Review \\
+                              & Relative Grade \\ \hline
+\emph{Reward}               & Grade \\
+                              & Badges \\
+                              & Bonus Content \\
+                              & Epic Meaning \\ \hline
+\emph{Time Constraints}     & Final Deadline \\
+                              & Multiple Deadlines \\
+                              & Hard Deadlines \\
+                              & Soft Deadlines \\ \hline
+\emph{Space}                & Physical Room \\
+                              & Virual Room \\
+                              & Isolated \\ \hline
+\emph{Assignment Goal}      & Knowledge Acquisition \\
+                              & Knowledge Transfer \\
+                              & Exploration \\
+                              & Consolidation \\
+                              & Implementation/Application \\
+\end{tabular}
+
 
 \section{Experiment results}
 
-\begin{tabular}{ll}
-Program & Frequency \\ \hline
+\begin{table*}\centering
+\ra{1.3}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Program & Frequency \\ 
+\midrule
 1st year Bachelor Artificial Intelligence & 40 \\
 1st year Master Artificial Intelligence & 41 \\
 1st year Bachelor Computer Science & 27 \\
 3rd year Bachelor Computer Science & 3 \\
 1st year Bachelor Information Science & 2 \\
 3rd year Bachelor Information Science & 2 \\
-2nd year Bachelor Beta-Gamma & 9
+2nd year Bachelor Beta-Gamma & 9 \\
+\bottomrule
 \end{tabular}
+\caption{Nicer table format ?}
+\end{table*}
 
-\begin{tabular}{ll}
-Gender & Frequency \\ \hline
+\begin{table*}\centering
+\ra{1.3}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Gender & Frequency \\
+\midrule
 Male & 83 \\
-Female & 41
+Female & 41 \\
+\bottomrule
 \end{tabular}
+\caption{Nicer table format ?}
+\end{table*}
 
-\begin{tabular}{ll}
-General start motivation & Frequency \\ \hline
+\begin{table*}\centering
+\ra{1.3}
+\begin{tabular}{@{}ll@{}}
+\toprule
+General start motivation & Frequency \\ 
+\midrule
 Highly demotivated & 0 \\
 Demotivated & 0 \\
 Neutral & 52 \\
 Motivated & 72 \\
 Highly motivated & 0 \\
+\bottomrule
 \end{tabular}
+\caption{Nicer table format ?}
+\end{table*}
 
-\begin{tabular}{lll}
-Game Context element & Frequency (present) & Frequence (not present) \\ \hline
+\begin{table*}\centering
+\ra{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Game Context element & Frequency (present) & Frequence (not present) \\ 
+\midrule
 Multi Assignment & 53 & 71 \\
 Strict deadline & 67 & 57 \\
 Bonus & 66 & 58 \\
@@ -405,7 +479,10 @@ Relative grades & 66 & 58 \\
 Expert review & 57 & 67 \\
 A single final grade & 55 & 69 \\
 Group assignment & 61 & 63 \\
+\bottomrule
 \end{tabular}
+\caption{Nicer table format ?}
+\end{table*}
 
 
 \section{Analysis of Data}
@@ -480,7 +557,22 @@ Linear Regression Model with Aikake measure for feature selection
 \appendix
 \section{Further Possibilities}
 \subsection{Looking For Group, an automatic interdisciplinary group forming system}
-One of the first iterations of the gamification for education project (GAMED) was to have a sort of multiplayer role-playing game where the course is seen as a game. In this game, students are players, the teacher is a dungeon-master/game-master and the assignments are quests. Players are from different classes, such as programmer; designer; marketeer; etc. Each quest requires a group with players from different classes and part of the game is to find a group to work with. The groups have to collaborate to perform these quests and can level up, giving access to more difficult (and more rewarding) quests. This is more in the category of serious game than gamification.
+The first iteration of the game context was just the basic notion that many aspects of education have similar concepts in games. People generally love playing games and experience high motivation and high engagement while doing so, but lack these properties when learning. The idea is that if we rename all education concepts to their respective counterparts in games, we could create a more compelling narrative for the students. This idea is known in the field of gamification as \emph{Epic Meaning} which gives the user the idea that the activity they are doing is much more important. 
+
+When renaming these aspects of education it quickly becomes apparent that the experience itself can be enriched by adding more game elements to learning. When looking at the basic game flow of a course, it seems as though the game itself is fairly simple in structure and the challenge is only provided by the challenge of the course material. The idea is that you can add a new level of challenge on top of the course material, creating a meta-game which provides an easier method to fine-tune the pacing of the challenges and gives students more things to optimize. In modern education, students are mostly concerned with optimizing a single value. One of the reasons for this is that getting a sufficient grade is enough to pass the course and that higher grades do not necessarily matter. 
+
+By adding more dynamic to the course, the students will have more resources to manage and more values to optimize. If correctly designed, this could lead to students spending more time with the course material. 
+
+The idea was to take an interdisciplinary course (Introduction to Game Programming) and renaming all concepts within the course to their counterparts. Students are players, the teacher is the dungeon master, assignments are quests, grades are experience points, the final exam is the boss battle, course materials are weapons/armour/buffs/NPCs, etc.
+
+Since the course is interdisciplinary and focussed on teamwork, it makes sense to view the course as a multiplayer role playing game in which each student chooses a class (vocation) at the start of the course. All activity takes place on an online system where the students have an avatar and a stats-card showcasing their strengths and capabilities.
+
+The classes can be things like game-designers, marketeers, programmers, artists, etc. To do an assignment, or quest, students have to form a group with various classes as required by the assignment. All quests are locked until all participants have reached a high enough level within their class. This results in players having to grind simpler assignments to be able to unlock higher level quests. The idea is that these higher level quests are more interesting, thus motivating students to unlock these quests.
+
+
+
+
+% One of the first iterations of the gamification for education project (GAMED) was to have a sort of multiplayer role-playing game where the course is seen as a game. In this game, students are players, the teacher is a dungeon-master/game-master and the assignments are quests. Players are from different classes, such as programmer; designer; marketeer; etc. Each quest requires a group with players from different classes and part of the game is to find a group to work with. The groups have to collaborate to perform these quests and can level up, giving access to more difficult (and more rewarding) quests. This is more in the category of serious game than gamification.
 
 \subsection{Virtual Economies in the Classroom}
 
