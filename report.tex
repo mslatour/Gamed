@@ -15,8 +15,9 @@
 \setlength{\bibsep}{0.0pt}
 
 % Dutch style of paragraph formatting, i.e. no indents. 
-% \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
-% \setlength{\parindent}{0pt}
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
 \usepackage[protrusion=true,expansion=true]{microtype}
 
 % Command for Horizontal lines
@@ -52,6 +53,8 @@
 \cfoot{\large \thepage} % center footer: page number
 
 \setlength{\headheight}{18pt}
+
+
 
 \begin{document}
 
@@ -417,7 +420,7 @@ In the experiment, participants were presented with a series of descriptions. Th
 
 \section{Experiment results}
 
-\begin{table*}
+\begin{table}
   \centering
   \ra{1.3}
   \begin{tabular}{@{}ll@{}}
@@ -434,9 +437,9 @@ In the experiment, participants were presented with a series of descriptions. Th
   \bottomrule
   \end{tabular}
   \caption{Nicer table format ?}
-\end{table*}
+\end{table}
 
-\begin{table*}
+\begin{table}
   \centering
   \ra{1.3}
   \begin{tabular}{@{}ll@{}}
@@ -448,9 +451,9 @@ In the experiment, participants were presented with a series of descriptions. Th
   \bottomrule
   \end{tabular}
   \caption{Nicer table format ?}
-\end{table*}
+\end{table}
 
-\begin{table*}
+\begin{table}
   \centering
   \ra{1.3}
   \begin{tabular}{@{}ll@{}}
@@ -465,9 +468,9 @@ In the experiment, participants were presented with a series of descriptions. Th
   \bottomrule
   \end{tabular}
   \caption{Nicer table format ?}
-\end{table*}
+\end{table}
 
-\begin{table*}\centering
+\begin{table}\centering
 \ra{1.3}
 \begin{tabular}{@{}lll@{}}
 \toprule
@@ -485,7 +488,7 @@ Group assignment & 61 & 63 \\
 \bottomrule
 \end{tabular}
 \caption{Nicer table format ?}
-\end{table*}
+\end{table}
 
 
 \section{Analysis of Data}
@@ -547,6 +550,12 @@ Linear Regression Model with Aikake measure for feature selection
 
 
 \section{Conclusion}
+In this report the game context was introduced. The game context is a domain that abhors to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
+
+The other system that was discussed is GAMED, which is a method for transferring knowledge about users from one domain to another. This is done by creating user models in a domain for each individual user. This is followed by finding higher level variables that represent certain aspects that are important to the value which the user models are mapped to. After this, a mapping is made between the higher level variables of multiple domains so that knowledge can be transferred between domains and initial estimates can be given on what aspects might influence a user in another domain.
+
+Both systems were introduced on a conceptual level based on the literature that is currently available for both the domain of gamification and learning analytics. An experiment was done to test whether the game context of a domain captures important aspects of that domain. The experiment was done by using a questionnaire based on the domain of school-assignments. The result of this experiment was that the game context is indeed capable of representing a domain which is not necessarily viewed as being game-like. 
+
 
 \section{Discussion}
 
@@ -566,24 +575,23 @@ When renaming these aspects of education it quickly becomes apparent that the ex
 
 By adding more dynamic to the course, the students will have more resources to manage and more values to optimize. If correctly designed, this could lead to students spending more time with the course material. 
 
-The idea was to take an interdisciplinary course (Introduction to Game Programming) and renaming all concepts within the course to their counterparts. Students are players, the teacher is the dungeon master, assignments are quests, grades are experience points, the final exam is the boss battle, course materials are weapons/armour/buffs/NPCs, etc.
+The idea was to take an interdisciplinary course (Introduction to Game Programming) and renaming all concepts within the course to their counterparts. Students are players, the teacher is the dungeon master, assignments are quests, grades are experience points, the final exam is the boss battle, course materials are weapons/armour/buffs/NPCs.
 
 Since the course is interdisciplinary and focussed on teamwork, it makes sense to view the course as a multiplayer role playing game in which each student chooses a class (vocation) at the start of the course. All activity takes place on an online system where the students have an avatar and a stats-card showcasing their strengths and capabilities.
 
 The classes can be things like game-designers, marketeers, programmers, artists, etc. To do an assignment, or quest, students have to form a group with various classes as required by the assignment. All quests are locked until all participants have reached a high enough level within their class. This results in players having to grind simpler assignments to be able to unlock higher level quests. The idea is that these higher level quests are more interesting, thus motivating students to unlock these quests. 
 
-
-
-
-% One of the first iterations of the gamification for education project (GAMED) was to have a sort of multiplayer role-playing game where the course is seen as a game. In this game, students are players, the teacher is a dungeon-master/game-master and the assignments are quests. Players are from different classes, such as programmer; designer; marketeer; etc. Each quest requires a group with players from different classes and part of the game is to find a group to work with. The groups have to collaborate to perform these quests and can level up, giving access to more difficult (and more rewarding) quests. This is more in the category of serious game than gamification.
-
 \subsection{Virtual Economies in the Classroom}
 
-Stack Overflow Programming Courses
+
+
+Stack Overflow Programming Courses 
+
 One of the most important skills for programmers is the ability to ask questions and get answers. By allowing students to interact with each other in a stack-overflow-like environment, the students can more easily collaborate on assignments, while also giving the teacher insight into what students are struggling with. One of the main goals is that students are driven to asking better questions, as too simple answers or too complicated or ill-defined questions can be downvoted, resulting in a negative reputation. Students that answer questions quickly and correctly can receive a good reputation on the forum. This also means that the better students will work to give even better answers. Naturally, it is not meant for the students to share answers to the assignments, but a board-moderator (the teaching assistant) can ban students that behave in this manner. This board-like structure will allow students to not worry about boring implementation details (such as how to convert various data-types) and focus more 
 on implementing algorithms and structuring code.
 
 Virtual Economies in the Classroom
+
 An interesting extension to the Stack-Overflow course, is the possibility of introducing a virtual economy to the classroom. Instead of letting the students freely share answers, it is possible to introduce a currency, called credits, and assigning worth to these answers. By viewing answers as knowledge and this knowledge as products, the students can interact with each other by selling and buying knowledge from each other. Products are valued based on their inherent worth for other students. For instance, the TA could function as an auction-house selling knowledge to the highest bidder. This would allow students who are struggling to use up their credits to make their assignment easier, while good students will work to deliver well structured answers/code to get more credits. All students begin the course with an equal amount of credits, this would make sure that students can’t just buy their way through the course and have to save up credits for when more difficult assignments come. The TA could also 
 function as a national bank, making sure there is enough activity on the market and by manipulating the currency. A bank could start buying products, creating more credits, or selling products and thereby lowering the amount of credits in the marketplace. The TA also has to watch over the market as some students may opt to work together and create a cartel in the meantime. 
 
