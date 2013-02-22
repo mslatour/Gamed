@@ -490,9 +490,33 @@ Group assignment & 61 & 63 \\
 \caption{Nicer table format ?}
 \end{table}
 
-
+\clearpage
 \section{Analysis of Data}
-Linear Regression Model through Least Median Square error regression
+To better analyse the data, regression is done on the data to find correlation between the game elements and the start motivation. The models that were fitted were linear models that assign a single coefficient to each of the game elements. By analysing these coefficients, it is possible to see what type of impact each game element has on the start motivation. Keep in mind that this does not reveal dependencies between the game elements, but rather views the elements as independent variables. 
+
+The first model is fitted through least median square error regression, resulting in the following coefficients.
+
+\begin{table}\centering
+\ra{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Game Context element & Frequency (present) & Frequence (not present) \\ 
+\midrule
+Multi Assignment & 53 & 71 \\
+Strict deadline & 67 & 57 \\
+Bonus & 66 & 58 \\
+Badges & 65 & 59 \\
+Graded & 60 & 64 \\
+Relative grades & 66 & 58 \\
+Expert review & 57 & 67 \\
+A single final grade & 55 & 69 \\
+Group assignment & 61 & 63 \\
+\bottomrule
+\end{tabular}
+\caption{Linear Regression through least median squre error}
+\end{table}
+
+
 \begin{align}
  motivation  & = \nonumber \\
      -0.0679 & * multi\_ass + \nonumber \\
@@ -507,13 +531,35 @@ Linear Regression Model through Least Median Square error regression
       0.1233 &\nonumber \\
 \end{align}
 
-% Notes:
-% Badges have highest negative impact
-% Expected bonus content to have a positive impact, but apparently it does not
-% 
+The first important conclusion that we can gather is that the data is reasonably well distributed around $0$. Furthermore, some of the coefficients follow what we would expect to see. For instance, strict deadlines result in lower start motivation and multiple assignments also result in lower motivation. Having the grade not counting towards the final grade of the course also results in lower motivation. These three notions follow our initial hypothesis given rise to the notion that the other coefficients may also be good indications of these elements and their impact on motivation.
+
+First, let us look at the elements with a negative impact on motivation. These are:
+\begin{itemize}
+  \item Badges have the highest negative impact on start motivation
+  \item Having a grade relative to other students
+  \item Having multiple assignments instead of one final hand-in
+  \item Getting access to bonus content
+  \item A strict deadline
+\end{itemize}
+
+It is rather surprising that badges seem to have a negative impact on start motivation as it is currently a very popular mechanic in the field of gamification. It may be possible that students perceived these badges as resulting in more work, in order to receive the badges, and thus felt less motivated as the entire assignment would be more work. Another possibility is that students feel that the badges do not contribute to their learning experience and that at university level this may affect students.
+
+The same can be said for the bonus content, which was in the form of an extra master class. It may be that the students perceived this as more work, instead of an optional extra.
+
+Another interesting conclusion is that students seem to be negatively influenced by being graded relative to other students. It may be that the students that filled in the questionnaire were less competitive in general. It is also interesting to view this in combination with the negative impact of peer-review. It may be so, that students feel uncomfortable for other students to be able to see their work and to be judged with other students. The social aspects of these two measures may be key to the impact on motivation that the data shows. Being peer-reviewed may also be viewed as being more work, although this was not intended to be the case in the questionnaire.
+
+The elements with a positive impact are as follows:
+\begin{itemize}
+  \item Being reviewed by the teaching assistant or professor
+  \item Having the grade count towards the final grade of the course
+  \item Receiving one single final grade instead of multiple grades
+  \item Working in groups
+\end{itemize}
 
 
-% Expert Review might have been misinterpreted as being more work if assignments are peer-reviewed
+It is important to note that the positive impact of working in groups is very low and that this may not be indicative of larger groups. It may be so that some students prefer working in groups whilst other prefer working alone. Another possibility is that it does not matter and that students do not feel more or less motivated by either.
+
+Another interesting notion is that being reviewed by the teaching assistant is generally preferred to peer-reviews. However, as noted before, this may be because the students perceive peer-reviews as resulting in more work.
 
 
 % === Cross-validation ===
@@ -590,13 +636,12 @@ The first idea to apply this is by utilizing a model similar to \emph{Stack Over
 One of the most important skills for programmers is the ability to ask questions and get answers. By allowing students to interact with each other in a stack-overflow-like environment, the students can more easily collaborate on assignments, while also giving the teacher insight into what students are struggling with. One of the main goals is that students are driven to asking better questions, as too simple answers or too complicated or ill-defined questions can be downvoted, resulting in a negative reputation. Students that answer questions quickly and correctly can receive a good reputation on the forum. This also means that the better students will work to give even better answers. Naturally, it is not meant for the students to share answers to the assignments, but a board-moderator (the teaching assistant) can ban students that behave in this manner. This board-like structure will allow students to not get stuck about implementation details and focus more 
 on implementing algorithms and structuring code.
 
-Virtual Economies in the Classroom
+In the case of Stack Overflow, points are awarded for responding to questions quickly and by giving good quality answers. This results in that users do not generate content unless there are questions to be answered. Furthermore, in a class-room setting it may be difficult to moderate how much each user relies on the freely available information.
 
-An interesting extension to the Stack-Overflow course, is the possibility of introducing a virtual economy to the classroom. Instead of letting the students freely share answers, it is possible to introduce a currency, called credits, and assigning worth to these answers. By viewing answers as knowledge and this knowledge as products, the students can interact with each other by selling and buying knowledge from each other. Products are valued based on their inherent worth for other students. For instance, the TA could function as an auction-house selling knowledge to the highest bidder. This would allow students who are struggling to use up their credits to make their assignment easier, while good students will work to deliver well structured answers/code to get more credits. All students begin the course with an equal amount of credits, this would make sure that students can’t just buy their way through the course and have to save up credits for when more difficult assignments come. The TA could also 
+An interesting extension to the Stack-Overflow course, is the possibility of introducing a virtual economy to the classroom. Instead of letting the students freely share answers, it is possible to introduce a currency, called credits, and assigning value to these answers. By viewing answers as knowledge and this knowledge as a product, the students can interact with each other by selling and buying knowledge from each other. Products are valued based on their inherent worth for other students. For instance, the TA could function as an auction-house selling knowledge to the highest bidder. This would allow students who are struggling to use up their credits to make their assignment easier, while good students will work to deliver well structured answers/code to get more credits. All students begin the course with an equal amount of credits, this would make sure that students can’t just buy their way through the course and have to save up credits for when more difficult assignments come. The TA could also 
 function as a national bank, making sure there is enough activity on the market and by manipulating the currency. A bank could start buying products, creating more credits, or selling products and thereby lowering the amount of credits in the marketplace. The TA also has to watch over the market as some students may opt to work together and create a cartel in the meantime. 
 
 There are a lot of economic principles that could be introduced and it is unclear how these would affect the classroom. For instance, what would introducing taxes do? Could the bank buy a company/student if that student is sufficiently good? Would a black-market appear and is this unwanted? Could products be in a delayed-release system so that the market works with a slight delay? Could students get loans from the bank and what happens if we introduce rent on these loans? What happens to students that go bankrupt? 
-
 
 
 \subsection{Interactive Storytelling in the classroom, non-linear path planning through courses}
