@@ -15,8 +15,9 @@
 \setlength{\bibsep}{0.0pt}
 
 % Dutch style of paragraph formatting, i.e. no indents. 
-% \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
-% \setlength{\parindent}{0pt}
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
 \usepackage[protrusion=true,expansion=true]{microtype}
 
 % Command for Horizontal lines
@@ -52,6 +53,8 @@
 \cfoot{\large \thepage} % center footer: page number
 
 \setlength{\headheight}{18pt}
+
+
 
 \begin{document}
 
@@ -229,7 +232,7 @@ Introduceer de notie van personalized learning, met een citaat uit een paper.
 
 \paragraph{Social Learning}
 \begin{itemize}
-  \item \cite{Shum2011}
+  \item \cite{Shum2012}
   \item \cite{Ullmann2011}
   \item \cite{Haiming2012}
   \item \cite{Fournier2011}
@@ -295,6 +298,7 @@ Visual Analytics
 
 
 \section{The Game Context}
+\label{sec:thegamecontext}
 The usual approach in gamification is to take a non-gaming context and add game elements from other domains to create a gamified context. However, if we try to define what constitutes as a game context or a non-game context, it quickly becomes apparent that the borderline between the two is difficult to find. In fact, it seems that the definition from game theory is the one that is most capable of correctly classifying what constitutes as a game context. In game theory, games are seen as having a set of actors, a set of possible actions and a set of pay-off or reward functions. The key-factor is that this does not restrict the definition to modern games, but also a plethora of other situations in which actors take decisions based on possible pay-off. It is this definition that we use to describe what a game context is, albeit slightly altered so that it is more capable than just decision making for pay-off.
 
 We define the game context as having a set of players, a set of mechanics or game elements, and a set of reward functions that can be either action based or based on other rules, such as variables at the end of the game. Another important element of both the set of game elements and the set of reward functions is that all players must agree on these sets. This further removes our definition of a game context from the game theory definition of a game by removing the intrinsic- or implicit-ness of the pay-off function.
@@ -308,7 +312,7 @@ certain structures.
 
 The set of actors does not refer to users within the context, but interacting agents that can modify some or all of the game elements. Without this, books and movies should be considered game contexts as well, since there is at least one actor, a goal and mechanics. 
 
-Finally, the game elements or mechanics are defined as the often occurring elements within the domain.Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that not only frequently occur in the domain, but also based upon the goal of the task. Within a single domain, it is possible to arrive to different game elements. For instance, when defining game elements in modern video games, the set may be different if the task of the context is to classify the genre as opposed to finding the motivational factors within the game.
+Finally, the game elements or mechanics are defined as the often occurring elements within the domain. Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that not only frequently occur in the domain, but also based upon the goal of the task. Within a single domain, it is possible to arrive to different game elements. For instance, when defining game elements in modern video games, the set may be different if the task of the context is to classify the genre as opposed to finding the motivational factors within the game.
 
 To test the correctness and the versatility of the game context it is necessary to look at some examples of situations.
 
@@ -377,94 +381,96 @@ An example of how to do this is to track which games a user plays and for how lo
 
 This is also done for the school assignments domain. Resulting in another set of higher level variables that may represent certain motivational aspects of the users. The difficult part is to find a mapping between these two sets. One method to achieve this would be to create these user models of both domains for a group of users. Then the goal is to find if there is overlap in the higher level variables, which can be done by finding couples of variables that have the same values for all users. Another possibility is to annotate the higher variables using the related game elements and then manually find the mapping between the two sets.
 
-
-
-
-
 \section{Experiment setup}
-The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement.
+The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement in the education domain. 
 
-In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
-
+As mentioned in section \ref{sec:thegamecontext}, each domain has its own set of identifiable game elements. The game elements that the authors found in school assignments are listed in table \ref{tab:game_elements_assignments}.
+\begin{table}[ht!]
+\centering
 \begin{tabular}{ll}
 \textbf{Category} & \textbf{Instances} \\ \hline \hline
 \emph{Player Configuration} & Single \\
-                              & Pair \\
-                              & Multi \\ \hline
+                            & Pair \\
+                            & Multi \\ \hline
 \emph{Evaluation}           & Final Evalutation \\
-                              & Multiple Sub-Evaluations \\
-                              & Expert Review \\
-                              & Peer Review \\
-                              & Relative Grade \\ \hline
+                            & Multiple Sub-Evaluations \\
+                            & Expert Review \\
+                            & Peer Review \\
+                            & Relative Grade \\ \hline
 \emph{Reward}               & Grade \\
-                              & Badges \\
-                              & Bonus Content \\
-                              & Epic Meaning \\ \hline
+                            & Badges \\
+                            & Bonus Content \\
+                            & Epic Meaning \\ \hline
 \emph{Time Constraints}     & Final Deadline \\
-                              & Multiple Deadlines \\
-                              & Hard Deadlines \\
-                              & Soft Deadlines \\ \hline
+                            & Multiple Deadlines \\
+                            & Hard Deadlines \\
+                            & Soft Deadlines \\ \hline
 \emph{Space}                & Physical Room \\
-                              & Virual Room \\
-                              & Isolated \\ \hline
+                            & Virtual Room \\
+                            & Isolated \\ \hline
 \emph{Assignment Goal}      & Knowledge Acquisition \\
-                              & Knowledge Transfer \\
-                              & Exploration \\
-                              & Consolidation \\
-                              & Implementation/Application \\
+                            & Knowledge Transfer \\
+                            & Exploration \\
+                            & Consolidation \\
+                            & Implementation/Application \\
 \end{tabular}
-
+\caption{The game elements discovered in school assignments\label{tab:game_elements_assignments}}
+\end{table}
+In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
 
 \section{Experiment results}
 
-\begin{table*}\centering
-\ra{1.3}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Program & Frequency \\ 
-\midrule
-1st year Bachelor Artificial Intelligence & 40 \\
-1st year Master Artificial Intelligence & 41 \\
-1st year Bachelor Computer Science & 27 \\
-3rd year Bachelor Computer Science & 3 \\
-1st year Bachelor Information Science & 2 \\
-3rd year Bachelor Information Science & 2 \\
-2nd year Bachelor Beta-Gamma & 9 \\
-\bottomrule
-\end{tabular}
-\caption{Nicer table format ?}
-\end{table*}
+\begin{table}
+  \centering
+  \ra{1.3}
+  \begin{tabular}{@{}ll@{}}
+  \toprule
+  Program & Frequency \\ 
+  \midrule
+  1st year Bachelor Artificial Intelligence & 40 \\
+  1st year Master Artificial Intelligence & 41 \\
+  1st year Bachelor Computer Science & 27 \\
+  3rd year Bachelor Computer Science & 3 \\
+  1st year Bachelor Information Science & 2 \\
+  3rd year Bachelor Information Science & 2 \\
+  2nd year Bachelor Beta-Gamma & 9 \\
+  \bottomrule
+  \end{tabular}
+  \caption{Nicer table format ?}
+\end{table}
 
-\begin{table*}\centering
-\ra{1.3}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Gender & Frequency \\
-\midrule
-Male & 83 \\
-Female & 41 \\
-\bottomrule
-\end{tabular}
-\caption{Nicer table format ?}
-\end{table*}
+\begin{table}
+  \centering
+  \ra{1.3}
+  \begin{tabular}{@{}ll@{}}
+  \toprule
+  Gender & Frequency \\
+  \midrule
+  Male & 83 \\
+  Female & 41 \\
+  \bottomrule
+  \end{tabular}
+  \caption{Nicer table format ?}
+\end{table}
 
-\begin{table*}\centering
-\ra{1.3}
-\begin{tabular}{@{}ll@{}}
-\toprule
-General start motivation & Frequency \\ 
-\midrule
-Highly demotivated & 0 \\
-Demotivated & 0 \\
-Neutral & 52 \\
-Motivated & 72 \\
-Highly motivated & 0 \\
-\bottomrule
-\end{tabular}
-\caption{Nicer table format ?}
-\end{table*}
+\begin{table}
+  \centering
+  \ra{1.3}
+  \begin{tabular}{@{}ll@{}}
+  \toprule
+  General start motivation & Frequency \\ 
+  \midrule
+  Highly demotivated & 0 \\
+  Demotivated & 0 \\
+  Neutral & 52 \\
+  Motivated & 72 \\
+  Highly motivated & 0 \\
+  \bottomrule
+  \end{tabular}
+  \caption{Nicer table format ?}
+\end{table}
 
-\begin{table*}\centering
+\begin{table}\centering
 \ra{1.3}
 \begin{tabular}{@{}lll@{}}
 \toprule
@@ -482,11 +488,35 @@ Group assignment & 61 & 63 \\
 \bottomrule
 \end{tabular}
 \caption{Nicer table format ?}
-\end{table*}
+\end{table}
 
-
+\clearpage
 \section{Analysis of Data}
-Linear Regression Model through Least Median Square error regression
+To better analyse the data, regression is done on the data to find correlation between the game elements and the start motivation. The models that were fitted were linear models that assign a single coefficient to each of the game elements. By analysing these coefficients, it is possible to see what type of impact each game element has on the start motivation. Keep in mind that this does not reveal dependencies between the game elements, but rather views the elements as independent variables. 
+
+The first model is fitted through least median square error regression, resulting in the following coefficients.
+
+\begin{table}\centering
+\ra{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Game Context element & Frequency (present) & Frequence (not present) \\ 
+\midrule
+Multi Assignment & 53 & 71 \\
+Strict deadline & 67 & 57 \\
+Bonus & 66 & 58 \\
+Badges & 65 & 59 \\
+Graded & 60 & 64 \\
+Relative grades & 66 & 58 \\
+Expert review & 57 & 67 \\
+A single final grade & 55 & 69 \\
+Group assignment & 61 & 63 \\
+\bottomrule
+\end{tabular}
+\caption{Linear Regression through least median squre error}
+\end{table}
+
+
 \begin{align}
  motivation  & = \nonumber \\
      -0.0679 & * multi\_ass + \nonumber \\
@@ -501,13 +531,35 @@ Linear Regression Model through Least Median Square error regression
       0.1233 &\nonumber \\
 \end{align}
 
-% Notes:
-% Badges have highest negative impact
-% Expected bonus content to have a positive impact, but apparently it does not
-% 
+The first important conclusion that we can gather is that the data is reasonably well distributed around $0$. Furthermore, some of the coefficients follow what we would expect to see. For instance, strict deadlines result in lower start motivation and multiple assignments also result in lower motivation. Having the grade not counting towards the final grade of the course also results in lower motivation. These three notions follow our initial hypothesis given rise to the notion that the other coefficients may also be good indications of these elements and their impact on motivation.
+
+First, let us look at the elements with a negative impact on motivation. These are:
+\begin{itemize}
+  \item Badges have the highest negative impact on start motivation
+  \item Having a grade relative to other students
+  \item Having multiple assignments instead of one final hand-in
+  \item Getting access to bonus content
+  \item A strict deadline
+\end{itemize}
+
+It is rather surprising that badges seem to have a negative impact on start motivation as it is currently a very popular mechanic in the field of gamification. It may be possible that students perceived these badges as resulting in more work, in order to receive the badges, and thus felt less motivated as the entire assignment would be more work. Another possibility is that students feel that the badges do not contribute to their learning experience and that at university level this may affect students.
+
+The same can be said for the bonus content, which was in the form of an extra master class. It may be that the students perceived this as more work, instead of an optional extra.
+
+Another interesting conclusion is that students seem to be negatively influenced by being graded relative to other students. It may be that the students that filled in the questionnaire were less competitive in general. It is also interesting to view this in combination with the negative impact of peer-review. It may be so, that students feel uncomfortable for other students to be able to see their work and to be judged with other students. The social aspects of these two measures may be key to the impact on motivation that the data shows. Being peer-reviewed may also be viewed as being more work, although this was not intended to be the case in the questionnaire.
+
+The elements with a positive impact are as follows:
+\begin{itemize}
+  \item Being reviewed by the teaching assistant or professor
+  \item Having the grade count towards the final grade of the course
+  \item Receiving one single final grade instead of multiple grades
+  \item Working in groups
+\end{itemize}
 
 
-% Expert Review might have been misinterpreted as being more work if assignments are peer-reviewed
+It is important to note that the positive impact of working in groups is very low and that this may not be indicative of larger groups. It may be so that some students prefer working in groups whilst other prefer working alone. Another possibility is that it does not matter and that students do not feel more or less motivated by either.
+
+Another interesting notion is that being reviewed by the teaching assistant is generally preferred to peer-reviews. However, as noted before, this may be because the students perceive peer-reviews as resulting in more work.
 
 
 % === Cross-validation ===
@@ -544,6 +596,12 @@ Linear Regression Model with Aikake measure for feature selection
 
 
 \section{Conclusion}
+In this report the game context was introduced. The game context is a domain that abhors to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
+
+The other system that was discussed is GAMED, which is a method for transferring knowledge about users from one domain to another. This is done by creating user models in a domain for each individual user. This is followed by finding higher level variables that represent certain aspects that are important to the value which the user models are mapped to. After this, a mapping is made between the higher level variables of multiple domains so that knowledge can be transferred between domains and initial estimates can be given on what aspects might influence a user in another domain.
+
+Both systems were introduced on a conceptual level based on the literature that is currently available for both the domain of gamification and learning analytics. An experiment was done to test whether the game context of a domain captures important aspects of that domain. The experiment was done by using a questionnaire based on the domain of school-assignments. The result of this experiment was that the game context is indeed capable of representing a domain which is not necessarily viewed as being game-like. 
+
 
 \section{Discussion}
 
@@ -563,29 +621,27 @@ When renaming these aspects of education it quickly becomes apparent that the ex
 
 By adding more dynamic to the course, the students will have more resources to manage and more values to optimize. If correctly designed, this could lead to students spending more time with the course material. 
 
-The idea was to take an interdisciplinary course (Introduction to Game Programming) and renaming all concepts within the course to their counterparts. Students are players, the teacher is the dungeon master, assignments are quests, grades are experience points, the final exam is the boss battle, course materials are weapons/armour/buffs/NPCs, etc.
+The idea was to take an interdisciplinary course (Introduction to Game Programming) and renaming all concepts within the course to their counterparts. Students are players, the teacher is the dungeon master, assignments are quests, grades are experience points, the final exam is the boss battle, course materials are weapons/armour/buffs/NPCs.
 
 Since the course is interdisciplinary and focussed on teamwork, it makes sense to view the course as a multiplayer role playing game in which each student chooses a class (vocation) at the start of the course. All activity takes place on an online system where the students have an avatar and a stats-card showcasing their strengths and capabilities.
 
-The classes can be things like game-designers, marketeers, programmers, artists, etc. To do an assignment, or quest, students have to form a group with various classes as required by the assignment. All quests are locked until all participants have reached a high enough level within their class.
-
-
-
-
-% One of the first iterations of the gamification for education project (GAMED) was to have a sort of multiplayer role-playing game where the course is seen as a game. In this game, students are players, the teacher is a dungeon-master/game-master and the assignments are quests. Players are from different classes, such as programmer; designer; marketeer; etc. Each quest requires a group with players from different classes and part of the game is to find a group to work with. The groups have to collaborate to perform these quests and can level up, giving access to more difficult (and more rewarding) quests. This is more in the category of serious game than gamification.
+The classes can be things like game-designers, marketeers, programmers, artists, etc. To do an assignment, or quest, students have to form a group with various classes as required by the assignment. All quests are locked until all participants have reached a high enough level within their class. This results in players having to grind simpler assignments to be able to unlock higher level quests. The idea is that these higher level quests are more interesting, thus motivating students to unlock these quests. 
 
 \subsection{Virtual Economies in the Classroom}
 
-Stack Overflow Programming Courses
-One of the most important skills for programmers is the ability to ask questions and get answers. By allowing students to interact with each other in a stack-overflow-like environment, the students can more easily collaborate on assignments, while also giving the teacher insight into what students are struggling with. One of the main goals is that students are driven to asking better questions, as too simple answers or too complicated or ill-defined questions can be downvoted, resulting in a negative reputation. Students that answer questions quickly and correctly can receive a good reputation on the forum. This also means that the better students will work to give even better answers. Naturally, it is not meant for the students to share answers to the assignments, but a board-moderator (the teaching assistant) can ban students that behave in this manner. This board-like structure will allow students to not worry about boring implementation details (such as how to convert various data-types) and focus more 
+One of the original ideas behind combining learning analytics with gamification was the idea that gamification generates data and is capable of steering behaviour, whilst learning analytics is capable of giving insight into behaviour, making predictions and giving recommendations to students. The idea is that gamification is capable of generating data which can be analysed with learning analytics which in turn can make predictions and give recommendations which can be used to steer the behaviour of the student through gamification. 
+
+The first idea to apply this is by utilizing a model similar to \emph{Stack Overflow}. Stack Overflow is a website meant for programmers to ask questions about certain problems that they face. Other users can respond with their ideas about the subject and are rewarded points for quick responding to questions and users vote on answers so that quality is ensured. This results in a dynamic community where users can go to to resolve issues that they may face. However, more importantly is that Stack Overflow is creating a vast database of problems that programmers might encounter with various solutions to each of them. 
+
+One of the most important skills for programmers is the ability to ask questions and get answers. By allowing students to interact with each other in a stack-overflow-like environment, the students can more easily collaborate on assignments, while also giving the teacher insight into what students are struggling with. One of the main goals is that students are driven to asking better questions, as too simple answers or too complicated or ill-defined questions can be downvoted, resulting in a negative reputation. Students that answer questions quickly and correctly can receive a good reputation on the forum. This also means that the better students will work to give even better answers. Naturally, it is not meant for the students to share answers to the assignments, but a board-moderator (the teaching assistant) can ban students that behave in this manner. This board-like structure will allow students to not get stuck about implementation details and focus more 
 on implementing algorithms and structuring code.
 
-Virtual Economies in the Classroom
-An interesting extension to the Stack-Overflow course, is the possibility of introducing a virtual economy to the classroom. Instead of letting the students freely share answers, it is possible to introduce a currency, called credits, and assigning worth to these answers. By viewing answers as knowledge and this knowledge as products, the students can interact with each other by selling and buying knowledge from each other. Products are valued based on their inherent worth for other students. For instance, the TA could function as an auction-house selling knowledge to the highest bidder. This would allow students who are struggling to use up their credits to make their assignment easier, while good students will work to deliver well structured answers/code to get more credits. All students begin the course with an equal amount of credits, this would make sure that students can’t just buy their way through the course and have to save up credits for when more difficult assignments come. The TA could also 
+In the case of Stack Overflow, points are awarded for responding to questions quickly and by giving good quality answers. This results in that users do not generate content unless there are questions to be answered. Furthermore, in a class-room setting it may be difficult to moderate how much each user relies on the freely available information.
+
+An interesting extension to the Stack-Overflow course, is the possibility of introducing a virtual economy to the classroom. Instead of letting the students freely share answers, it is possible to introduce a currency, called credits, and assigning value to these answers. By viewing answers as knowledge and this knowledge as a product, the students can interact with each other by selling and buying knowledge from each other. Products are valued based on their inherent worth for other students. For instance, the TA could function as an auction-house selling knowledge to the highest bidder. This would allow students who are struggling to use up their credits to make their assignment easier, while good students will work to deliver well structured answers/code to get more credits. All students begin the course with an equal amount of credits, this would make sure that students can’t just buy their way through the course and have to save up credits for when more difficult assignments come. The TA could also 
 function as a national bank, making sure there is enough activity on the market and by manipulating the currency. A bank could start buying products, creating more credits, or selling products and thereby lowering the amount of credits in the marketplace. The TA also has to watch over the market as some students may opt to work together and create a cartel in the meantime. 
 
 There are a lot of economic principles that could be introduced and it is unclear how these would affect the classroom. For instance, what would introducing taxes do? Could the bank buy a company/student if that student is sufficiently good? Would a black-market appear and is this unwanted? Could products be in a delayed-release system so that the market works with a slight delay? Could students get loans from the bank and what happens if we introduce rent on these loans? What happens to students that go bankrupt? 
-
 
 
 \subsection{Interactive Storytelling in the classroom, non-linear path planning through courses}
