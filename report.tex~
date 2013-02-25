@@ -54,7 +54,7 @@
 
 \setlength{\headheight}{18pt}
 
-
+\setcounter{tocdepth}{1}
 
 \begin{document}
 
@@ -80,7 +80,9 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \pagebreak
 
 \pagestyle{empty} %get rid of header/footer for toc page
+
 \tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
 
 \begin{abstract}
 	
@@ -494,7 +496,7 @@ Group assignment & 61 & 63 \\
 \section{Analysis of Data}
 To better analyse the data, regression is done on the data to find correlation between the game elements and the start motivation. The models that were fitted were linear models that assign a single coefficient to each of the game elements. By analysing these coefficients, it is possible to see what type of impact each game element has on the start motivation. Keep in mind that this does not reveal dependencies between the game elements, but rather views the elements as independent variables. 
 
-The first model is fitted through least median square error regression, resulting in the following coefficients.
+The first model is fitted through least median square error regression, resulting in the following coefficients as seen in table \ref{lmsreg}.
 
 \begin{table}[h!t]\centering
 \ra{1.3}
@@ -511,7 +513,8 @@ Badges 			& -0.2141 	& Group Assignment 	& 0.0212 \\
 Relative Grading 	& -0.1377 	& Default Motivation	& 0.1233\\
 \bottomrule
 \end{tabular}
-\caption{Linear Regression through least median squre error}
+\caption{Linear Regression through least median square error}
+\label{lmsreg}
 \end{table}
 
 
@@ -545,20 +548,8 @@ It is important to note that the positive impact of working in groups is very lo
 
 Another interesting notion is that being reviewed by the teaching assistant is generally preferred to peer-reviews. However, as noted before, this may be because the students perceive peer-reviews as resulting in more work.
 
+By doing feature selection we can verify the features that have the biggest impact on the start motivation. Feature selection is done using the Aikake measure, resulting in the following coefficients as seen in table \ref{lmsreg_aikake}.
 
-% === Cross-validation ===
-% === Summary ===
-% 
-% Correlation coefficient                  0.2993
-% Mean absolute error                      0.7266
-% Root mean squared error                  0.9003
-% Relative absolute error                 94.0473 %
-% Root relative squared error             96.3392 %
-% Total Number of Instances              124     
-
-
-
-Linear Regression Model with Aikake measure for feature selection
 \begin{table}[h!t]\centering
 \ra{1.3}
 \begin{tabular}{@{}ll@{}}
@@ -572,20 +563,28 @@ Default Motivation	& 0.1233\\
 \bottomrule
 \end{tabular}
 \caption{Linear Regression through least median square error using Aikake measure for feature selection}
+\label{lmsreg_aikake}
 \end{table}
 
-\begin{align}
- motivation &=  \nonumber \\
-     -0.1332 &* badges + \nonumber \\
-      0.2163 &* graded + \nonumber \\
-      0.2852 &* expert_review + \nonumber \\
-      0.1733 &\nonumber \\
-\end{align}
+From these coefficients we can draw the same conclusion that the group of students prefer standard education in the form of grades given by the teaching assistant or professor. Furthermore, this group of students are negatively influenced by the addition of badges.
+
+The model without feature selection had a mean absolute error of $0.7266$ and the model with feature selection had a mean absolute error of $0.7517$. Most of this error is created by the start motivation being on a discrete Likert scale, resulting in regression on a non-continuous scale.
+
+% === Cross-validation ===
+% === Summary ===
+%  Without Aikake
+% Correlation coefficient                  0.2993
+% Mean absolute error                      0.7266
+% Root mean squared error                  0.9003
+% Relative absolute error                 94.0473 %
+% Root relative squared error             96.3392 %
+% Total Number of Instances              124     
+
 % Time taken to build model: 0 seconds
 % 
 % === Cross-validation ===
 % === Summary ===
-% 
+% With Aikake
 % Correlation coefficient                  0.2687
 % Mean absolute error                      0.7517
 % Root mean squared error                  0.9018
@@ -595,15 +594,34 @@ Default Motivation	& 0.1233\\
 
 
 \section{Conclusion}
-In this report the game context was introduced. The game context is a domain that abhors to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
+In this report the game context was introduced. The game context is a domain that adheres to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
 
 The other system that was discussed is GAMED, which is a method for transferring knowledge about users from one domain to another. This is done by creating user models in a domain for each individual user. This is followed by finding higher level variables that represent certain aspects that are important to the value which the user models are mapped to. After this, a mapping is made between the higher level variables of multiple domains so that knowledge can be transferred between domains and initial estimates can be given on what aspects might influence a user in another domain.
 
 Both systems were introduced on a conceptual level based on the literature that is currently available for both the domain of gamification and learning analytics. An experiment was done to test whether the game context of a domain captures important aspects of that domain. The experiment was done by using a questionnaire based on the domain of school-assignments. The result of this experiment was that the game context is indeed capable of representing a domain which is not necessarily viewed as being game-like. 
 
 
-\section{Discussion}
+\section{Lessons Learned}
+During this research, we ran into several issues which had an impact on the final product. For future research it is important to take the following lessons into account.
 
+\subsection{Current State of Education Data}
+% Difficult to gain access to large amounts of data. Learning Record Stores are the solution (?) Sander, write this!
+
+\subsection{User Models}
+% Problems with getting unbiased input from users. Especially on the topic of Motivation. How can you better test for motivation
+
+
+\subsection{Motivational Aspects}
+% Motivation may not be prime concern for education. Learning is more important than being motivated or engaged (Although Experiental Flow counters this)
+
+\subsection{Education without Pedagogy}
+% Research on Education without adequate study in Pedagogy and Psychology is problematic. We miss these two in our literature, resulting in a lack of theoretical support for the Game Context
+
+\subsection{Current State of Gamification}
+As of now, the field of gamification has little academic support. Ample research has been done on motivational or incentive systems, game design and mechanism design.
+However, gamification is still in its exploratory phase and most papers published on the subject are applications and qualitative results. This makes it difficult to properly design a system based on gamification. Most work in gamification has been done by commercial institutes which makes it difficult to design new systems from the ground up. It is also difficult to reproduce experiments and there are no standard datasets on which new techniques can be benchmarked.
+
+A large problem is the lack of a proper definition of gamification, apart from the definition by Deterding, resulting in ambiguity as to what actually constitutes as gamification. We used the definition as given by Deterding, but we found that it was not perfect. Therefore, we altered the definition to better describe what game elements are, using literature from the field of game design, and to define game and non-game contexts. This resulted in our definition of a game context, which is different from the usual approach of gamification in which non-game contexts are changed into games by adding game elements. Instead, we defined game contexts to be domains adhering to three criteria. If so, all design patterns within the domain can be viewed as game elements and we use the set which influences a certain external value such as motivation, genre, etcetera.
 
 \pagebreak
 \bibliography{literature,literature2}

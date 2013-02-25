@@ -54,7 +54,7 @@
 
 \setlength{\headheight}{18pt}
 
-
+\setcounter{tocdepth}{1}
 
 \begin{document}
 
@@ -80,7 +80,9 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \pagebreak
 
 \pagestyle{empty} %get rid of header/footer for toc page
+
 \tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
 
 \begin{abstract}
 	
@@ -494,42 +496,27 @@ Group assignment & 61 & 63 \\
 \section{Analysis of Data}
 To better analyse the data, regression is done on the data to find correlation between the game elements and the start motivation. The models that were fitted were linear models that assign a single coefficient to each of the game elements. By analysing these coefficients, it is possible to see what type of impact each game element has on the start motivation. Keep in mind that this does not reveal dependencies between the game elements, but rather views the elements as independent variables. 
 
-The first model is fitted through least median square error regression, resulting in the following coefficients.
+The first model is fitted through least median square error regression, resulting in the following coefficients as seen in table \ref{lmsreg}.
 
-\begin{table}\centering
+\begin{table}[h!t]\centering
 \ra{1.3}
-\begin{tabular}{@{}lll@{}}
+\begin{tabular}{@{}llll@{}}
 \toprule
-Game Context element & Frequency (present) & Frequence (not present) \\ 
-\midrule
-Multi Assignment & 53 & 71 \\
-Strict deadline & 67 & 57 \\
-Bonus & 66 & 58 \\
-Badges & 65 & 59 \\
-Graded & 60 & 64 \\
-Relative grades & 66 & 58 \\
-Expert review & 57 & 67 \\
-A single final grade & 55 & 69 \\
-Group assignment & 61 & 63 \\
+\multicolumn{2}{c}{Negative Influence} & \multicolumn{2}{c}{Positive Influence} \\
+Game Element & Coefficient &  Game Element& Coefficient  \\ 
+\cmidrule(r){1-2}
+\cmidrule(r){3-4}
+Multiple Assignments 	& -0.0679 	& Graded 		& 0.1635 \\
+Strict Deadline 	& -0.0283 	& Expert Review 	& 0.1652 \\
+Bonus Content 		& -0.0484 	& Single Final Grade 	& 0.1558 \\
+Badges 			& -0.2141 	& Group Assignment 	& 0.0212 \\
+Relative Grading 	& -0.1377 	& Default Motivation	& 0.1233\\
 \bottomrule
 \end{tabular}
-\caption{Linear Regression through least median squre error}
+\caption{Linear Regression through least median square error}
+\label{lmsreg}
 \end{table}
 
-
-\begin{align}
- motivation  & = \nonumber \\
-     -0.0679 & * multi\_ass + \nonumber \\
-     -0.0283 & * strict\_dead + \nonumber \\
-     -0.0484 & * bonus + \nonumber \\
-     -0.2141 & * badges + \nonumber \\
-      0.1635 & * graded + \nonumber \\
-     -0.1377 & * rel\_grade + \nonumber \\
-      0.1652 & * expert\_review + \nonumber \\
-      0.1558 & * final\_grade + \nonumber \\
-      0.0212 & * group\_ass + \nonumber \\
-      0.1233 &\nonumber \\
-\end{align}
 
 The first important conclusion that we can gather is that the data is reasonably well distributed around $0$. Furthermore, some of the coefficients follow what we would expect to see. For instance, strict deadlines result in lower start motivation and multiple assignments also result in lower motivation. Having the grade not counting towards the final grade of the course also results in lower motivation. These three notions follow our initial hypothesis given rise to the notion that the other coefficients may also be good indications of these elements and their impact on motivation.
 
@@ -561,10 +548,31 @@ It is important to note that the positive impact of working in groups is very lo
 
 Another interesting notion is that being reviewed by the teaching assistant is generally preferred to peer-reviews. However, as noted before, this may be because the students perceive peer-reviews as resulting in more work.
 
+By doing feature selection we can verify the features that have the biggest impact on the start motivation. Feature selection is done using the Aikake measure, resulting in the following coefficients as seen in table \ref{lmsreg_aikake}.
+
+\begin{table}[h!t]\centering
+\ra{1.3}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Game Element & Coefficient \\
+\midrule
+Graded 			& 0.1635 \\
+Expert Review 		& 0.1652 \\
+Badges 			& -0.2141 \\
+Default Motivation	& 0.1233\\
+\bottomrule
+\end{tabular}
+\caption{Linear Regression through least median square error using Aikake measure for feature selection}
+\label{lmsreg_aikake}
+\end{table}
+
+From these coefficients we can draw the same conclusion that the group of students prefer standard education in the form of grades given by the teaching assistant or professor. Furthermore, this group of students are negatively influenced by the addition of badges.
+
+The model without feature selection had a mean absolute error of $0.7266$ and the model with feature selection had a mean absolute error of $0.7517$. Most of this error is created by the start motivation being on a discrete Likert scale, resulting in regression on a non-continuous scale.
 
 % === Cross-validation ===
 % === Summary ===
-% 
+%  Without Aikake
 % Correlation coefficient                  0.2993
 % Mean absolute error                      0.7266
 % Root mean squared error                  0.9003
@@ -572,21 +580,11 @@ Another interesting notion is that being reviewed by the teaching assistant is g
 % Root relative squared error             96.3392 %
 % Total Number of Instances              124     
 
-
-
-Linear Regression Model with Aikake measure for feature selection
-\begin{align}
- motivation &=  \nonumber \\
-     -0.1332 &* badges + \nonumber \\
-      0.2163 &* graded + \nonumber \\
-      0.2852 &* expert_review + \nonumber \\
-      0.1733 &\nonumber \\
-\end{align}
 % Time taken to build model: 0 seconds
 % 
 % === Cross-validation ===
 % === Summary ===
-% 
+% With Aikake
 % Correlation coefficient                  0.2687
 % Mean absolute error                      0.7517
 % Root mean squared error                  0.9018
@@ -603,8 +601,25 @@ The other system that was discussed is GAMED, which is a method for transferring
 Both systems were introduced on a conceptual level based on the literature that is currently available for both the domain of gamification and learning analytics. An experiment was done to test whether the game context of a domain captures important aspects of that domain. The experiment was done by using a questionnaire based on the domain of school-assignments. The result of this experiment was that the game context is indeed capable of representing a domain which is not necessarily viewed as being game-like. 
 
 
-\section{Discussion}
+\section{Lessons Learned}
+During this research, we ran into several issues which had an impact on the final product. For future research it is important to take the following lessons into account.
 
+\subsection{Current State of Education Data}
+% Difficult to gain access to large amounts of data. Learning Record Stores are the solution (?) Sander, write this!
+
+\subsection{User Models}
+% Problems with getting unbiased input from users. Especially on the topic of Motivation. How can you better test for motivation
+
+
+\subsection{Motivational Aspects}
+% Motivation may not be prime concern for education. Learning is more important than being motivated or engaged (Although Experiental Flow counters this)
+
+\subsection{Education without Pedagogy}
+% Research on Education without adequate study in Pedagogy and Psychology is problematic. We miss these two in our literature, resulting in a lack of theoretical support for the Game Context
+
+\subsection{Current State of Gamification}
+As of now, the field of gamification has little academic support. Ample research has been done on motivational or incentive systems, game design and mechanism design.
+However, gamification is still in its exploratory phase and most papers published on the subject are applications and qualitative results. This makes it difficult to properly design a system based on gamification. Most work in gamification has been done by commercial institutes which makes it difficult to design new systems from the ground up.
 
 \pagebreak
 \bibliography{literature,literature2}
