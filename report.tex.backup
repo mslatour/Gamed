@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage{geometry}
+\usepackage[hmargin=3cm]{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -17,7 +17,6 @@
 % Dutch style of paragraph formatting, i.e. no indents. 
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 \setlength{\parindent}{0pt}
-
 \usepackage[protrusion=true,expansion=true]{microtype}
 
 % Command for Horizontal lines
@@ -44,7 +43,7 @@
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 
 
-% Psuedo code
+% Pseudo code
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
@@ -54,7 +53,6 @@
 
 \setlength{\headheight}{18pt}
 
-\setcounter{tocdepth}{1}
 
 \begin{document}
 
@@ -80,6 +78,8 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \pagebreak
 
 \pagestyle{empty} %get rid of header/footer for toc page
+
+
 
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
@@ -387,37 +387,56 @@ This is also done for the school assignments domain. Resulting in another set of
 The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement in the education domain. 
 
 As mentioned in section \ref{sec:thegamecontext}, each domain has its own set of identifiable game elements. The game elements that the authors found in school assignments are listed in table \ref{tab:game_elements_assignments}.
-\begin{table}[ht!]
-\centering
-\begin{tabular}{ll}
-\textbf{Category} & \textbf{Instances} \\ \hline \hline
-\emph{Player Configuration} & Single \\
-                            & Pair \\
-                            & Multi \\ \hline
-\emph{Evaluation}           & Final Evalutation \\
-                            & Multiple Sub-Evaluations \\
-                            & Expert Review \\
-                            & Peer Review \\
-                            & Relative Grade \\ \hline
-\emph{Reward}               & Grade \\
-                            & Badges \\
-                            & Bonus Content \\
-                            & Epic Meaning \\ \hline
-\emph{Time Constraints}     & Final Deadline \\
-                            & Multiple Deadlines \\
-                            & Hard Deadlines \\
-                            & Soft Deadlines \\ \hline
-\emph{Space}                & Physical Room \\
-                            & Virtual Room \\
-                            & Isolated \\ \hline
-\emph{Assignment Goal}      & Knowledge Acquisition \\
-                            & Knowledge Transfer \\
-                            & Exploration \\
-                            & Consolidation \\
-                            & Implementation/Application \\
+
+\begin{table}[h!t]\centering
+\ra{1.3}
+\footnotesize
+\begin{tabular}{@{}*{6}{l @{\hspace{0.5em}} }@{}}
+\toprule
+\multicolumn{6}{c}{Category}  \\
+\emph{Player} & \emph{Evaluation} & \emph{Reward} & \emph{Time Constraints} & \emph{Space} & \emph{Assignment Goal} \\
+ \cmidrule(r){1-1} \cmidrule(r){2-2} \cmidrule(r){3-3} \cmidrule(r){4-4} \cmidrule(r){5-5} \cmidrule(r){6-6}
+Single & Final Evaluation & Grade & Final Deadline & Physical Room & Knowledge Acquisition \\
+Pair & Multiple Evaluations & Badges 	& Multiple Deadlines & Virtual Room & Knowledge Transfer \\
+Multi & Expert Review 		& Bonus Content & Hard Deadlines & Isolated & Exploration \\
+      & Peer Review 		& Epic Meaning	& Soft Deadlines & & Consolidation \\
+      & Relative Grade 		&		& & &Implementation \\
+\bottomrule
 \end{tabular}
 \caption{The game elements discovered in school assignments\label{tab:game_elements_assignments}}
 \end{table}
+
+% \begin{table}[ht!]
+% \centering
+% \begin{tabular}{ll}
+% \textbf{Category} & \textbf{Instances} \\ \hline \hline
+% \emph{Player Configuration} & Single \\
+%                             & Pair \\
+%                             & Multi \\ \hline
+% \emph{Evaluation}           & Final Evalutation \\
+%                             & Multiple Sub-Evaluations \\
+%                             & Expert Review \\
+%                             & Peer Review \\
+%                             & Relative Grade \\ \hline
+% \emph{Reward}               & Grade \\
+%                             & Badges \\
+%                             & Bonus Content \\
+%                             & Epic Meaning \\ \hline
+% \emph{Time Constraints}     & Final Deadline \\
+%                             & Multiple Deadlines \\
+%                             & Hard Deadlines \\
+%                             & Soft Deadlines \\ \hline
+% \emph{Space}                & Physical Room \\
+%                             & Virtual Room \\
+%                             & Isolated \\ \hline
+% \emph{Assignment Goal}      & Knowledge Acquisition \\
+%                             & Knowledge Transfer \\
+%                             & Exploration \\
+%                             & Consolidation \\
+%                             & Implementation/Application \\
+% \end{tabular}
+% \caption{The game elements discovered in school assignments\label{tab:game_elements_assignments}}
+% \end{table}
 In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
 
 \section{Experiment results}
@@ -476,7 +495,7 @@ In the experiment, participants were presented with a series of descriptions. Th
 \ra{1.3}
 \begin{tabular}{@{}lll@{}}
 \toprule
-Game Context element & Frequency (present) & Frequence (not present) \\ 
+Game Context element & Frequency (present) & Frequency (not present) \\ 
 \midrule
 Multi Assignment & 53 & 71 \\
 Strict deadline & 67 & 57 \\
@@ -594,7 +613,7 @@ The model without feature selection had a mean absolute error of $0.7266$ and th
 
 
 \section{Conclusion}
-In this report the game context was introduced. The game context is a domain that abhors to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
+In this report the game context was introduced. The game context is a domain that adheres to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
 
 The other system that was discussed is GAMED, which is a method for transferring knowledge about users from one domain to another. This is done by creating user models in a domain for each individual user. This is followed by finding higher level variables that represent certain aspects that are important to the value which the user models are mapped to. After this, a mapping is made between the higher level variables of multiple domains so that knowledge can be transferred between domains and initial estimates can be given on what aspects might influence a user in another domain.
 
@@ -604,27 +623,33 @@ Both systems were introduced on a conceptual level based on the literature that 
 \section{Lessons Learned}
 During this research, we ran into several issues which had an impact on the final product. For future research it is important to take the following lessons into account.
 
-\subsection{Current State of Education Data}
+\subsection{Current State of Educational Data}
 % Difficult to gain access to large amounts of data. Learning Record Stores are the solution (?) Sander, write this!
 
 \subsection{User Models}
 % Problems with getting unbiased input from users. Especially on the topic of Motivation. How can you better test for motivation
 
 
-\subsection{Motivational Aspects}
-% Motivation may not be prime concern for education. Learning is more important than being motivated or engaged (Although Experiental Flow counters this)
-
 \subsection{Education without Pedagogy}
 % Research on Education without adequate study in Pedagogy and Psychology is problematic. We miss these two in our literature, resulting in a lack of theoretical support for the Game Context
+One of the main issues with the game context is the lack of a psychological and pedagogical foundation. We discovered that when developing educational systems it is mandatory that the systems are also founded in principles from developmental psychology and pedagogy. In retrospect, the systems should have been developed starting from the psychology, instead of explaining the system with psychology. However, the game-based learning and learning analytics literature have a strong foundation in psychology. For future projects, it is important to see incentive systems as an extension to psychological principles so that the system is more clearly defined and constructed to work on these principles. The game context had to be changed from its earlier concept to work with these principles and as a result, the game context may be sub-optimal.
+
+\subsection{Motivational Aspects}
+% Motivation may not be prime concern for education. Learning is more important than being motivated or engaged (Although Experiental Flow counters this)
+As an effect of not starting with the psychology, is the idea that, in education, it may not be a prime concern to motivate students. Instead, it is more important to have students learning, without the necessity of them being motivated to do so. However, the principle of experiental flow \cite{Kiili2005} opposes this and states that learning is facilitated by the trance-like state which is achieved when the student is fully engaged and motivated.
+
+Another example is competition among students. It is unclear whether competition actually increases learning or if it just more fun to some students.
 
 \subsection{Current State of Gamification}
 As of now, the field of gamification has little academic support. Ample research has been done on motivational or incentive systems, game design and mechanism design.
-However, gamification is still in its exploratory phase and most papers published on the subject are applications and qualitative results. This makes it difficult to properly design a system based on gamification. Most work in gamification has been done by commercial institutes which makes it difficult to design new systems from the ground up.
+However, gamification is still in its exploratory phase and most papers published on the subject are applications and qualitative results. This makes it difficult to properly design a system based on gamification. Most work in gamification has been done by commercial institutes which makes it difficult to design new systems from the ground up. It is also difficult to reproduce experiments and there are no standard datasets on which new techniques can be benchmarked.
+
+A large problem is the lack of a proper definition of gamification, apart from the definition by Deterding, resulting in ambiguity as to what actually constitutes as gamification. We used the definition as given by Deterding, but we found that it was not perfect. Therefore, we altered the definition to better describe what game elements are, using literature from the field of game design, and to define game and non-game contexts. This resulted in our definition of a game context, which is different from the usual approach of gamification in which non-game contexts are changed into games by adding game elements. Instead, we defined game contexts to be domains adhering to three criteria. If so, all design patterns within the domain can be viewed as game elements and we use the set which influences a certain external value such as motivation, genre, etcetera.
+
 
 \pagebreak
 \bibliography{literature,literature2}
 \bibliographystyle{plain}
-
 
 \pagebreak
 \appendix
