@@ -495,7 +495,8 @@ Group assignment & 61 & 63 \\
 \label{tab:freqelem}
 \end{table}
 
-\clearpage
+The conclusion for this data is that the participants were predominantly male and from the fields of Artificial Intelligence and Computer Science. Further analysis is thus biased towards this group and the conclusions may not apply to all fields. Game elements have a reasonably equal frequency and thus we can conclude that these elements do not introduce bias.
+
 \section{Analysis of Data}
 To better analyse the data, regression is done on the data to find correlation between the game elements and the start motivation. The models that were fitted were linear models that assign a single coefficient to each of the game elements. By analysing these coefficients, it is possible to see what type of impact each game element has on the start motivation. Keep in mind that this does not reveal dependencies between the game elements, but rather views the elements as independent variables. 
 
