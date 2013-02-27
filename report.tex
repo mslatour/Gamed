@@ -119,7 +119,9 @@ Students often come from different backgrounds and
 
 % Overview of Paper
 
-\section{Gamification}
+In sections \ref{sec:gamification} and \ref{sec:learninganalytics} a literature overview is given for the fields of gamification and learning analytics. In section \ref{sec:thegamecontext} the game context is introduced and in sections \ref{sec:gala} and \ref{sec:gamed} two conceptual systems are given using the game context. In section \ref{sec:experiment} an experiment is discussed validating the game context and giving an initial exploration of its possibilities. Finally a conclusion is drawn in section \ref{sec:conclusion} and discussed in section \ref{sec:discussion}.
+
+\section{Gamification}\label{sec:gamification}
 Games are unprecedented in motivating and engaging players. Humans tend to spent large amounts of time playing games of all sorts. This led some people to believe that it could be possible to generate this type of motivation and engagement in other contexts as well by applying the underlying game design patterns to areas other than gaming to steer behaviour.
 
 Gamification is a concept that is both controversial \cite{McGonigal2011} as well as hard to define \cite{Deterding2011}. The controversy of the term gamification is easily seen in the many different terms that have been coined, including pervasive games, alternate reality games, productivity games, applied gaming, etcetera. All of these terms refer to the practice of applying game design patterns to non-gaming contexts to achieve higher motivation and engagement from users. The term gamification originates from 2004 when it was first used by Nick Pelling as a marketing term \cite{Huotari2012}. In recent years, gamification has moved beyond being just a marketing technique and becoming an academic field. The mayor problem with gamification is that the definition is very subjective and it is difficult to formalize the definition \cite{Huotari2012, Deterding2011}. 
@@ -197,7 +199,7 @@ The big difference is with Sid Meyer's original quote is the naming of the simul
 
 
 
-\section{Learning Analytics}
+\section{Learning Analytics}\label{sec:learninganalytics}
 %introduction
 There is an ongoing whish to increase study success of students in higher education. Stakeholders demand educational institutions to make data-driven decisions to improve perfomance \cite{Ferguson2012a}. Recently more and more focus is on identifying at-risk students to prevent drop-outs.
 
@@ -318,6 +320,7 @@ The set of actors does not refer to users within the context, but interacting ag
 
 Finally, the game elements or mechanics are defined as the often occurring elements within the domain. Following the approach found in the game classification literature, it is necessary to define the set of game elements based on the elements that not only frequently occur in the domain, but also based upon the goal of the task. Within a single domain, it is possible to arrive to different game elements. For instance, when defining game elements in modern video games, the set may be different if the task of the context is to classify the genre as opposed to finding the motivational factors within the game.
 
+\subsection{Examples of the Game Context}
 To test the correctness and the versatility of the game context it is necessary to look at some examples of situations.
 
 % Example: a modern game
@@ -335,6 +338,7 @@ Another possibility is a context which has no defined goals or rewards, but does
 % Example: Education
 The final example is the main subject of this report, namely education. In education there is a set of actors that are interacting with the game-state. There is also a predefined set of mechanics within each context. Furthermore, there are also clearly distinct goals, although these goals may differ per actor as students may have defined a different set of goals for themselves as opposed to what the institution has set as a goal.
 
+\subsection{Definition of Game Context}
 % Definition of the Game Context
 So the final definition of the game context is a set of game elements that are chosen based on domain and the task that has to be achieved through the game context. To determine whether or not a domain is a game context, the context should satisfy three conditions.
 
@@ -346,7 +350,7 @@ So the final definition of the game context is a set of game elements that are c
 
 If these three conditions are met, the context can be viewed as being a game context and then the instantiation of the game context can be done by finding all reoccurring elements within the domain that influence that for which the game context should be used. The final representation of the game context is then the set of game elements within the domain for a specific task.
 
-\section{GaLA, Gamification and Learning Analytics}
+\section{GaLA, Gamification and Learning Analytics}\label{sec:gala}
 When designing a course, a teacher tries to make a compromise between what he wants students to learn during the course and what students are able to pick up based on their prior knowledge. Often a teacher focusses on the expected average student to determine the overall level and as such try to optimize the course content for the entire group (global optimization). Additionally, a teacher may decide to provide some extra learning materials for those students that feel they need more assistance, and as such enable students to optimize the course content even further for them individually (local optimization). One could add a recommender system to do this local optimization automatically based on a model of their individual knowledge and skills.
 
 Similar to the optimizations on course content, a teacher also decides which set of Game Context elements he will use in the course. This again is a compromise between what he wants students to be motivated by and what students have shown to be motivated by in the past. If teachers see this as an optimization at all, they will almost always only focus on the expected average student engagement (global optimization). Ignoring the possibility to further optimize engagement per student (local optimization).
@@ -369,7 +373,7 @@ Let’s now look at the workings of the GaLA component more closely. In generic 
 \item[GaLA System] Given the representations of the other components in this example, the GaLA system could calculate local recommendations by linearly combining the weight vectors from the User model with the Game Context of each learning object. For the global recommendations the GaLA System could calculate the average weight vector based on all User models and linearly combined that with each Game Context.
 \end{description}
 
-\section{GAMED, Transfer Learning through Game Design}
+\section{GAMED, Transfer Learning through Game Design}\label{sec:gamed}
 The user models in GaLA are difficult to create. It is not straight-forward to model the connection between the game elements and the value to be optimized in any given domain. However, the overlap of game elements from different domains is significant as well as that multiple game elements seem to be connected to some higher level element. For instance, a student who is competitive will have higher motivation for competition-related game elements in multiple domains such as gaming and assignments with a competitive nature. If we are able to find a set of higher level elements and how these higher level elements affect, for instance, motivation the task of creating these user models will be easier for new domains. This is a type of transfer learning that can be achieved by finding a set of higher level elements and the connection between that set and the set of game elements in a domain. 
 
 \emph{GAMED} is a system that tries to achieve this type of transfer learning by first finding models that map the game elements in a domain to the value that is being optimized. Once these models have been created for each player in the domain, factor analysis is done on the models to find underlying structure. These values then have to be mapped to the values found on another domain which creates the possibility of estimating a model for another domain.
@@ -385,7 +389,7 @@ An example of how to do this is to track which games a user plays and for how lo
 
 This is also done for the school assignments domain. Resulting in another set of higher level variables that may represent certain motivational aspects of the users. The difficult part is to find a mapping between these two sets. One method to achieve this would be to create these user models of both domains for a group of users. Then the goal is to find if there is overlap in the higher level variables, which can be done by finding couples of variables that have the same values for all users. Another possibility is to annotate the higher variables using the related game elements and then manually find the mapping between the two sets.
 
-\section{Experiment setup}
+\section{Experiment setup}\label{sec:experiment}
 The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement in the education domain. 
 
 As mentioned in section \ref{sec:thegamecontext}, each domain has its own set of identifiable game elements. The game elements that the authors found in school assignments are listed in table \ref{tab:game_elements_assignments}.
@@ -414,11 +418,12 @@ The descriptions were automatically generated by an algorithm that will now be s
 
 The experiment showed participants 20 descriptions, each represented as a bitstring of 9 bits that was generated by flipping 7 bits of the previous description. Participants were furthermore asked in the beginning to enter their current educational program, the year that they are in, their gender, and an indication of their motivation in general on the same five-point scale.
 
-\section{Data Spread}
+\subsection{Data Spread}
 In table \ref{tab:level} we can see the the academic level and field of the students. The field that is most represented in the data is Artificial Intelligence followed by Computer Science.
 \begin{table}[h!t]
   \centering
   \ra{1.3}
+\footnotesize
   \begin{tabular}{@{}ll@{}}
   \toprule
   Program & Frequency \\ 
@@ -440,6 +445,7 @@ In table \ref{tab:gender}, we can see the spread in gender of the participants. 
 \begin{table}[h!t]
   \centering
   \ra{1.3}
+\footnotesize
   \begin{tabular}{@{}ll@{}}
   \toprule
   Gender & Frequency \\
@@ -457,6 +463,7 @@ In table \ref{tab:motivation} we can see the spread in start motivation of the p
 \begin{table}[h!t]
   \centering
   \ra{1.3}
+\footnotesize
   \begin{tabular}{@{}ll@{}}
   \toprule
   General start motivation & Frequency \\ 
@@ -476,6 +483,7 @@ In table \ref{tab:freqelem} the frequency of each game element can be found. Wha
 
 \begin{table}[h!t]\centering
 \ra{1.3}
+\footnotesize
 \begin{tabular}{@{}lll@{}}
 \toprule
 Game Context element & Frequency (present) & Frequency (not present) \\ 
@@ -497,13 +505,14 @@ Group assignment & 61 & 63 \\
 
 The conclusion for this data is that the participants were predominantly male and from the fields of Artificial Intelligence and Computer Science. Further analysis is thus biased towards this group and the conclusions may not apply to all fields. General starting motivation is neutral for all students as the distinction between "reasonably motivated" and "neutral" may differ between students.  Game elements have a reasonably equal frequency and thus we can conclude that these elements do not introduce bias.
 
-\section{Analysis of Data}
+\subsection{Analysis of Data}
 To better analyse the data, regression is done on the data to find correlation between the game elements and the start motivation. The models that were fitted were linear models that assign a single coefficient to each of the game elements. By analysing these coefficients, it is possible to see what type of impact each game element has on the start motivation. Keep in mind that this does not reveal dependencies between the game elements, but rather views the elements as independent variables. 
 
 The first model is fitted through least median square error regression, resulting in the following coefficients as seen in table \ref{lmsreg}.
 
 \begin{table}[h!t]\centering
 \ra{1.3}
+\footnotesize
 \begin{tabular}{@{}llll@{}}
 \toprule
 \multicolumn{2}{c}{Negative Influence} & \multicolumn{2}{c}{Positive Influence} \\
@@ -556,6 +565,7 @@ By doing feature selection we can verify the features that have the biggest impa
 
 \begin{table}[h!t]\centering
 \ra{1.3}
+\footnotesize
 \begin{tabular}{@{}ll@{}}
 \toprule
 Game Element & Coefficient \\
@@ -597,7 +607,7 @@ The model without feature selection had a mean absolute error of $0.7266$ and th
 % Total Number of Instances              124     
 
 
-\section{Conclusion}
+\section{Conclusion}\label{sec:conclusion}
 In this report the game context was introduced. The game context is a domain that adheres to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
 
 The other system that was discussed is GAMED, which is a method for transferring knowledge about users from one domain to another. This is done by creating user models in a domain for each individual user. This is followed by finding higher level variables that represent certain aspects that are important to the value which the user models are mapped to. After this, a mapping is made between the higher level variables of multiple domains so that knowledge can be transferred between domains and initial estimates can be given on what aspects might influence a user in another domain.
@@ -605,7 +615,7 @@ The other system that was discussed is GAMED, which is a method for transferring
 Both systems were introduced on a conceptual level based on the literature that is currently available for both the domain of gamification and learning analytics. An experiment was done to test whether the game context of a domain captures important aspects of that domain. The experiment was done by using a questionnaire based on the domain of school-assignments. The result of this experiment was that the game context is indeed capable of representing a domain which is not necessarily viewed as being game-like. 
 
 
-\section{Lessons Learned}
+\section{Lessons Learned}\label{sec:discussion}
 During this research, we ran into several issues which had an impact on the final product. For future research it is important to take the following lessons into account.
 
 \subsection{Current State of Educational Data}
@@ -682,6 +692,7 @@ Another possibility with this non-linear system, is that is can be guided by nar
 
 \begin{table}[h!t]
   \centering
+\ra{1.3}
   \begin{tabular}{ll p{0.6\linewidth}}
 \toprule
     \textbf{Game context element} & \textbf{Present} & \textbf{Verbalization} \\ 
