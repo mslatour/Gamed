@@ -43,7 +43,7 @@
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 
 
-% Psuedo code
+% Pseudo code
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
@@ -53,7 +53,6 @@
 
 \setlength{\headheight}{18pt}
 
-\setcounter{tocdepth}{1}
 
 \begin{document}
 
@@ -79,6 +78,8 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \pagebreak
 
 \pagestyle{empty} %get rid of header/footer for toc page
+
+
 
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
@@ -386,37 +387,56 @@ This is also done for the school assignments domain. Resulting in another set of
 The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement in the education domain. 
 
 As mentioned in section \ref{sec:thegamecontext}, each domain has its own set of identifiable game elements. The game elements that the authors found in school assignments are listed in table \ref{tab:game_elements_assignments}.
-\begin{table}[ht!]
-\centering
-\begin{tabular}{ll}
-\textbf{Category} & \textbf{Instances} \\ \hline \hline
-\emph{Player Configuration} & Single \\
-                            & Pair \\
-                            & Multi \\ \hline
-\emph{Evaluation}           & Final Evalutation \\
-                            & Multiple Sub-Evaluations \\
-                            & Expert Review \\
-                            & Peer Review \\
-                            & Relative Grade \\ \hline
-\emph{Reward}               & Grade \\
-                            & Badges \\
-                            & Bonus Content \\
-                            & Epic Meaning \\ \hline
-\emph{Time Constraints}     & Final Deadline \\
-                            & Multiple Deadlines \\
-                            & Hard Deadlines \\
-                            & Soft Deadlines \\ \hline
-\emph{Space}                & Physical Room \\
-                            & Virtual Room \\
-                            & Isolated \\ \hline
-\emph{Assignment Goal}      & Knowledge Acquisition \\
-                            & Knowledge Transfer \\
-                            & Exploration \\
-                            & Consolidation \\
-                            & Implementation/Application \\
+
+\begin{table}[h!t]\centering
+\ra{1.3}
+\footnotesize
+\begin{tabular}{@{}*{6}{ l }@{}}
+\toprule
+\multicolumn{6}{c}{Category}  \\
+\emph{Player} & \emph{Evaluation} & \emph{Reward} & \emph{Time Constraints} & \emph{Space} & \emph{Assignment Goal} \\
+ \cmidrule(r){1-1} \cmidrule(r){2-2} \cmidrule(r){3-3} \cmidrule(r){4-4} \cmidrule(r){5-5} \cmidrule(r){6-6}
+Single & Final Evaluation & Grade & Final Deadline & Physical Room & Knowledge Acquisition \\
+Pair & Multiple Evaluations & Badges 	& Multiple Deadlines & Virtual Room & Knowledge Transfer \\
+Multi & Expert Review 		& Bonus Content & Hard Deadlines & Isolated & Exploration \\
+      & Peer Review 		& Epic Meaning	& Soft Deadlines & & Consolidation \\
+      & Relative Grade 		&		& & &Implementation \\
+\bottomrule
 \end{tabular}
 \caption{The game elements discovered in school assignments\label{tab:game_elements_assignments}}
 \end{table}
+
+% \begin{table}[ht!]
+% \centering
+% \begin{tabular}{ll}
+% \textbf{Category} & \textbf{Instances} \\ \hline \hline
+% \emph{Player Configuration} & Single \\
+%                             & Pair \\
+%                             & Multi \\ \hline
+% \emph{Evaluation}           & Final Evalutation \\
+%                             & Multiple Sub-Evaluations \\
+%                             & Expert Review \\
+%                             & Peer Review \\
+%                             & Relative Grade \\ \hline
+% \emph{Reward}               & Grade \\
+%                             & Badges \\
+%                             & Bonus Content \\
+%                             & Epic Meaning \\ \hline
+% \emph{Time Constraints}     & Final Deadline \\
+%                             & Multiple Deadlines \\
+%                             & Hard Deadlines \\
+%                             & Soft Deadlines \\ \hline
+% \emph{Space}                & Physical Room \\
+%                             & Virtual Room \\
+%                             & Isolated \\ \hline
+% \emph{Assignment Goal}      & Knowledge Acquisition \\
+%                             & Knowledge Transfer \\
+%                             & Exploration \\
+%                             & Consolidation \\
+%                             & Implementation/Application \\
+% \end{tabular}
+% \caption{The game elements discovered in school assignments\label{tab:game_elements_assignments}}
+% \end{table}
 In the experiment, participants were presented with a series of descriptions. These descriptions contained information about a school assignment. These pieces of information were verbalizations of the Game Context elements present in that assignment. 
 
 \section{Experiment results}
@@ -475,7 +495,7 @@ In the experiment, participants were presented with a series of descriptions. Th
 \ra{1.3}
 \begin{tabular}{@{}lll@{}}
 \toprule
-Game Context element & Frequency (present) & Frequence (not present) \\ 
+Game Context element & Frequency (present) & Frequency (not present) \\ 
 \midrule
 Multi Assignment & 53 & 71 \\
 Strict deadline & 67 & 57 \\

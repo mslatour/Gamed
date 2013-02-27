@@ -17,7 +17,6 @@
 % Dutch style of paragraph formatting, i.e. no indents. 
 \setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
 \setlength{\parindent}{0pt}
-
 \usepackage[protrusion=true,expansion=true]{microtype}
 
 % Command for Horizontal lines
@@ -44,7 +43,7 @@
 \newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 
 
-% Psuedo code
+% Pseudo code
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
@@ -54,7 +53,6 @@
 
 \setlength{\headheight}{18pt}
 
-\setcounter{tocdepth}{1}
 
 \begin{document}
 
@@ -80,6 +78,8 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \pagebreak
 
 \pagestyle{empty} %get rid of header/footer for toc page
+
+
 
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
@@ -387,6 +387,22 @@ This is also done for the school assignments domain. Resulting in another set of
 The contributions described in this report so far had a theoretical nature. The described Game Context and application areas are based on a review of the literature and brainstorm sessions. This section describes an experiment that was conducted to make a first step in the analysis of the usefulness of the Game Context. In particular the experiment attempts to provide insight in the capabilities of the Game Context to represent engagement in the education domain. 
 
 As mentioned in section \ref{sec:thegamecontext}, each domain has its own set of identifiable game elements. The game elements that the authors found in school assignments are listed in table \ref{tab:game_elements_assignments}.
+
+\begin{table}[h!t]\centering
+\ra{1.3}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+ & \multicolumn{2}{c}{Category}  \\
+ & \emph{Player Configuration} & \emph{Evaluation} & \emph{Reward} & \emph{Time Constraints} & \emph{Space} & \emph{Assignment Goal} \\
+\cmidrule(r){2} \cmidrule(r){3} \cmidrule(r){4} \cmidrule(r){5} \cmidrule(r){6} \cmidrule(r){7}
+
+
+\bottomrule
+\end{tabular}
+\caption{Linear Regression through least median square error}
+\label{lmsreg}
+\end{table}
+
 \begin{table}[ht!]
 \centering
 \begin{tabular}{ll}
@@ -476,7 +492,7 @@ In the experiment, participants were presented with a series of descriptions. Th
 \ra{1.3}
 \begin{tabular}{@{}lll@{}}
 \toprule
-Game Context element & Frequency (present) & Frequence (not present) \\ 
+Game Context element & Frequency (present) & Frequency (not present) \\ 
 \midrule
 Multi Assignment & 53 & 71 \\
 Strict deadline & 67 & 57 \\
@@ -594,7 +610,7 @@ The model without feature selection had a mean absolute error of $0.7266$ and th
 
 
 \section{Conclusion}
-In this report the game context was introduced. The game context is a domain that abhors to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
+In this report the game context was introduced. The game context is a domain that adheres to three criteria. If a domain has a set of players, a set of mechanics and a set of goals, than the domain can be classified as being a game context. The game context representation is a vector of features which represent the game elements within the domain with respect to the task the game context is created for. Two possible applications were discussed. One of these is GaLA, which is a system that interacts with an intelligent curriculum system by using the game context for both the user models and for representing the course itself. The goal of GaLA is to both give recommendations on a global level to improve the course based on the set of students that will take the course and recommendations on a local level through the intelligent curriculum by giving recommendations to each individual student to facilitate learning.
 
 The other system that was discussed is GAMED, which is a method for transferring knowledge about users from one domain to another. This is done by creating user models in a domain for each individual user. This is followed by finding higher level variables that represent certain aspects that are important to the value which the user models are mapped to. After this, a mapping is made between the higher level variables of multiple domains so that knowledge can be transferred between domains and initial estimates can be given on what aspects might influence a user in another domain.
 
@@ -619,12 +635,14 @@ During this research, we ran into several issues which had an impact on the fina
 
 \subsection{Current State of Gamification}
 As of now, the field of gamification has little academic support. Ample research has been done on motivational or incentive systems, game design and mechanism design.
-However, gamification is still in its exploratory phase and most papers published on the subject are applications and qualitative results. This makes it difficult to properly design a system based on gamification. Most work in gamification has been done by commercial institutes which makes it difficult to design new systems from the ground up.
+However, gamification is still in its exploratory phase and most papers published on the subject are applications and qualitative results. This makes it difficult to properly design a system based on gamification. Most work in gamification has been done by commercial institutes which makes it difficult to design new systems from the ground up. It is also difficult to reproduce experiments and there are no standard datasets on which new techniques can be benchmarked.
+
+A large problem is the lack of a proper definition of gamification, apart from the definition by Deterding, resulting in ambiguity as to what actually constitutes as gamification. We used the definition as given by Deterding, but we found that it was not perfect. Therefore, we altered the definition to better describe what game elements are, using literature from the field of game design, and to define game and non-game contexts. This resulted in our definition of a game context, which is different from the usual approach of gamification in which non-game contexts are changed into games by adding game elements. Instead, we defined game contexts to be domains adhering to three criteria. If so, all design patterns within the domain can be viewed as game elements and we use the set which influences a certain external value such as motivation, genre, etcetera.
+
 
 \pagebreak
 \bibliography{literature,literature2}
 \bibliographystyle{plain}
-
 
 \pagebreak
 \appendix
