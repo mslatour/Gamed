@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[margin=3cm]{geometry}
+\usepackage[hmargin=3cm, vmargin=4cm]{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -56,6 +56,7 @@
 \setlength{\headheight}{18pt}
 
 
+
 \begin{document}
 
 \begin{titlepage}
@@ -78,30 +79,30 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \thispagestyle{empty}
 \mbox{}
 \pagebreak
-
 \pagestyle{empty} %get rid of header/footer for toc page
-
-
-
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 
-\begin{abstract}
-	
-\end{abstract}
-
-
 \cleardoublepage %start new page
-\pagestyle{plain} % put headers/footers back on
+\pagestyle{fancy} % put headers/footers back on
 \setcounter{page}{1} %reset the page counter
 
 
 \section{Introduction}
 
-Throughout history, education has retained approximately the same underlying model of how knowledge and information is transferred. A teacher tells the students about a certain subject and the students listen and perhaps discuss the material. With each paradigm shift in information technology, this transferring of knowledge has been improved. Paradigm shifts such as: literacy, the printing press, long-distance communication, radio, television and computers. The latest shift in this paradigm is the advent of the internet. Nowadays, for most students high-speed internet is available. This has resulted in yet another change to the mindset of students and, perhaps more importantly, the skills they need to acquire. However, this paradigm shift has not been fully visible in education. Perhaps, it is because high-speed internet and the new corresponding skill-set are not easily applicable in current education.
+Throughout history, education has retained approximately the same underlying model of how knowledge and information is transferred. A teacher tells the students about a certain subject and the students listen and perhaps discuss the material. With each paradigm shift in information technology, this transferring of knowledge has been improved. Paradigm shifts such as: literacy, the printing press, long-distance communication, radio, television and computers. The latest shift in this paradigm is the advent of the internet. Nowadays, for most students high-speed internet is available. This has resulted in yet another change to the mindset of students and, perhaps more importantly, the skills they need to acquire, usually referred to as \emph{21st century skills}. However, this paradigm shift has not been fully visible in education. Perhaps, it is because high-speed internet and the new corresponding skill-set are not easily applicable in current education. Another possibility is the change in how attention and motivation work. The unprecedented amount of 
+information that is readily available to students also requires that students remain focussed. In recent years, there has been a shift towards keeping students motivated and engaged with the course material. This motivation is said to be necessary to keep students focussed as well as to increase learning capacity in these students. According to the \emph{Horizon Report 2012} \cite{Horizon2012} two new technologies are on the rise that address these issues. On the one hand, there is \emph{learning analytics} which has various purposes, including: keeping track of students' progress, bla bla bla, bla bla bla and bla bla bla. On the other hand, there is \emph{gamification}, which is mainly concerned with using game-like structures to drive towards certain behaviour while being both motivating and engaging. 
+
+\begin{figure}[h!tb]
+\centering
+\includegraphics[width=0.7\linewidth]{GalaLoop}
+\caption{The basic feedback loop between Gamification and Learning Analytics\label{fig:galaloop}}
+\end{figure}
+
+In this report, an exploratory research is discussed on combining and applying \emph{gamification} and \emph{learning analytics} to education. The idea behind combining learning analytics and gamification is that both fields can benefit from each other by not only strengthening each others strong points, but also by addressing issues that each technique faces. For instance, gamification drives usage and enforces users to use a system making it easy to log data and thus generating large usage-datasets. This data can then be analysed by a learning analytics system and this system can give recommendations to either the users, both students and learning institutes, as well as providing feedback to the gamification engine thus fine-tuning the game elements to individual users. This loop, as seen in figure \ref{fig:galaloop} is the basic principle from which the methods discussed in this report are based.
 
 
-In this report, an exploratory research is discussed on combining and applying \emph{gamification} and \emph{learning analytics} to education.
+
 
 % Introduce the current status of education and the problems that lie with motivation
 % There is an ongoing desire to improve study success in higher education.
@@ -242,11 +243,11 @@ According to \cite{Brusilovsky2007} access to online education is no longer a pr
 
 \paragraph{Personalized Learning}
 Introduceer de notie van personalized learning, met een citaat uit een paper.
+
 \begin{itemize}
   \item \cite{Weber2001}: Work has been done on Adaptive hypermedia systems that can integrate external resources (open course).
   \item Brusilovsky2001: Static hypermedia systems suffer from the inability to adapt to specific users' knowledge, needs and preferences. Adaptive hypermedia systems combine the fields of hypertext and user modelling to overcome this.
 %  \item Arruabarrena2002: On evaluating adaptive educational systems
-  \item Brusilovsky2007: Access to online educational is not a problem anymore, however personalised access is.
 %  \item Romero2005:
   \item \cite{Brusilovsky2003}
   \item \cite{Henze2001}
@@ -262,65 +263,8 @@ Introduceer de notie van personalized learning, met een citaat uit een paper.
   \item \cite{Haiming2012}
   \item \cite{Fournier2011}
   \item \cite{Ferguson2012b}
+  \item Learning as a social activity: Social Learning Analytics, Networked Learning, Collaborative learning, E-mentoring
 \end{itemize}
-
-Social Learning Analytics:
-
-
-%Large amounts of students that are studying with a decreasing amount of contact hours can cause problems for a teacher that wants to keep track of progress in the group and wants to adjust his teaching methods to specific learner's needs. At the same time, we observe that the learning increasingly takes place in digital environments that are able to track students and have the potential of interacting on a personalized level due to the fact that each student runs his own instance of such systems. The enourmous amounts of data that are gathered in this way can be analysed automatically and used to base system actions on.
-
-%Teachers are typically not able to analyse the large amounts of data themselves, however they can act upon summarized information that can be supplied by such a system. Teachers are able to give specific aid to a few struggling students, if they would know which students are struggling.
-
-%Teachers also typically have difficulties with identifying problematic components in their suggested curriculum. These problematic components are sometimes visible to students, but the feedback resulting from that to the teacher is not always sufficient. Sometimes these problematic components are not even that clear to students, since they could also explain their struggling with other factors.
-
-%Students are also affected by the reduction in personal education due to student increase. They get less feedback on their own progress and also have the risk of being stuck too long because they are not directed to other resources to get them over the edge.
-
-%Using the large amounts of data to give feedback on the learning process to both teachers and students is called Learning Analytics.
-
-%\subsection{Introduction, Definition, Subcategories}
-%According to the 1st International Conference on Learning Analytics and Knowledge:
-%\begin{quote}
-%"Learning analytics is the measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the environments in which it occurs." \cite{lak2011}
-%%\end{quote}
-
-\newpage
-Learning Analytics differs from Academic Analytics in the intended stakeholders and their questions. 
-
-Where academic analytics tries to answer questions about performance on an institutional, regional, 
-
-disambiguate:
-Learning Analytics
-Academic Analytics: business intelligence on higher education. On institutional, regional and (inter)national level analysis of perfomance and learner profiles. Comparison between institutions. (For administrators, funders, marketing and governments/authorities)
-Action Analytics: 
-Visual Analytics
-
-
-
-
-
-\cite{Ferguson2012a} \cite{Greller2012}
-\begin{itemize}
-\item Position in field: Educational Data Mining, Academic Analytics.
-\item Introduction of the EDM tradition
-\item Introduction of the Academic Analytics tradition
-\item Differentiating Learning Analytics from EDM and Academic Analytics
-\end{itemize}
-\subsection{Personalised learning}
-\begin{itemize}
-\item Personalised learning: Student modelling, Recommendation systems, Adaptive systems
-\item The connection between Learning Analytics and modelling students’ knowledge
-\item The connection between Learning Analytics and recommender systems
-\item The connection between Learning Analytics and adaptive systems
-\end{itemize}
-\subsection{Learning as social activity}
-\begin{itemize}
-\item Learning as a social activity: Social Learning Analytics, Networked Learning, Collaborative learning, E-mentoring
-\end{itemize}
-\subsection{Results}
-\begin{itemize}
-\item What improvements have been shown?
-\end{itemize}
-
 
 \section{The Game Context}
 \label{sec:thegamecontext}
