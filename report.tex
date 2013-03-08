@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[hmargin=3cm]{geometry}
+\usepackage[hmargin=3cm, vmargin=4cm]{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -56,6 +56,7 @@
 \setlength{\headheight}{18pt}
 
 
+
 \begin{document}
 
 \begin{titlepage}
@@ -63,7 +64,7 @@
 \includegraphics[width=1\textwidth]{img/uva}\\[1cm]
 \HRule \\[0.4cm]
 % Title
-Exploring the Possibilities of Applying Gamification and Learning Analytics to Education \\A Literature Research \\[0.4cm]
+{\Large \textbf{Exploring the Possibilities of Applying Gamification and Learning Analytics to Education}} \\Literature Research \\[0.4cm]
 \HRule \\[1cm]
 \begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
 Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
@@ -78,29 +79,30 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 \thispagestyle{empty}
 \mbox{}
 \pagebreak
-
 \pagestyle{empty} %get rid of header/footer for toc page
-
-
-
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 
 \cleardoublepage %start new page
-\pagestyle{plain} % put headers/footers back on
+\pagestyle{fancy} % put headers/footers back on
 \setcounter{page}{1} %reset the page counter
 
 
 \section{Introduction}
+
+Throughout history, education has retained approximately the same underlying model of how knowledge and information is transferred. A teacher tells the students about a certain subject and the students listen and perhaps discuss the material. With each paradigm shift in information technology, this transferring of knowledge has been improved. Paradigm shifts such as: literacy, the printing press, long-distance communication, radio, television and computers. The latest shift in this paradigm is the advent of the internet. Nowadays, for most students high-speed internet is available. This has resulted in yet another change to the mindset of students and, perhaps more importantly, the skills they need to acquire. However, this paradigm shift has not been fully visible in education. Perhaps, it is because high-speed internet and the new corresponding skill-set are not easily applicable in current education. Another possibility is the change in how attention and motivation work. The unprecedented amount of information that is readily available to students also requires that students remain focussed. In recent years, there has been a shift towards keeping students motivated and engaged with the course material. This motivation is said to be necessary to keep students focussed as well as to increase learning capacity in these students. According to the \emph{Horizon Report 2012} \cite{Horizon2012} two new technologies are on the rise that address these issues. On the one hand, there is \emph{learning analytics} which has various purposes, including: keeping track of students' progress, bla bla bla, bla bla bla and bla bla bla. On the other hand, there is \emph{gamification}, which is mainly concerned with using game-like structures to drive towards certain behaviour while being both motivating and engaging. 
+
+In this report, an exploratory research is discussed on combining and applying \emph{gamification} and \emph{learning analytics} to education.
+
 % Introduce the current status of education and the problems that lie with motivation
-There is an ongoing desire to improve study success in higher education.
-Work has been done to identify students that have a high risk of dropping out. (refs)
+% There is an ongoing desire to improve study success in higher education.
+% Work has been done to identify students that have a high risk of dropping out. (refs)
+% 
+% Two factors in study success seem to be 1) the match between the level of the student and the level of the courses' materials and 2) the student's engagement and motivation.
+% 
+% Students often come from different backgrounds and 
 
-Two factors in study success seem to be 1) the match between the level of the student and the level of the courses' materials and 2) the student's engagement and motivation.
-
-Students often come from different backgrounds and 
-
-\cite{Horizon2012}
+% \cite{Horizon2012}
 
 % Use psychological evidence to determine key-factors in motivation and how it improves learning
 
@@ -118,6 +120,8 @@ In sections \ref{sec:gamification} and \ref{sec:learninganalytics} a literature 
 
 \section{Gamification}\label{sec:gamification}
 Games are unprecedented in motivating and engaging players. Humans tend to spent large amounts of time playing games of all sorts. This led some people to believe that it could be possible to generate this type of motivation and engagement in other contexts as well by applying the underlying game design patterns to areas other than gaming to steer behaviour.
+
+There are many other terms for gamification, although some may have a slightly different nuance. Gamification is also known under terms such as: Hybrid Reality Games, Alternate Reality Games, Pervasive Gaming, Mechanism Design and Reverse Game Theory. Furthermore, there are fields that use the same type of methods such as Serious Games and Game-based Learning.
 
 Gamification is a concept that is both controversial \cite{McGonigal2011} as well as hard to define \cite{Deterding2011}. The controversy of the term gamification is easily seen in the many different terms that have been coined, including pervasive games, alternate reality games, productivity games, applied gaming, etcetera. All of these terms refer to the practice of applying game design patterns to non-gaming contexts to achieve higher motivation and engagement from users. The term gamification originates from 2004 when it was first used by Nick Pelling as a marketing term \cite{Huotari2012}. In recent years, gamification has moved beyond being just a marketing technique and becoming an academic field. The mayor problem with gamification is that the definition is very subjective and it is difficult to formalize the definition \cite{Huotari2012, Deterding2011}. 
 %
@@ -140,7 +144,23 @@ Deterding challenges this definition by addressing that a rule-based system cove
 
 Non-game contexts is a broad term for anything that is not a game in itself. However, non-game contexts may also apply to games themselves \cite{Deterding2011}. Parts of the game that may not necessarily be part of the design of the game can be considered as non-game contexts. These type of meta-games have been considered as separate from the game design itself. The game-context is thus also difficult to capture in a formal definition as games can be considered to be something subjective by nature. 
 
+Another important aspect of this definition is the divergence between gaming and playing \cite{Groh2012} which is mostly concerned with the purpose of the domain. A key component is that for a game there needs to be a specific goal that the player is trying to achieve or a value that can be optimized. Playing can be transformed into gaming by introducing a goal for the player to strive towards. Furthermore, gamification differs from serious games in that serious games are a whole product while gamification only addresses parts of a domain.
+
 In game theory, games are formally defined as a set of players or agents, a set of moves or strategies and a pay-off function or reward system. In this definition the game elements are already considered as being the set of moves and the reward function. The reward function would then hold all the underlying game mechanics whereas the set of moves can be interpreted as the user interface. For a gamification framework we would like to be able to understand more about the elements that fall under reward functions and the set of moves, as there is common notion that gamification is more then adding rewards and available moves to a non-gaming context.
+
+
+
+\subsection{Game-based Learning}
+As noted before, there are two ways gaming can be applied to non-gaming situations \cite{Groh2012}. One of them is gamification in which a set of game elements is introduced to a non-gaming context. The second is when the entire context is transformed in to a full game. The latter is known as serious gaming and has been extensively studied \cite{Wouters2009} in its application to education.
+
+% Pieter Wouters - Current Practices in serious game research: a review from a learners outcome perspective
+Wouters et al describe serious games as games with a primary purpose other than entertainment. Games are described as being a goal-driven, competitive activity within a framework of agreed rules. Serious games can have several different learning outcomes. These different outcomes are classified as being cognitive learning outcomes, affective learning outcomes and communicative learning outcomes. For instance, \emph{River City} is a serious game intended to achieve better communication and problem solving skills, while \emph{America's Army} is geared towards teaching the history and values of the American Army. 
+
+From this study it is apparent that serious games have a positive effect on cognitive learning outcomes. The effects on motor and attitudinal skills are also positive, although more research is needed. Finally, the effect on motivation and communicative learning outcomes is not substantiated enough to draw either a positive or negative conclusion.
+
+
+\cite{Kelle2011}\cite{Amory2006}\cite{Wouters2011}\cite{Kafai2006}\cite{Gros2007}\cite{Staalduinen2011}\cite{Becker2007}
+
 
 \subsection{Game Elements}
 Byron and Reeves \cite{Byron2009} consider game-elements to be any part of a game and give a list of game elements that help to make a game more engaging. These game elements are: Self-representation with avatars; three-dimensional environments; narrative context; feedback; reputations, ranks, and levels; marketplaces and economies; competition under rules that are explicit and enforced; teams; parallel communication systems that can be easily configured; time pressure. These elements differ from the set of moves and the reward function as found in game theory. Although elements such as feedback and ranks seem to be correlating to intrinsic rewards and thus the reward function, avatars and communication systems appear to be different from this as they are actions that do not directly influence the pay-off.
@@ -182,14 +202,9 @@ With this quote, Sid Meyer touches upon what lies at the heart of a game and wha
 	[Gameplay is] One or more causally linked series of challenges in a simulated environment \cite{Rollings2003}
 \end{quotation}
 
-The big difference is with Sid Meyer's original quote is the naming of the simulated environment and the alteration of the interesting choices to a series of challenges. The game is now defined by one or more linked series of challenges which represent the different types of gameplay that can be present in a game. These causal links are closely related to assemblage theory and the magic circle. The challenges not only refer to the gameplay being an actual challenge, but more to certain events and obstacles that the player has to overcome to reach the goal of the game.
+The big difference is with Sid Meier's original quote is the naming of the simulated environment and the alteration of the interesting choices to a series of challenges. The game is now defined by one or more linked series of challenges which represent the different types of gameplay that can be present in a game. These causal links are closely related to assemblage theory and the magic circle. The challenges not only refer to the gameplay being an actual challenge, but more to certain events and obstacles that the player has to overcome to reach the goal of the game.
 
 
-\subsection{Application of Gamification}
-
-
-
-\subsection{Game-based Learning}
 
 
 
@@ -581,8 +596,10 @@ A large problem is the lack of a proper definition of gamification, apart from t
 
 
 \pagebreak
+\small{
 \bibliography{literature,literature2}
 \bibliographystyle{plain}
+}
 
 \pagebreak
 \appendix
