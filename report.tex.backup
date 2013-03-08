@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[hmargin=3cm]{geometry}
+\usepackage[margin=3cm]{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -63,7 +63,7 @@
 \includegraphics[width=1\textwidth]{img/uva}\\[1cm]
 \HRule \\[0.4cm]
 % Title
-Exploring the Possibilities of Applying Gamification and Learning Analytics to Education \\A Literature Research \\[0.4cm]
+{\Large \textbf{Exploring the Possibilities of Applying Gamification and Learning Analytics to Education}} \\Literature Research \\[0.4cm]
 \HRule \\[1cm]
 \begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
 Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
@@ -97,15 +97,21 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 
 
 \section{Introduction}
+
+Throughout history, education has retained approximately the same underlying model of how knowledge and information is transferred. A teacher tells the students about a certain subject and the students listen and perhaps discuss the material. With each paradigm shift in information technology, this transferring of knowledge has been improved. Paradigm shifts such as: literacy, the printing press, long-distance communication, radio, television and computers. The latest shift in this paradigm is the advent of the internet. Nowadays, for most students high-speed internet is available. This has resulted in yet another change to the mindset of students and, perhaps more importantly, the skills they need to acquire. However, this paradigm shift has not been fully visible in education. Perhaps, it is because high-speed internet and the new corresponding skill-set are not easily applicable in current education.
+
+
+In this report, an exploratory research is discussed on combining and applying \emph{gamification} and \emph{learning analytics} to education.
+
 % Introduce the current status of education and the problems that lie with motivation
-There is an ongoing desire to improve study success in higher education.
-Work has been done to identify students that have a high risk of dropping out. (refs)
+% There is an ongoing desire to improve study success in higher education.
+% Work has been done to identify students that have a high risk of dropping out. (refs)
+% 
+% Two factors in study success seem to be 1) the match between the level of the student and the level of the courses' materials and 2) the student's engagement and motivation.
+% 
+% Students often come from different backgrounds and 
 
-Two factors in study success seem to be 1) the match between the level of the student and the level of the courses' materials and 2) the student's engagement and motivation.
-
-Students often come from different backgrounds and 
-
-\cite{Horizon2012}
+% \cite{Horizon2012}
 
 % Use psychological evidence to determine key-factors in motivation and how it improves learning
 
@@ -157,8 +163,12 @@ In game theory, games are formally defined as a set of players or agents, a set 
 As noted before, there are two ways gaming can be applied to non-gaming situations \cite{Groh2012}. One of them is gamification in which a set of game elements is introduced to a non-gaming context. The second is when the entire context is transformed in to a full game. The latter is known as serious gaming and has been extensively studied \cite{Wouters2009} in its application to education.
 
 % Pieter Wouters - Current Practices in serious game research: a review from a learners outcome perspective
-Wouters et al describe serious games as games with a primary purpose other than entertainment. Games are described as being a goal-driven, competitive activity within a framework of agreed rules.
+Wouters et al describe serious games as games with a primary purpose other than entertainment. Games are described as being a goal-driven, competitive activity within a framework of agreed rules. Serious games can have several different learning outcomes. These different outcomes are classified as being cognitive learning outcomes, affective learning outcomes and communicative learning outcomes. For instance, \emph{River City} is a serious game intended to achieve better communication and problem solving skills, while \emph{America's Army} is geared towards teaching the history and values of the American Army. 
 
+From this study it is apparent that serious games have a positive effect on cognitive learning outcomes. The effects on motor and attitudinal skills are also positive, although more research is needed. Finally, the effect on motivation and communicative learning outcomes is not substantiated enough to draw either a positive or negative conclusion.
+
+
+\cite{Kelle2011}\cite{Amory2006}\cite{Wouters2011}\cite{Kafai2006}\cite{Gros2007}\cite{Staalduinen2011}\cite{Becker2007}
 
 
 \subsection{Game Elements}
@@ -652,8 +662,10 @@ A large problem is the lack of a proper definition of gamification, apart from t
 
 
 \pagebreak
+\small{
 \bibliography{literature,literature2}
 \bibliographystyle{plain}
+}
 
 \pagebreak
 \appendix
