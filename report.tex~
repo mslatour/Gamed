@@ -99,9 +99,7 @@ information that is readily available to students also requires that students re
 \caption{The basic feedback loop between Gamification and Learning Analytics\label{fig:galaloop}}
 \end{figure}
 
-In this report, an exploratory research is discussed on combining and applying \emph{gamification} and \emph{learning analytics} to education. The idea behind combining learning analytics and gamification is that both fields can benefit from each other by not only strengthening each others strong points, but also by addressing issues that each technique faces. For instance, gamification drives usage and enforces users to use a system making it easy to log data and thus generating large usage-datasets. This data can then be analysed by a learning analytics system and this system can give recommendations to either the users, both students and learning institutes, as well as providing feedback to the gamification engine thus fine-tuning the game elements to individual users. This loop, as seen in figure \ref{fig:galaloop} is the basic principle from which the methods discussed in this report are based. 
-
-
+In this report, an exploratory research is discussed on combining and applying \emph{gamification} and \emph{learning analytics} to education. The idea behind combining learning analytics and gamification is that both fields can benefit from each other by not only strengthening each others strong points, but also by addressing issues that each technique faces. For instance, gamification drives usage and enforces users to use a system making it easy to log data and thus generating large usage-datasets. This data can then be analysed by a learning analytics system and this system can give recommendations to either the users, both students and learning institutes, as well as providing feedback to the gamification engine thus fine-tuning the game elements to individual users. This loop, as seen in figure \ref{fig:galaloop} is the basic principle from which the methods discussed in this report are based. First a representation for domains is introduced which allows communication between gamification and learning analytics systems. With this representation, two possible systems are discussed which extend this basic loop.
 
 
 % Introduce the current status of education and the problems that lie with motivation
@@ -128,7 +126,8 @@ In this report, an exploratory research is discussed on combining and applying \
 
 In sections \ref{sec:gamification} and \ref{sec:learninganalytics} a literature overview is given for the fields of gamification and learning analytics. In section \ref{sec:thegamecontext} the game context is introduced and in sections \ref{sec:gala} and \ref{sec:gamed} two conceptual systems are given using the game context. In section \ref{sec:experiment} an experiment is discussed validating the game context and giving an initial exploration of its possibilities. Finally a conclusion is drawn in section \ref{sec:conclusion} and discussed in section \ref{sec:discussion}.
 
-\section{Gamification}\label{sec:gamification}
+\section{Related Work}
+\subsection{Gamification}\label{sec:gamification}
 Games are unprecedented in motivating and engaging players. Humans tend to spent large amounts of time playing games of all sorts. This led some people to believe that it could be possible to generate this type of motivation and engagement in other contexts as well by applying the underlying game design patterns to areas other than gaming to steer behaviour.
 
 There are many other terms for gamification, although some may have a slightly different nuance. Gamification is also known under terms such as: Hybrid Reality Games, Alternate Reality Games, Pervasive Gaming, Mechanism Design and Reverse Game Theory. Furthermore, there are fields that use the same type of methods such as Serious Games and Game-based Learning.
@@ -160,7 +159,7 @@ In game theory, games are formally defined as a set of players or agents, a set 
 
 
 
-\subsection{Game-based Learning}
+\paragraph{Game-based Learning}
 As noted before, there are two ways gaming can be applied to non-gaming situations \cite{Groh2012}. One of them is gamification in which a set of game elements is introduced to a non-gaming context. The second is when the entire context is transformed in to a full game. The latter is known as serious gaming and has been extensively studied \cite{Wouters2009} in its application to education.
 
 % Pieter Wouters - Current Practices in serious game research: a review from a learners outcome perspective
@@ -172,7 +171,7 @@ From this study it is apparent that serious games have a positive effect on cogn
 \cite{Kelle2011}\cite{Amory2006}\cite{Wouters2011}\cite{Kafai2006}\cite{Gros2007}\cite{Staalduinen2011}\cite{Becker2007}
 
 
-\subsection{Game Elements}
+\paragraph{Game Elements}
 Byron and Reeves \cite{Byron2009} consider game-elements to be any part of a game and give a list of game elements that help to make a game more engaging. These game elements are: Self-representation with avatars; three-dimensional environments; narrative context; feedback; reputations, ranks, and levels; marketplaces and economies; competition under rules that are explicit and enforced; teams; parallel communication systems that can be easily configured; time pressure. These elements differ from the set of moves and the reward function as found in game theory. Although elements such as feedback and ranks seem to be correlating to intrinsic rewards and thus the reward function, avatars and communication systems appear to be different from this as they are actions that do not directly influence the pay-off.
 
 % Ontology project
@@ -192,7 +191,7 @@ such a session and the evaluation at the end. The structural components are the 
 % Magic circle of play
 As the literature shows, game elements are usually defined as being design patterns used in game design. The game elements are elements that can be found in game contexts, although the definition of the game context is different depending on the task of the ontology. When classifying games, the game elements that are used are based on different genres, while for game design, the game elements are used as experience-design patterns. There seems to be no definite set of game elements for all purposes as some of the elements change context determined by the task of the ontology. So to define a set of game elements, it is important to first understand what constitutes as a game context. 
 
-\subsection{Game Contexts}
+\paragraph{Game Contexts}
 
 In Huizinga's ``Homo Ludens: A Study of the Play-Element in Culture'' \cite{Huizinga} the play context is described as being a ``Magic'' circle. The magic circle is a concept that is used, in a similar fashion to assemblage theory \cite{Taylor2009}, to denote all elements within a certain contextual domain. The circle refers to a contextual domain that is either materially or ideally marked off and contains all elements that are relevant to the domain. The strength of this concept lies in that it allows for any domain to be viewed as being a circle for play. While Huizinga refers to this as a circle for play, the concept was later applied to digital games by Salen and Zimmerman \cite{Zimmerman2004}. In the context of a game, the magic circle is the domain that is entered when a player starts a game and thus all elements that are relevant during the game are the game elements of that game.
 
@@ -219,7 +218,7 @@ The big difference is with Sid Meier's original quote is the naming of the simul
 
 
 
-\section{Learning Analytics}\label{sec:learninganalytics}
+\subsection{Learning Analytics}\label{sec:learninganalytics}
 %introduction
 There is an ongoing whish to increase study success of students in higher education. Stakeholders demand educational institutions to make data-driven decisions to improve perfomance \cite{Ferguson2012a}. Recently more and more focus is on identifying at-risk students to prevent drop-outs.
 
@@ -265,6 +264,12 @@ Introduceer de notie van personalized learning, met een citaat uit een paper.
   \item \cite{Ferguson2012b}
   \item Learning as a social activity: Social Learning Analytics, Networked Learning, Collaborative learning, E-mentoring
 \end{itemize}
+
+\subsection{Related Work Conclusion}
+The fields of \emph{gamification} and \emph{learning analytics} are both still in early stages. This is especially true for gamification which came from fields that are also not typically associated with academic research. However, both fields show great promise for education. Both fields can be applied to education and as the literature shows with reasonable success. Furthermore, on the surface it seems that not only can both fields be applied simultaneously, but also both fields can benefit from each other. Gamification drives users to use the system and therefore generate data which in turn can be analysed using learning analytics. Another method of analysing the data is game mining, as the data resembles both learning data as well as gaming data. Game mining is used mainly to determine the flow of games and to improve gaming experiences and improve future games. The methods that are used closely resemble the various sub-fields of learning analytics. 
+
+One on of the main challenges with analysing learning data, as opposed to gaming data, is that learning data is not necessarily fully observable. Since games takes place within closed systems where all actions and events can be logged. This is not the case in education, as learning also takes place outside of the learning system. Furthermore, 
+
 
 \section{The Game Context}
 \label{sec:thegamecontext}
