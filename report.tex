@@ -270,56 +270,41 @@ Before the term learning analytics came in to play, the term academic analytics 
 \end{figure}
 Chatti et al \cite{Chatti2012} presented a reference model of learning analytics, as seen in Figure~\ref{fig:reference_model_la}, to classify the literature in the field. The reference model identified seven objectives for learning analytics: monitoring and analysis, prediction and intervention, tutoring and mentoring, assessment and feedback, adaptation, personalization and recommendation, and reflection. Greller et al \cite{Greller2012} primarily identifies two objectives, reflection and prediction. However, the definition of these objectives are broader than those listed by Chatti et al. Reflection includes monitoring and analysis, and prediction includes intervention and "adaptive services" (which probably includes adaption, personalization and recommendation, although this is not explicitely mentioned). The reference model by Chatti et al will be used in this section to classify the literature.
 
-% 1: Monitoring and analysis
-% 2: Prediction and intervention
-% 3: Tutoring and mentoring
-% 4: Assessment and feedback
-% 5: Adaption
-% 6: Personalization and recommendation
-% 7: Reflection
 \begin{tabular}{l|lllllll|lll}
     & 
     \multicolumn{7}{c}{Objectives} &
     \multicolumn{3}{c}{Stakeholders} \\ 
 \hline
     &
-    \begin{sideways}Monitoring and analysis\end{sideways}&
-    \begin{sideways}Prediction and intervention\end{sideways}&
-    \begin{sideways}Tutoring and mentoring\end{sideways}&
-    \begin{sideways}Assessment and feedback\end{sideways}&
-    \begin{sideways}Adaption\end{sideways}&
-    \begin{sideways}Personalization and recommendation\end{sideways}&
-    \begin{sideways}Reflection\end{sideways}&
-    \begin{sideways}Learners\end{sideways}&
-    \begin{sideways}Teachers\end{sideways}&
-    \begin{sideways}Institutions\end{sideways} \\ 
+    \begin{sideways}Monitoring and analysis\end{sideways}& %1
+    \begin{sideways}Prediction and intervention\end{sideways}& %2
+    \begin{sideways}Tutoring and mentoring\end{sideways}& %3
+    \begin{sideways}Assessment and feedback\end{sideways}& %4
+    \begin{sideways}Adaption\end{sideways}& %5
+    \begin{sideways}Personalization and recommendation\end{sideways}& %6
+    \begin{sideways}Reflection\end{sideways}& %7
+    \begin{sideways}Learners\end{sideways}& %8
+    \begin{sideways}Instructors / Mentors \end{sideways}& %9
+    \begin{sideways}Institutions\end{sideways} \\ %A
 \hline
-%                       & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
-\cite{Brusilovsky2001}  &   &   &   &   & X &   &   \\ 
-\cite{Brusilovsky2003}  &   &   &   &   & X &   &   \\ 
-\cite{Brusilovsky2007}  &   &   &   &   & X &   &   \\ 
-\cite{Weber2001}        &   &   &   &   & X &   &   \\
-\cite{Henze2001}        &   &   &   &   & X &   &   \\
-\cite{Farzan2004}       &   &   &   &   & X &   &   \\
-\cite{Tang2005}         &   &   &   &   & X &   &   \\
-\cite{Reategui2008}     &   &   &   &   & X & X &   \\
-\cite{Modritscher2011}  &   &   &   &   &   & X &   \\
-\cite{Tang2005}         &   &   &   &   &   & X &   \\
-\cite{Mazza2004}        & X &   &   &   &   &   &   \\
+%                       & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & A \\
+\cite{Brusilovsky2001}  &   &   &   &   & X & X &   & X &   &   \\ %overview
+\cite{Brusilovsky2003}  &   &   &   &   & X & X &   & X &   &   \\ %overview
+\cite{Brusilovsky2007}  &   &   &   &   & X & X &   & X &   &   \\ %overview
+\cite{Weber2001}        &   &   &   & X & X & X &   & X &   &   \\
+\cite{Henze2001}        &   &   &   &   & X & X &   & X &   &   \\
+\cite{Farzan2004}       &   &   &   &   &   & X &   & X &   &   \\
+\cite{Tang2005}         &   &   &   &   &   & X &   & X &   &   \\
+\cite{Reategui2008}     &   &   &   &   & X & X &   & X &   &   \\
+\cite{Modritscher2011}  &   &   &   &   &   & X &   & X &   &   \\ % overview
+\cite{Mazza2004}        & X &   &   &   &   &   &   &   & X &   \\
+\cite{Shum2012}         & X &   & X &   &   &   & X & X &   &   \\
+\cite{Ullmann2011}      & X &   & X &   &   &   & X & X & X &   \\
+\cite{Haiming2012}      &   &   & X &   &   &   & X & X & X &   \\
+\cite{Fournier2011}     & X &   &   &   &   &   & X & X & X &   \\
+\cite{Ferguson2012b}    & X &   & X &   &   &   &   & X & X &   \\ %overview
+\cite{Blikstein2011}    & X &   &   &   &   &   &   &   & X &   \\ 
 \end{tabular}
-% Feedback (by visualisation)
-% * inspired by runkeeper and the likes, LA tools emerged that provided visual feedback to students about their progress.
-% * related to visual analytics
-% * 
-\paragraph{Social Learning}
-\begin{itemize}
-  \item \cite{Shum2012}
-  \item \cite{Ullmann2011}
-  \item \cite{Haiming2012}
-  \item \cite{Fournier2011}
-  \item \cite{Ferguson2012b}
-  \item Learning as a social activity: Social Learning Analytics, Networked Learning, Collaborative learning, E-mentoring
-\end{itemize}
 
 \subsection{Related Work Conclusion}
 The fields of \emph{gamification} and \emph{learning analytics} are both still in early stages. This is especially true for gamification which came from fields that are also not typically associated with academic research. However, both fields show great promise for education. Both fields can be applied to education and as the literature shows with reasonable success. Furthermore, on the surface it seems that not only can both fields be applied simultaneously, but also both fields can benefit from each other. Gamification drives users to use the system and therefore generate data which in turn can be analysed using learning analytics. Another method of analysing the data is game mining, as the data resembles both learning data as well as gaming data. Game mining is used mainly to determine the flow of games and to improve gaming experiences and improve future games. The methods that are used closely resemble the various sub-fields of learning analytics. 
