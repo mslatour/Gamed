@@ -5,11 +5,11 @@
             pdftitle={Game Context Report},
             pdfsubject={GameContext},
             pdfkeywords={Gamification, Learning Analytics},
-            pdfproducer={Latex with hyperref, or other system},
+            pdfproducer={Latex},
 	    pdfborder={0 0 0 0}, linkcolor=black, urlcolor=blue,
             pdfcreator={pdflatex}]{hyperref}
 
-%\usepackage[hmargin=3cm, vmargin=4cm]{geometry}
+\usepackage[hmargin=3cm, vmargin=4cm]{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -18,7 +18,7 @@
 \usepackage{rotating}
 
 % Lay out packages
-\usepackage{geometry}
+
 \usepackage[utf8]{inputenc}
 %\usepackage{mathpazo}
 
@@ -65,7 +65,7 @@
 
 \setlength{\headheight}{18pt}
 
-
+\setcounter{tocdepth}{2}
 
 \begin{document}
 
@@ -75,11 +75,16 @@
 \HRule \\[0.4cm]
 % Title
 {\Large \textbf{Exploring the Possibilities of Applying Gamification and Learning Analytics to Education}} \\[0.4cm]
-\HRule \\[1cm]
-\begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
-Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
-\textsc{5887380} & \textsc{5743044}
-\end{tabular*}
+\HRule \\[0.5cm]
+
+{\Large
+Robrecht \textsc{Jurriaans} \\
+Sander \textsc{Latour} \\[0.5cm]
+
+Supervised by: \\
+Frank Aldershoff 
+}
+
 
 \vfill \today
 \end{center}
@@ -116,7 +121,8 @@ In recent years, there has been a shift towards keeping students more motivated 
 
 \begin{figure}[h!tb]
 \centering
-\includegraphics[width=0.7\linewidth]{GalaLoop}
+\def\svgwidth{0.7\columnwidth}
+\input{GalaLoop.pdf_tex}
 \caption{The basic feedback loop between Gamification and Learning Analytics\label{fig:galaloop}}
 \end{figure}
 
@@ -263,7 +269,7 @@ Before the term learning analytics came in to play, the term academic analytics 
 students are informed of how they are doing using the traffic light metaphor. Their project lies somewhere between academic analytics and learning analytics. Academic analytics differs from EDM in that it is more hypothesis driven. The term action analytics emerged to stress that academic analytics is nowadays mostly focused on actionable analytics (i.e. having it early enough so that something could still be done).
 
 \subsubsection{Classifying the literature}
-\begin{figure}[ht]
+\begin{figure}[h!t]
   \begin{center}
     \includegraphics[width=\linewidth]{referencemodel_chatti.png}
   \end{center}
@@ -631,13 +637,6 @@ Both systems were introduced on a conceptual level based on the literature that 
 \section{Lessons Learned}\label{sec:discussion}
 During this research, we ran into several issues which had an impact on the final product. For future research it is important to take the following lessons into account.
 
-\subsection{Current State of Educational Data}
-% Difficult to gain access to large amounts of data. Learning Record Stores are the solution (?) Sander, write this!
-
-\subsection{User Models}
-% Problems with getting unbiased input from users. Especially on the topic of Motivation. How can you better test for motivation
-
-
 \subsection{Education without Pedagogy}
 % Research on Education without adequate study in Pedagogy and Psychology is problematic. We miss these two in our literature, resulting in a lack of theoretical support for the Game Context
 One of the main issues with the game context is the lack of a psychological and pedagogical foundation. We discovered that when developing educational systems it is mandatory that the systems are also founded in principles from developmental psychology and pedagogy. In retrospect, the systems should have been developed starting from the psychology, instead of explaining the system with psychology. However, the game-based learning and learning analytics literature have a strong foundation in psychology. For future projects, it is important to see incentive systems as an extension to psychological principles so that the system is more clearly defined and constructed to work on these principles. The game context had to be changed from its earlier concept to work with these principles and as a result, the game context may be sub-optimal.
@@ -654,6 +653,8 @@ However, gamification is still in its exploratory phase and most papers publishe
 
 A large problem is the lack of a proper definition of gamification, apart from the definition by Deterding, resulting in ambiguity as to what actually constitutes as gamification. We used the definition as given by Deterding, but we found that it was not perfect. Therefore, we altered the definition to better describe what game elements are, using literature from the field of game design, and to define game and non-game contexts. This resulted in our definition of a game context, which is different from the usual approach of gamification in which non-game contexts are changed into games by adding game elements. Instead, we defined game contexts to be domains adhering to three criteria. If so, all design patterns within the domain can be viewed as game elements and we use the set which influences a certain external value such as motivation, genre, etcetera.
 
+\subsection{Great Potential}
+All things considered, one main outcome of this project is still a positive one. There lies great potential in working with Learning Analytics and Gamification and those fields will also move forward. The combination of both seems to be able to unlock a new level of personalized education, after some hurdles are overcome. The latest signs at the Learning Analytics and Knowledge conference in april 2013 also indicate that other projects are looking into the combination of both approaches. Furthermore, the work presented here is most of all conceptual (see Appendix \ref{furtherposs} for detailed descriptions), providing for a foundation for follow up projects to implement these ideas and test them. 
 
 \pagebreak
 \small{
@@ -663,7 +664,7 @@ A large problem is the lack of a proper definition of gamification, apart from t
 
 \pagebreak
 \appendix
-\section{Further Possibilities}
+\section{Further Possibilities}\label{furtherposs}
 \subsection{Looking For Group, an automatic interdisciplinary group forming system}
 The first iteration of the game context was just the basic notion that many aspects of education have similar concepts in games. People generally love playing games and experience high motivation and high engagement while doing so, but lack these properties when learning. The idea is that if we rename all education concepts to their respective counterparts in games, we could create a more compelling narrative for the students. This idea is known in the field of gamification as \emph{Epic Meaning} which gives the user the idea that the activity they are doing is much more important. 
 

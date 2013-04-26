@@ -5,7 +5,7 @@
             pdftitle={Game Context Report},
             pdfsubject={GameContext},
             pdfkeywords={Gamification, Learning Analytics},
-            pdfproducer={Latex with hyperref, or other system},
+            pdfproducer={Latex},
 	    pdfborder={0 0 0 0}, linkcolor=black, urlcolor=blue,
             pdfcreator={pdflatex}]{hyperref}
 
@@ -65,7 +65,7 @@
 
 \setlength{\headheight}{18pt}
 
-
+\setcounter{tocdepth}{2}
 
 \begin{document}
 
@@ -75,11 +75,16 @@
 \HRule \\[0.4cm]
 % Title
 {\Large \textbf{Exploring the Possibilities of Applying Gamification and Learning Analytics to Education}} \\[0.4cm]
-\HRule \\[1cm]
-\begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
-Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
-\textsc{5887380} & \textsc{5743044}
-\end{tabular*}
+\HRule \\[0.5cm]
+
+{\Large
+Robrecht \textsc{Jurriaans} \\
+Sander \textsc{Latour} \\[0.5cm]
+
+Supervised by: \\
+Frank Aldershoff 
+}
+
 
 \vfill \today
 \end{center}
@@ -116,7 +121,8 @@ In recent years, there has been a shift towards keeping students more motivated 
 
 \begin{figure}[h!tb]
 \centering
-\includegraphics[width=0.7\linewidth]{GalaLoop}
+\def\svgwidth{0.7\columnwidth}
+\input{GalaLoop.pdf_tex}
 \caption{The basic feedback loop between Gamification and Learning Analytics\label{fig:galaloop}}
 \end{figure}
 
@@ -263,13 +269,14 @@ Before the term learning analytics came in to play, the term academic analytics 
 students are informed of how they are doing using the traffic light metaphor. Their project lies somewhere between academic analytics and learning analytics. Academic analytics differs from EDM in that it is more hypothesis driven. The term action analytics emerged to stress that academic analytics is nowadays mostly focused on actionable analytics (i.e. having it early enough so that something could still be done).
 
 \subsubsection{Classifying the literature}
-\begin{figure}[ht]
+\begin{figure}[h!t]
   \begin{center}
     \includegraphics[width=\linewidth]{referencemodel_chatti.png}
   \end{center}
   \caption{Learning Analytics Reference Model as presented by Chatti et al \cite{Chatti2012}.}
   \label{fig:reference_model_la}
 \end{figure}
+
 Chatti et al \cite{Chatti2012} presented a reference model of learning analytics, as seen in Figure~\ref{fig:reference_model_la}, to classify the literature in the field. The reference model identified seven objectives for learning analytics: monitoring and analysis, prediction and intervention, tutoring and mentoring, assessment and feedback, adaptation, personalization and recommendation, and reflection. Greller et al \cite{Greller2012} primarily identifies two objectives, reflection and prediction. However, the definition of these objectives are broader than those listed by Chatti et al. Reflection includes monitoring and analysis, and prediction includes intervention and "adaptive services" (which probably includes adaption, personalization and recommendation, although this is not explicitely mentioned). The reference model by Chatti et al will be used in this section to classify the literature.
 
 \begin{tabular}{l|lllllll|lll}
@@ -647,8 +654,8 @@ However, gamification is still in its exploratory phase and most papers publishe
 
 A large problem is the lack of a proper definition of gamification, apart from the definition by Deterding, resulting in ambiguity as to what actually constitutes as gamification. We used the definition as given by Deterding, but we found that it was not perfect. Therefore, we altered the definition to better describe what game elements are, using literature from the field of game design, and to define game and non-game contexts. This resulted in our definition of a game context, which is different from the usual approach of gamification in which non-game contexts are changed into games by adding game elements. Instead, we defined game contexts to be domains adhering to three criteria. If so, all design patterns within the domain can be viewed as game elements and we use the set which influences a certain external value such as motivation, genre, etcetera.
 
-\subsection{Great potential}
-All things considered, one main outcome of this project is still a positive one. There lies great potential in working with Learning Analytics and Gamification and those fields will also move forward. The combination of both seems to be able to unlock a new level of personalized education, after some hurdles are overcome. The latest signs at the Learning Analytics and Knowledge conference in april 2013 also indicate that other projects are looking into the combination of both approaches. Furthermore, the work presented here is most of all conceptual, providing for a foundation for follow up projects to implement these ideas and test them. 
+\subsection{Great Potential}
+All things considered, one main outcome of this project is still a positive one. There lies great potential in working with Learning Analytics and Gamification and those fields will also move forward. The combination of both seems to be able to unlock a new level of personalized education, after some hurdles are overcome. The latest signs at the Learning Analytics and Knowledge conference in april 2013 also indicate that other projects are looking into the combination of both approaches. Furthermore, the work presented here is most of all conceptual (see Appendix \ref{furtherposs} for detailed descriptions), providing for a foundation for follow up projects to implement these ideas and test them. 
 
 \pagebreak
 \small{
@@ -658,7 +665,7 @@ All things considered, one main outcome of this project is still a positive one.
 
 \pagebreak
 \appendix
-\section{Further Possibilities}
+\section{Further Possibilities}\label{furtherposs}
 \subsection{Looking For Group, an automatic interdisciplinary group forming system}
 The first iteration of the game context was just the basic notion that many aspects of education have similar concepts in games. People generally love playing games and experience high motivation and high engagement while doing so, but lack these properties when learning. The idea is that if we rename all education concepts to their respective counterparts in games, we could create a more compelling narrative for the students. This idea is known in the field of gamification as \emph{Epic Meaning} which gives the user the idea that the activity they are doing is much more important. 
 
