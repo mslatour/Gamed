@@ -9,20 +9,21 @@
 	    pdfborder={0 0 0 0}, linkcolor=black, urlcolor=blue,
             pdfcreator={pdflatex}]{hyperref}
 
-\usepackage[hmargin=3cm, vmargin=4cm]{geometry}
+%\usepackage[hmargin=3cm, vmargin=4cm]{geometry}
 % Math formatting
 \usepackage{amsmath}
 \usepackage{amssymb}
 
 \usepackage{longtable}
+\usepackage{rotating}
 
 % Lay out packages
-%\usepackage[margin=3.5cm]{geometry}
+\usepackage{geometry}
 \usepackage[utf8]{inputenc}
 %\usepackage{mathpazo}
 
 % More compact bibliography
-\usepackage{natbib}
+\usepackage[authoryear]{natbib}
 \setlength{\bibsep}{0.0pt}
 
 % Dutch style of paragraph formatting, i.e. no indents. 
@@ -94,7 +95,7 @@ Robrecht \textsc{Jurriaans} & Sander \textsc{Latour} \\
 %\addtocontents{toc}{~\hfill\textbf{Page}\par}
 {\linespread{0.8}
 
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents}
 
 
@@ -269,52 +270,43 @@ students are informed of how they are doing using the traffic light metaphor. Th
   \caption{Learning Analytics Reference Model as presented by Chatti et al \cite{Chatti2012}.}
   \label{fig:reference_model_la}
 \end{figure}
-Chatti et al \cite{Chatti2012} presented a reference model of learning analytics, as seen in Figure~\ref{fig:reference_model_la}, to classify literature in the field. The reference model identified seven objectives for learning analytics: monitoring and analysis, prediction and intervention, tutoring and mentoring, assessment and feedback, adaptation, personalization and recommendation, and reflection. Greller et al \cite{Greller2012} primarily identifies two objectives, reflection and prediction. However, the definition of these objectives are broader than those listed by Chatti et al. Reflection includes monitoring and analysis, and prediction includes intervention and "adaptive services" (which probably includes adaption, personalization and recommendation, although this is not explicitely mentioned). The reference model by Chatti et al will be used in this section to classify the literature.
-\paragraph{Monitoring and analysis}
-\paragraph{Prediction and intervention}
-\paragraph{Tutoring and mentoring}
-\paragraph{Assessment and feedback}
-\paragraph{Adaption}
-% * Adaptive Hypermedia
-\paragraph{Personalization and recommendation}
-% * ITS
-\paragraph{Reflection}
+Chatti et al \cite{Chatti2012} presented a reference model of learning analytics, as seen in Figure~\ref{fig:reference_model_la}, to classify the literature in the field. The reference model identified seven objectives for learning analytics: monitoring and analysis, prediction and intervention, tutoring and mentoring, assessment and feedback, adaptation, personalization and recommendation, and reflection. Greller et al \cite{Greller2012} primarily identifies two objectives, reflection and prediction. However, the definition of these objectives are broader than those listed by Chatti et al. Reflection includes monitoring and analysis, and prediction includes intervention and "adaptive services" (which probably includes adaption, personalization and recommendation, although this is not explicitely mentioned). The reference model by Chatti et al will be used in this section to classify the literature.
 
-% Feedback (by visualisation)
-% * inspired by runkeeper and the likes, LA tools emerged that provided visual feedback to students about their progress.
-% * related to visual analytics
-% * 
-
-
-
-
-%Personalized learning
-According to \cite{Brusilovsky2007} access to online education is no longer a problem, but personalised access is. 
-
-\paragraph{Personalized Learning}
-Introduceer de notie van personalized learning, met een citaat uit een paper.
-
-\begin{itemize}
-  \item \cite{Weber2001}: Work has been done on Adaptive hypermedia systems that can integrate external resources (open course).
-  \item Brusilovsky2001: Static hypermedia systems suffer from the inability to adapt to specific users' knowledge, needs and preferences. Adaptive hypermedia systems combine the fields of hypertext and user modelling to overcome this.
-%  \item Arruabarrena2002: On evaluating adaptive educational systems
-%  \item Romero2005:
-  \item \cite{Brusilovsky2003}
-  \item \cite{Henze2001}
-  \item \cite{Farzan2004}
-  \item \cite{Tand2005}
-  \item \cite{Modritscher2011}
-\end{itemize}
-
-\paragraph{Social Learning}
-\begin{itemize}
-  \item \cite{Shum2012}
-  \item \cite{Ullmann2011}
-  \item \cite{Haiming2012}
-  \item \cite{Fournier2011}
-  \item \cite{Ferguson2012b}
-  \item Learning as a social activity: Social Learning Analytics, Networked Learning, Collaborative learning, E-mentoring
-\end{itemize}
+\begin{tabular}{l|lllllll|lll}
+    & 
+    \multicolumn{7}{c}{Objectives} &
+    \multicolumn{3}{c}{Stakeholders} \\ 
+\hline
+    &
+    \begin{sideways}Monitoring and analysis\end{sideways}& %1
+    \begin{sideways}Prediction and intervention\end{sideways}& %2
+    \begin{sideways}Tutoring and mentoring\end{sideways}& %3
+    \begin{sideways}Assessment and feedback\end{sideways}& %4
+    \begin{sideways}Adaption\end{sideways}& %5
+    \begin{sideways}Personalization and recommendation\end{sideways}& %6
+    \begin{sideways}Reflection\end{sideways}& %7
+    \begin{sideways}Learners\end{sideways}& %8
+    \begin{sideways}Instructors / Mentors \end{sideways}& %9
+    \begin{sideways}Institutions\end{sideways} \\ %A
+\hline
+%                       & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & A \\
+\cite{Brusilovsky2001}  &   &   &   &   & X & X &   & X &   &   \\ %overview
+\cite{Brusilovsky2003}  &   &   &   &   & X & X &   & X &   &   \\ %overview
+\cite{Brusilovsky2007}  &   &   &   &   & X & X &   & X &   &   \\ %overview
+\cite{Weber2001}        &   &   &   & X & X & X &   & X &   &   \\
+\cite{Henze2001}        &   &   &   &   & X & X &   & X &   &   \\
+\cite{Farzan2004}       &   &   &   &   &   & X &   & X &   &   \\
+\cite{Tang2005}         &   &   &   &   &   & X &   & X &   &   \\
+\cite{Reategui2008}     &   &   &   &   & X & X &   & X &   &   \\
+\cite{Modritscher2011}  &   &   &   &   &   & X &   & X &   &   \\ % overview
+\cite{Mazza2004}        & X &   &   &   &   &   &   &   & X &   \\
+\cite{Shum2012}         & X &   & X &   &   &   & X & X &   &   \\
+\cite{Ullmann2011}      & X &   & X &   &   &   & X & X & X &   \\
+\cite{Haiming2012}      &   &   & X &   &   &   & X & X & X &   \\
+\cite{Fournier2011}     & X &   &   &   &   &   & X & X & X &   \\
+\cite{Ferguson2012b}    & X &   & X &   &   &   &   & X & X &   \\ %overview
+\cite{Blikstein2011}    & X &   &   &   &   &   &   &   & X &   \\ 
+\end{tabular}
 
 \subsection{Related Work Conclusion}
 The fields of \emph{gamification} and \emph{learning analytics} are both still in early stages. This is especially true for gamification which came from fields that are also not typically associated with academic research. However, both fields show great promise for education. Both fields can be applied to education and as the literature shows with reasonable success. Furthermore, on the surface it seems that not only can both fields be applied simultaneously, but also both fields can benefit from each other. Gamification drives users to use the system and therefore generate data which in turn can be analysed using learning analytics. Another method of analysing the data is game mining, as the data resembles both learning data as well as gaming data. Game mining is used mainly to determine the flow of games and to improve gaming experiences and improve future games. The methods that are used closely resemble the various sub-fields of learning analytics. 
@@ -665,8 +657,8 @@ A large problem is the lack of a proper definition of gamification, apart from t
 
 \pagebreak
 \small{
+\bibliographystyle{abbrvnat}
 \bibliography{literature,literature2}
-\bibliographystyle{plain}
 }
 
 \pagebreak
